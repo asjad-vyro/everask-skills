@@ -1,0 +1,3 @@
+Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "Catch-Up Digest" (upstream: "digest"). The other upstream files are unchanged.
+Source: https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/enterprise-search/skills/digest
+Commit: 2574e29377c7173d0cecffef29a6ecbd7f8ccb5d

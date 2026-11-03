@@ -1,0 +1,3 @@
+Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "Document Comparison" (upstream: "compare-documents"). The other upstream files are unchanged.
+Source: https://github.com/open-legal-products/mike-workflows/tree/20bed204ce9ef07e1bc2df0b16b35ee8ad997fb1/assistant-workflows/compare-documents
+Commit: 20bed204ce9ef07e1bc2df0b16b35ee8ad997fb1
