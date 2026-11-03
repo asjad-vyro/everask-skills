@@ -1,6 +1,6 @@
 # EverAsk Skills
 
-The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. Each folder has the upstream `LICENSE` (MIT or Apache-2.0) and a `NOTICE` with that change, the source and the commit. Each folder also has our own `skill.config.json`, with the skill's Library type, example prompts and connector badges.
+The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. Each folder has the upstream `LICENSE` (MIT or Apache-2.0) and a `NOTICE` with that change, the source and the commit. Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
 ## Import
 
@@ -25,7 +25,7 @@ email/
   cold-email/
     SKILL.md
     skill.config.json
-    cover.webp            (once covers are made)
+    cover.webp
     LICENSE, NOTICE and the skill's other files
 ```
 
@@ -44,7 +44,7 @@ email/
   - `connectors`: up to 10, written as the backend's slugs (lowercase letters, digits, `-` or `_`). They show as badges and don't connect anything.
 
   It must be valid JSON, so no trailing commas or comments. The import skips any value outside these limits and flags it; the check below catches both before you push.
-- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. They will be added later.
+- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. Every skill here has a 600×800 `cover.webp`.
 - **Before you push**, run `uv run scripts/validate.py` (or `pip install pyyaml`, then `python3 scripts/validate.py`). It checks the import rules and exits non-zero on any failure. Add `--connectors <file>`, with the backend's slugs one per line, to check that every connector exists.
 
 ## Skills
