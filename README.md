@@ -42,6 +42,8 @@ email/
   - `type`: the skill's type, the same as its folder.
   - `example_prompts`: up to 5, each up to 300 characters.
   - `connectors`: up to 10, written as the backend's slugs (lowercase letters, digits, `-` or `_`). They show as badges and don't connect anything.
+
+  It must be valid JSON, so no trailing commas or comments. The import skips any value outside these limits and flags it; the check below catches both before you push.
 - **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. They will be added later.
 - **Before you push**, run `uv run scripts/validate.py` (or `pip install pyyaml`, then `python3 scripts/validate.py`). It checks the import rules and exits non-zero on any failure. Add `--connectors <file>`, with the backend's slugs one per line, to check that every connector exists.
 
