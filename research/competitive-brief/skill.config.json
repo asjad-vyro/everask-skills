@@ -1,0 +1,17 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Compare Notion, Coda and Obsidian's positioning and find a gap we can own.",
+    "Make a sales battlecard against HubSpot for our CRM.",
+    "What has changed in Calendly's pricing and messaging this year, and how should we respond?",
+    "Brief me on the top 3 competitors in AI meeting notes before our board meeting."
+  ],
+  "connectors": [
+    "semrush",
+    "similarweb_digitalrank_api",
+    "gong",
+    "hubspot",
+    "salesforce",
+    "notion"
+  ]
+}

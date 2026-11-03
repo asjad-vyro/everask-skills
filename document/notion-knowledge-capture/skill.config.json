@@ -1,0 +1,13 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Save this conversation as a how-to page in our Notion wiki",
+    "Log this decision in our Notion decision log",
+    "Turn these onboarding notes into a Notion FAQ",
+    "Capture what we just figured out as a Notion doc for the team"
+  ],
+  "connectors": [
+    "notion",
+    "slack"
+  ]
+}

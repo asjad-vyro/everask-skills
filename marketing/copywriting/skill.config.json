@@ -1,0 +1,15 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write homepage copy for my invoicing app from this one-pager",
+    "Our hero section sounds like AI. Rewrite it",
+    "Give me 3 headline and CTA options for our pricing page",
+    "Fix only this headline and leave the rest alone"
+  ],
+  "connectors": [
+    "googledocs",
+    "notion",
+    "webflow",
+    "figma"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "engineering",
+  "example_prompts": [
+    "Improve this system prompt for my customer-support bot",
+    "Turn my vague request into a precise prompt for an image model",
+    "Design a JSON schema and prompt for extracting invoice data",
+    "Write test cases to check my prompt's reliability"
+  ]
+}

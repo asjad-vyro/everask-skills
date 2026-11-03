@@ -1,0 +1,18 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Turn this blog post into a LinkedIn post, an X thread and a carousel",
+    "Plan 2 weeks of LinkedIn posts for a fintech founder",
+    "Write a 30-second Reel script for our launch",
+    "Find 10 posts in my niche worth commenting on today"
+  ],
+  "connectors": [
+    "linkedin",
+    "instagram",
+    "facebook",
+    "youtube",
+    "reddit",
+    "pinterest",
+    "typefully"
+  ]
+}

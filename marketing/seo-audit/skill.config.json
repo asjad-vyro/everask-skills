@@ -1,0 +1,17 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Audit example.com's SEO and give me a prioritized fix list",
+    "Traffic dropped after our redesign. What broke?",
+    "Rewrite title tags for these 30 low-CTR pages",
+    "Check my local SEO and Google Business Profile setup"
+  ],
+  "connectors": [
+    "google_search_console",
+    "google_analytics",
+    "semrush",
+    "ahrefs",
+    "moz",
+    "bing_webmaster_tools"
+  ]
+}

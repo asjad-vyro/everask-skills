@@ -1,6 +1,6 @@
 # EverAsk Skills
 
-The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. Each folder has the upstream `LICENSE` (MIT or Apache-2.0) and a `NOTICE` with that change, the source and the commit.
+The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. Each folder has the upstream `LICENSE` (MIT or Apache-2.0) and a `NOTICE` with that change, the source and the commit. Each folder also has our own `skill.config.json`, with the skill's Library type, example prompts and connector badges.
 
 ## Import
 
@@ -18,9 +18,32 @@ One import gives every skill the same type, so import each type folder with its 
 
 There are no slides skills.
 
-- **Covers** are optional: a small `cover.webp` (or `cover.png`, `cover.jpg`, `cover.gif`) next to a skill's `SKILL.md`. They will be added later.
-- **Example prompts and connectors** are set in the admin portal after import.
-- **Before you push**, run `uv run scripts/validate.py` (or `pip install pyyaml`, then `python3 scripts/validate.py`). It checks the import rules and exits non-zero on any failure.
+Each skill folder looks like this:
+
+```
+email/
+  cold-email/
+    SKILL.md
+    skill.config.json
+    cover.webp            (once covers are made)
+    LICENSE, NOTICE and the skill's other files
+```
+
+- **`skill.config.json`** is optional. Every field in it is optional too:
+
+  ```json
+  {
+    "type": "email",
+    "example_prompts": ["Write a cold email and 3 follow-ups to RevOps heads at Series B SaaS"],
+    "connectors": ["gmail", "outlook", "hubspot"]
+  }
+  ```
+
+  - `type`: the skill's type, the same as its folder.
+  - `example_prompts`: up to 5, each up to 300 characters.
+  - `connectors`: up to 10, written as the backend's slugs (lowercase letters, digits, `-` or `_`). They show as badges and don't connect anything.
+- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. They will be added later.
+- **Before you push**, run `uv run scripts/validate.py` (or `pip install pyyaml`, then `python3 scripts/validate.py`). It checks the import rules and exits non-zero on any failure. Add `--connectors <file>`, with the backend's slugs one per line, to check that every connector exists.
 
 ## Skills
 

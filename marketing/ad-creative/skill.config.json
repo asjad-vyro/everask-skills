@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write 15 Google search-ad headlines and 4 descriptions for our CRM",
+    "Here's my Meta ads CSV. Write variants of the winners",
+    "Turn these 40 reviews into 10 static ad concepts",
+    "Give me a hook grid for TikTok ads for our budgeting app"
+  ],
+  "connectors": [
+    "facebook",
+    "googleads",
+    "tiktok_ads",
+    "linkedin",
+    "reddit_ads"
+  ]
+}

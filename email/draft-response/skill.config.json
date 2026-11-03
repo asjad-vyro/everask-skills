@@ -1,0 +1,18 @@
+{
+  "type": "email",
+  "example_prompts": [
+    "Reply to this customer who was double-charged and wants a refund today.",
+    "Politely tell a client we won't build their feature request, and offer alternatives.",
+    "Draft an outage update for customers: payments were down 2 hours this morning.",
+    "Write a firm but kind reply to a customer asking for a refund outside our policy."
+  ],
+  "connectors": [
+    "gmail",
+    "outlook",
+    "zendesk",
+    "intercom",
+    "freshdesk",
+    "gorgias",
+    "notion"
+  ]
+}

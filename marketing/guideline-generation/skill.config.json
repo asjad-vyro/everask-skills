@@ -1,0 +1,17 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Make brand voice guidelines from our pitch deck and blog posts.",
+    "Build a tone guide from these 5 sales call transcripts.",
+    "Turn this messy style doc into a clear brand voice guide."
+  ],
+  "connectors": [
+    "googledrive",
+    "googledocs",
+    "notion",
+    "box",
+    "confluence",
+    "gong",
+    "fireflies"
+  ]
+}

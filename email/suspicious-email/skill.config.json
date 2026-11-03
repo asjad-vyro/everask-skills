@@ -1,0 +1,13 @@
+{
+  "type": "email",
+  "example_prompts": [
+    "Is this 'PayPal account suspended' email a scam?",
+    "Check this invoice email from a new vendor for phishing",
+    "My boss emailed asking for gift cards. Is it real?",
+    "Analyze these headers and links for signs of spoofing"
+  ],
+  "connectors": [
+    "gmail",
+    "outlook"
+  ]
+}

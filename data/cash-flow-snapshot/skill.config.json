@@ -1,0 +1,19 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Will I make payroll next month? Here's my bank balance and the AR/AP export.",
+    "Forecast my cash for the next 90 days from QuickBooks and flag the risks.",
+    "Use this CSV of income and expenses to show my 30/60/90-day runway.",
+    "Which late-paying customers put my cash at risk this quarter?"
+  ],
+  "connectors": [
+    "quickbooks",
+    "zoho_books",
+    "freshbooks",
+    "stripe",
+    "square",
+    "shopify",
+    "mercury_mcp",
+    "googlesheets"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Help me write my self-assessment for this half.",
+    "Draft a review for my direct report from these notes.",
+    "Prep my calibration doc for the three people I manage."
+  ],
+  "connectors": [
+    "jira",
+    "linear",
+    "asana",
+    "github",
+    "googledocs",
+    "bamboohr"
+  ]
+}

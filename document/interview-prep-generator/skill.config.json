@@ -1,0 +1,14 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Prepare me for a PM interview at Spotify using my resume",
+    "Turn my resume bullets into STAR stories",
+    "What will they ask for this data engineer job post?",
+    "Give me good questions to ask the hiring manager"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "linkedin"
+  ]
+}

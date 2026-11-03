@@ -1,0 +1,17 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Extract key terms from these 12 supplier contracts into a spreadsheet",
+    "Build a contract register from these agreements",
+    "Which of these contracts auto-renew, and when? Put it in a table",
+    "Summarize liability caps and termination rights across these MSAs"
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox",
+    "box",
+    "share_point",
+    "googlesheets",
+    "excel"
+  ]
+}

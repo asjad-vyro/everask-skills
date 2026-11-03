@@ -1,0 +1,18 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Catch me up on this week across Gmail, Slack and Drive.",
+    "Today's digest: my action items, decisions and mentions.",
+    "I've been off since Monday. What did I miss? Action items first."
+  ],
+  "connectors": [
+    "gmail",
+    "outlook",
+    "googlecalendar",
+    "slack",
+    "microsoft_teams",
+    "googledrive",
+    "notion",
+    "jira"
+  ]
+}

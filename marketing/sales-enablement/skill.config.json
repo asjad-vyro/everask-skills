@@ -1,0 +1,17 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write a battle card for us vs. Gong for our AEs",
+    "A CFO says Acme is half our price and the call is in an hour. What do I say?",
+    "Draft a 10-slide sales deck for CFOs evaluating our AP tool",
+    "Turn these lost-deal notes into a win-loss report"
+  ],
+  "connectors": [
+    "hubspot",
+    "salesforce",
+    "gong",
+    "googleslides",
+    "googledocs",
+    "notion"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Create a Business Model Canvas for a subscription plant-care startup",
+    "Analyze Duolingo's business model as a canvas",
+    "Fill out a BMC for my freelance design studio",
+    "How does Etsy create and capture value? Use the canvas"
+  ],
+  "connectors": [
+    "miro",
+    "notion",
+    "googledocs"
+  ]
+}

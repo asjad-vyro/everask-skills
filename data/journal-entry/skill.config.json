@@ -1,0 +1,16 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Prepare the December AP accrual from these open POs and receipts.",
+    "Book this month's depreciation from the attached fixed asset register.",
+    "Draft the payroll accrual for 3 unpaid days; the payroll register is attached.",
+    "Create the deferred revenue release entry for Q4 from this contract schedule."
+  ],
+  "connectors": [
+    "quickbooks",
+    "zoho_books",
+    "freshbooks",
+    "googlesheets",
+    "excel"
+  ]
+}

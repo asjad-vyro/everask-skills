@@ -1,0 +1,19 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write a LinkedIn post announcing our new AI slides feature, with 3 hook options.",
+    "Draft a 1,200-word SEO blog post on 'how to write a project brief'.",
+    "Turn this customer interview transcript into a one-page case study.",
+    "Write our October newsletter: 3 sections, one CTA, and subject line options.",
+    "Draft a press release for our seed round with a placeholder CEO quote."
+  ],
+  "connectors": [
+    "linkedin",
+    "typefully",
+    "instagram",
+    "mailchimp",
+    "beehiiv",
+    "googledocs",
+    "notion"
+  ]
+}

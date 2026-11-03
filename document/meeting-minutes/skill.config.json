@@ -1,0 +1,18 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Write minutes from this Zoom transcript",
+    "Turn my messy standup notes into action items with owners",
+    "Create minutes for today's design review from these bullets",
+    "Summarize this call into decisions, actions and open questions"
+  ],
+  "connectors": [
+    "zoom",
+    "googlemeet",
+    "microsoft_teams",
+    "fireflies",
+    "otter_ai_mcp",
+    "notion",
+    "googledocs"
+  ]
+}

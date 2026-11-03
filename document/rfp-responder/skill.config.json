@@ -1,0 +1,17 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Parse this RFP and list every mandatory requirement",
+    "Draft answers to this security questionnaire from our proof points",
+    "Should we bid on this RFP? Estimate our win chance",
+    "Build a compliance matrix for this tender"
+  ],
+  "connectors": [
+    "googledrive",
+    "share_point",
+    "confluence",
+    "notion",
+    "googledocs",
+    "salesforce"
+  ]
+}

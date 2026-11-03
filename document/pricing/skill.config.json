@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "How should I price my AI note-taker for freelancers?",
+    "Tear down acme.com/pricing for buyers and AI agents",
+    "Plan our price rise from $29 to $49 without a churn spike",
+    "Analyze these Van Westendorp survey responses"
+  ],
+  "connectors": [
+    "stripe",
+    "chartmogul",
+    "googlesheets",
+    "typeform",
+    "survey_monkey"
+  ]
+}

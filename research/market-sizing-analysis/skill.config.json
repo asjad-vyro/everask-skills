@@ -1,0 +1,15 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "What's the TAM/SAM/SOM for an AI tutoring app in India?",
+    "Size the market for invoice software for dental clinics",
+    "Build a bottom-up market size for my pitch deck",
+    "Sanity-check the market-size slide in this deck"
+  ],
+  "connectors": [
+    "googlesheets",
+    "googleslides",
+    "peopledatalabs",
+    "similarweb_digitalrank_api"
+  ]
+}

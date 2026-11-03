@@ -1,0 +1,17 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Profile this CSV and flag data quality problems.",
+    "What's in this spreadsheet? Columns, blanks, odd values.",
+    "Check my customer list for duplicates and inconsistent country names.",
+    "Before I analyze this export, tell me which columns I can trust."
+  ],
+  "connectors": [
+    "googlesheets",
+    "excel",
+    "airtable",
+    "googlebigquery",
+    "databricks",
+    "supabase"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "email",
+  "example_prompts": [
+    "Who owes me money? Draft reminders from QuickBooks.",
+    "Write chasers from this overdue-invoices CSV.",
+    "Draft firmer reminders for customers who are repeatedly late."
+  ],
+  "connectors": [
+    "gmail",
+    "outlook",
+    "quickbooks",
+    "zoho_books",
+    "freshbooks",
+    "stripe",
+    "square"
+  ]
+}

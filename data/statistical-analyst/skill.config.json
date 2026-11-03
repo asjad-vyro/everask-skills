@@ -1,0 +1,16 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Is 4.1% vs 3.6% conversion significant with 8,000 users each?",
+    "How many visitors do I need to detect a 10% lift?",
+    "Give me a confidence interval for this survey result",
+    "Should we ship variant B? Here are the numbers"
+  ],
+  "connectors": [
+    "googlesheets",
+    "statsig_mcp",
+    "posthog",
+    "amplitude",
+    "mixpanel"
+  ]
+}

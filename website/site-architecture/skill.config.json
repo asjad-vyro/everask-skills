@@ -1,0 +1,16 @@
+{
+  "type": "website",
+  "example_prompts": [
+    "Plan the sitemap and navigation for my bakery's new website",
+    "Restructure our SaaS navigation and URLs",
+    "We're moving from Wix to Webflow. Plan the redirects",
+    "What pages does a B2B consultancy website need?"
+  ],
+  "connectors": [
+    "google_search_console",
+    "google_analytics",
+    "semrush",
+    "webflow",
+    "wix"
+  ]
+}

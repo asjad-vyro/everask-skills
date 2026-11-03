@@ -7,6 +7,7 @@
 
     uv run scripts/validate.py
     # or: pip install pyyaml && python3 scripts/validate.py
+    # add --connectors FILE (one slug per line) to check slugs against the backend's list
 
 Every top-level folder named after a Library type (document, slides, website,
 research, email, data, marketing, engineering) is one import link, because one
@@ -18,14 +19,19 @@ import gives every skill the same type. For each link it checks:
   one English letter or digit) and a description of 1-1024 characters;
 - each skill has at most 100 files and 25 MiB, a LICENSE, and no symlinks or
   OS junk;
-- covers, when present: cover.png, .jpg, .webp or .gif next to SKILL.md, of
-  that image type, and small;
+- covers, when present: one cover.png, .jpg, .jpeg, .webp or .gif next to
+  SKILL.md, of that image type, and up to 5 MB (a note past 200 KiB);
+- skill.config.json, when present: a JSON object with only type (the type
+  folder it sits in), example_prompts (up to 5, each 1-300 characters) and
+  connectors (up to 10 slugs of lowercase letters, digits, - or _);
 - the folder and the whole repo against 1000 files and 50 MiB per link.
 
 Exits 1 if anything fails.
 """
 from __future__ import annotations
 
+import argparse
+import json
 import os
 import re
 import sys
@@ -43,14 +49,21 @@ NAME_MAX, DESCRIPTION_MAX = 64, 1024
 SKILL_MAX_FILES, SKILL_MAX_BYTES = 100, 25 * MIB
 LINK_MAX_FILES, LINK_MAX_BYTES = 1000, 50 * MIB
 LINK_MAX_SKILLS, MAX_DEPTH = 50, 3
-# "Kept small" is the rule; 1 MiB is our budget (chatly's own cover upload limit is 10 MiB).
-COVER_MAX_BYTES = 1 * MIB
+# The import takes covers up to 5 MB but asks for small ones; a 384x512 webp is
+# about 40 KiB, so anything past 200 KiB gets a note.
+COVER_MAX_BYTES, COVER_SMALL_BYTES = 5 * 1000 * 1000, 200 * 1024
 COVER_SIGNATURES = {
     "cover.png": lambda b: b.startswith(b"\x89PNG\r\n\x1a\n"),
     "cover.jpg": lambda b: b.startswith(b"\xff\xd8\xff"),
+    "cover.jpeg": lambda b: b.startswith(b"\xff\xd8\xff"),
     "cover.webp": lambda b: b[:4] == b"RIFF" and b[8:12] == b"WEBP",
     "cover.gif": lambda b: b[:6] in (b"GIF87a", b"GIF89a"),
 }
+CONFIG_NAME = "skill.config.json"
+CONFIG_FIELDS = ("type", "example_prompts", "connectors")
+PROMPTS_MAX, PROMPT_MAX_CHARS, CONNECTORS_MAX = 5, 300, 10
+CONNECTOR_RE = re.compile(r"^[a-z0-9_-]+$")
+known_connectors: set[str] | None = None
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".avif", ".heic", ".svg", ".bmp", ".tif", ".tiff"}
 JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "Icon\r"}
 JUNK_DIRS = {"__MACOSX", ".Spotlight-V100", ".Trashes", ".fseventsd"}
@@ -167,15 +180,73 @@ def check_covers(skill: Path) -> None:
             fail(cover, f"is not a {cover.suffix[1:].upper()} image")
             ok = False
         if len(data) > COVER_MAX_BYTES:
-            fail(cover, f"is {len(data) / MIB:.1f} MiB; keep covers under {COVER_MAX_BYTES // MIB} MiB")
+            fail(cover, f"is {len(data) / 1e6:.1f} MB; the limit is {COVER_MAX_BYTES // 1000000} MB")
             ok = False
+        elif len(data) > COVER_SMALL_BYTES:
+            notes.append(f"{rel(cover)}: {len(data) // 1024} KiB; keep covers small (a 384x512 webp is about 40 KiB)")
         if ok and cover.name != "cover.webp":
             notes.append(f"{rel(cover)}: fine, but webp is preferred")
     if len(covers) > 1:
         fail(skill, f"has {len(covers)} covers; keep one")
 
 
-def check_skill(skill: Path, names: dict[str, list[str]]) -> tuple[int, int]:
+def unique_keys(pairs: list[tuple[str, object]]) -> dict:
+    keys = [key for key, _ in pairs]
+    repeated = sorted({key for key in keys if keys.count(key) > 1})
+    if repeated:
+        raise ValueError(f"repeats the key(s) {', '.join(repeated)}")
+    return dict(pairs)
+
+
+def check_strings(path: Path, data: dict, field: str, most: int) -> list[str]:
+    """The field as a list of strings, after checking its shape; [] when unusable."""
+    value = data[field]
+    if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
+        fail(path, f"{field} must be a list of strings")
+        return []
+    if len(value) > most:
+        fail(path, f"{field} has {len(value)} entries; the limit is {most}")
+    if len(set(value)) < len(value):
+        fail(path, f"{field} repeats an entry")
+    return value
+
+
+def check_config(skill: Path, type_name: str) -> None:
+    for other in skill.iterdir():
+        if other.is_file() and other.name != CONFIG_NAME and re.sub(r"[^a-z]", "", other.name.lower()) == "skillconfigjson":
+            fail(other, f"must be named {CONFIG_NAME} exactly")
+    path = skill / CONFIG_NAME
+    if not path.is_file():
+        return
+    try:
+        data = json.loads(path.read_bytes().decode("utf-8"), object_pairs_hook=unique_keys)
+    except (UnicodeDecodeError, ValueError) as exc:
+        fail(path, f"is not valid UTF-8 JSON: {exc}")
+        return
+    if not isinstance(data, dict):
+        fail(path, "must be a JSON object")
+        return
+    unknown = sorted(set(data) - set(CONFIG_FIELDS))
+    if unknown:
+        fail(path, f"has unknown field(s) {', '.join(unknown)}; the fields are {', '.join(CONFIG_FIELDS)}")
+    if "type" in data:
+        if data["type"] not in TYPES:
+            fail(path, f"type must be one of {', '.join(TYPES)}")
+        elif data["type"] != type_name:
+            fail(path, f"type is {data['type']}, but the skill is in {type_name}/, whose import sets {type_name}")
+    if "example_prompts" in data:
+        for number, prompt in enumerate(check_strings(path, data, "example_prompts", PROMPTS_MAX), 1):
+            if not prompt.strip() or chars(prompt) > PROMPT_MAX_CHARS:
+                fail(path, f"example prompt {number} must be 1-{PROMPT_MAX_CHARS} characters, is {chars(prompt)}")
+    if "connectors" in data:
+        for slug in check_strings(path, data, "connectors", CONNECTORS_MAX):
+            if not CONNECTOR_RE.match(slug):
+                fail(path, f"connector {slug!r} must be lowercase letters, digits, - or _")
+            elif known_connectors is not None and slug not in known_connectors:
+                fail(path, f"connector {slug!r} is not in the backend's list")
+
+
+def check_skill(skill: Path, names: dict[str, list[str]], type_name: str) -> tuple[int, int]:
     files = walk(skill)
     total = size(files)
     if len(files) > SKILL_MAX_FILES:
@@ -193,6 +264,7 @@ def check_skill(skill: Path, names: dict[str, list[str]]) -> tuple[int, int]:
     if name:
         names.setdefault(" ".join(name.split()).casefold(), []).append(rel(skill))
     check_covers(skill)
+    check_config(skill, type_name)
     return len(files), total
 
 
@@ -220,7 +292,7 @@ def check_type_folder(folder: Path, names: dict[str, list[str]]) -> tuple[int, i
     if len(skills) > LINK_MAX_SKILLS:
         fail(folder, f"has {len(skills)} skills; one link takes at most {LINK_MAX_SKILLS}")
     for skill in skills:
-        check_skill(skill, names)
+        check_skill(skill, names, folder.name)
     total = size(files)
     if len(files) > LINK_MAX_FILES or total > LINK_MAX_BYTES:
         fail(folder, f"is {len(files)} files and {total / MIB:.1f} MiB; one link takes at most "
@@ -229,6 +301,14 @@ def check_type_folder(folder: Path, names: dict[str, list[str]]) -> tuple[int, i
 
 
 def main() -> int:
+    global known_connectors
+    parser = argparse.ArgumentParser(description="Check this repo against the Skills Library import rules.")
+    parser.add_argument("--connectors", type=Path, metavar="FILE",
+                        help="the backend's connector slugs, one per line; unknown slugs fail")
+    args = parser.parse_args()
+    if args.connectors:
+        known_connectors = {line.strip() for line in args.connectors.read_text().splitlines() if line.strip()}
+
     if (ROOT / "SKILL.md").exists():
         fail(ROOT / "SKILL.md", "a SKILL.md at the repo root makes every skill nested")
     for top in sorted(ROOT.iterdir()):

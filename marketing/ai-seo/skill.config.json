@@ -1,0 +1,17 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "How do we get cited in ChatGPT and Perplexity answers?",
+    "Write an llms.txt and pricing.md for our site",
+    "Can AI crawlers read our site? Fix our robots.txt",
+    "Which of our pages are easy for AI to quote, and which aren't?"
+  ],
+  "connectors": [
+    "google_search_console",
+    "bing_webmaster_tools",
+    "ahrefs",
+    "semrush",
+    "peec_ai_mcp",
+    "perplexityai"
+  ]
+}

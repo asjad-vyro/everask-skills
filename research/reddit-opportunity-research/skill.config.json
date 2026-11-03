@@ -1,0 +1,13 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Find Reddit threads where freelancers complain about invoicing",
+    "Which subreddits should our AI note-taker take part in, and how?",
+    "Turn Reddit talk about meal-prep apps into content ideas"
+  ],
+  "connectors": [
+    "reddit",
+    "googlesheets",
+    "notion"
+  ]
+}

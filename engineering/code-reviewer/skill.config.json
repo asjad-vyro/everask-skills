@@ -1,0 +1,14 @@
+{
+  "type": "engineering",
+  "example_prompts": [
+    "Review this pull request diff for bugs and security issues",
+    "Is this Python function safe from SQL injection?",
+    "Review my React component and suggest improvements",
+    "Do a code quality pass on this file before I merge"
+  ],
+  "connectors": [
+    "github",
+    "gitlab",
+    "bitbucket"
+  ]
+}

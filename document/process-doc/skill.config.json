@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Document our employee offboarding as an SOP.",
+    "Make a RACI for our content approval workflow.",
+    "Turn these messy notes into a step-by-step SOP."
+  ],
+  "connectors": [
+    "notion",
+    "confluence",
+    "googledocs",
+    "process_street",
+    "asana",
+    "jira"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Compare these two vendor contracts and show the differences",
+    "What changed between v1 and v2 of our partnership agreement?",
+    "Compare the terms of these three job offers in one table",
+    "Put these two lease drafts side by side and flag risky differences"
+  ],
+  "connectors": [
+    "googledrive",
+    "googledocs",
+    "dropbox",
+    "box",
+    "share_point"
+  ]
+}

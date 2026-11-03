@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Write a PRD for adding team workspaces to our note-taking app",
+    "Turn these meeting notes into a product requirements doc",
+    "Review my PRD and tell me what's missing before kickoff",
+    "Draft a lean PRD for an AI meal-planning feature for busy parents"
+  ],
+  "connectors": [
+    "notion",
+    "confluence",
+    "googledocs",
+    "jira",
+    "linear"
+  ]
+}

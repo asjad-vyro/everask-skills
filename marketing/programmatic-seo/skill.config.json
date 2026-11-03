@@ -1,0 +1,17 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Plan 200 integration pages for our SaaS, one for each app we connect to",
+    "Is a service-by-city page set worth it for my cleaning business?",
+    "Design the template for our 'best X for Y' directory pages",
+    "Which CMS can publish 5,000 template pages?"
+  ],
+  "connectors": [
+    "google_search_console",
+    "semrush",
+    "ahrefs",
+    "airtable",
+    "webflow",
+    "contentful"
+  ]
+}

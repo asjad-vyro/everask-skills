@@ -1,0 +1,14 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Write a cover letter for this product designer role using my resume",
+    "Make my cover letter sound less generic for this startup",
+    "Draft a cover letter that addresses my career gap",
+    "Write a 250-word cover letter for a junior data analyst job"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "linkedin"
+  ]
+}

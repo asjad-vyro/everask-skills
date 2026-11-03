@@ -1,0 +1,17 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Synthesize these 12 interview transcripts into themes with supporting quotes.",
+    "Analyze this survey CSV's open-ended answers: what do users want most?",
+    "Find the top 5 pain points in last month's Intercom conversations."
+  ],
+  "connectors": [
+    "googledrive",
+    "notion",
+    "dovetail",
+    "fireflies",
+    "gong",
+    "intercom",
+    "typeform"
+  ]
+}
