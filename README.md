@@ -1,6 +1,11 @@
 # EverAsk Skills
 
-The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence. Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
+The 61 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
+
+- 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
+- The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
+
+Each folder also has a `skill.config.json` of our own, with the skill's Library type, example prompts and connector badges, and the 58 open-source skills each have a `cover.webp` for their Library card.
 
 ## Import
 
@@ -9,14 +14,13 @@ One import gives every skill the same type, so import each type folder with its 
 | Type | Link | Skills |
 |---|---|---|
 | Document | https://github.com/asjad-vyro/everask-skills/tree/main/document | 15 |
+| Slides | https://github.com/asjad-vyro/everask-skills/tree/main/slides | 3 |
 | Email | https://github.com/asjad-vyro/everask-skills/tree/main/email | 7 |
 | Data | https://github.com/asjad-vyro/everask-skills/tree/main/data | 9 |
 | Engineering | https://github.com/asjad-vyro/everask-skills/tree/main/engineering | 3 |
 | Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 14 |
 | Research | https://github.com/asjad-vyro/everask-skills/tree/main/research | 7 |
 | Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 3 |
-
-There are no slides skills.
 
 Each skill folder looks like this:
 
@@ -44,7 +48,7 @@ email/
   - `connectors`: up to 10, written as the backend's slugs (lowercase letters, digits, `-` or `_`). They show as badges and don't connect anything.
 
   It must be valid JSON, so no trailing commas or comments. The import skips any value outside these limits and flags it; the check below catches both before you push.
-- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. Every skill here has a 600×800 `cover.webp`.
+- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. The 58 open-source skills each have a 600×800 `cover.webp`; the 3 slides skills have no cover yet.
 - **Before you push**, run `uv run scripts/validate.py` (or `pip install pyyaml`, then `python3 scripts/validate.py`). It checks the import rules and exits non-zero on any failure. Add `--connectors <file>`, with the backend's slugs one per line, to check that every connector exists.
 
 ## Skills
@@ -68,6 +72,14 @@ email/
 | Proposal and Quote Builder | [document/proposal-builder](document/proposal-builder) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/proposal-builder) | Apache-2.0 |
 | RFP Responder | [document/rfp-responder](document/rfp-responder) | [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills/tree/e4a1dc3695908dd5a6c811cc76ab7aa4cf95f2f0/commercial/skills/rfp-responder) | MIT |
 | SOP and Process Writer | [document/process-doc](document/process-doc) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/operations/skills/process-doc) | Apache-2.0 |
+
+### Slides (3)
+
+| Skill | Folder | Source | Licence |
+|---|---|---|---|
+| Lecture and Lesson Slides | [slides/lecture-slides](slides/lecture-slides) | Written for EverAsk | — |
+| Pitch Deck Builder | [slides/pitch-deck](slides/pitch-deck) | Written for EverAsk | — |
+| Quarterly Business Review Deck | [slides/quarterly-business-review](slides/quarterly-business-review) | Written for EverAsk | — |
 
 ### Email (7)
 

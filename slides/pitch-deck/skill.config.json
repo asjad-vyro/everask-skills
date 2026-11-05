@@ -1,0 +1,13 @@
+{
+  "type": "slides",
+  "example_prompts": [
+    "Make a seed pitch deck: we help dental clinics cut no-shows with text reminders. $18K MRR, up 15% a month, 40 clinics, raising $1.5M.",
+    "Turn this one-pager into a 10-slide investor deck.",
+    "Build an 8-slide demo day deck for our AI bookkeeping app for freelancers."
+  ],
+  "connectors": [
+    "googledrive",
+    "googledocs",
+    "notion"
+  ]
+}
