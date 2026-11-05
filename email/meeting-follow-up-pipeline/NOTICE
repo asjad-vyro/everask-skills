@@ -1,3 +1,0 @@
-Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "Meeting Follow-Ups" (upstream: "meeting-follow-up-pipeline"). The other upstream files are unchanged.
-Source: https://github.com/zapier/wade-skills/tree/b7b86e78ae2e1235bebac8668edd834b34176c19/skills/meeting-follow-up-pipeline
-Commit: b7b86e78ae2e1235bebac8668edd834b34176c19

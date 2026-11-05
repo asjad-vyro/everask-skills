@@ -1,3 +1,0 @@
-Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "Interview Prep" (upstream: "interview-prep-generator"). The other upstream files are unchanged.
-Source: https://github.com/Paramchoudhary/ResumeSkills/tree/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/interview-prep-generator
-Commit: 74ae19e7c62b0516d1c298328e5544976c12da5d

@@ -1,3 +1,0 @@
-Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "Meeting Minutes" (upstream: "meeting-minutes"). The other upstream files are unchanged.
-Source: https://github.com/github/awesome-copilot/tree/61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb/skills/meeting-minutes
-Commit: 61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb

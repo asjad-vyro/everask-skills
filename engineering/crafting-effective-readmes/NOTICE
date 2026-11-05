@@ -1,3 +1,0 @@
-Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "README Writer" (upstream: "crafting-effective-readmes"). The other upstream files are unchanged.
-Source: https://github.com/softaworks/agent-toolkit/tree/3027f20f3181758385a1bb8c022d4041dfb4de84/skills/crafting-effective-readmes
-Commit: 3027f20f3181758385a1bb8c022d4041dfb4de84

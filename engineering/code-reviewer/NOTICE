@@ -1,5 +1,0 @@
-Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "Code Reviewer" (upstream: "code-reviewer"). The other upstream files are unchanged.
-Source: https://github.com/Jeffallan/claude-skills/tree/078a25cc5bfd8011459be7b91d004e900c1d02d3/skills/code-reviewer
-Commit: 078a25cc5bfd8011459be7b91d004e900c1d02d3
-
-references/spec-compliance-review.md and references/receiving-feedback.md are adapted from obra/superpowers (https://github.com/obra/superpowers), MIT; see LICENSE-superpowers.

@@ -1,6 +1,6 @@
 # EverAsk Skills
 
-The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. Each folder has the upstream `LICENSE` (MIT or Apache-2.0) and a `NOTICE` with that change, the source and the commit. Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
+The 58 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top, copied unchanged from an open-source repo at a pinned commit, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence. Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
 ## Import
 
@@ -26,7 +26,7 @@ email/
     SKILL.md
     skill.config.json
     cover.webp
-    LICENSE, NOTICE and the skill's other files
+    the skill's other files
 ```
 
 - **`skill.config.json`** is optional. Every field in it is optional too:

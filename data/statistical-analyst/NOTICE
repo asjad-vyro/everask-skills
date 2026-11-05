@@ -1,3 +1,0 @@
-Changed on 2026-11-03 for the EverAsk Skills Library: the SKILL.md frontmatter `name` was set to the display name "A/B Test and Stats Checker" (upstream: "statistical-analyst"). The other upstream files are unchanged.
-Source: https://github.com/alirezarezvani/claude-skills/tree/e4a1dc3695908dd5a6c811cc76ab7aa4cf95f2f0/engineering/statistical-analyst/skills/statistical-analyst
-Commit: e4a1dc3695908dd5a6c811cc76ab7aa4cf95f2f0

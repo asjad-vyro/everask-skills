@@ -17,8 +17,7 @@ import gives every skill the same type. For each link it checks:
 - skills are at most 3 levels below the type folder, and at most 50 per folder;
 - SKILL.md frontmatter is valid YAML with a name of 1-64 characters (at least
   one English letter or digit) and a description of 1-1024 characters;
-- each skill has at most 100 files and 25 MiB, a LICENSE, and no symlinks or
-  OS junk;
+- each skill has at most 100 files and 25 MiB, and no symlinks or OS junk;
 - covers, when present: one cover.png, .jpg, .jpeg, .webp or .gif next to
   SKILL.md, of that image type, and up to 5 MB (a note past 200 KiB);
 - skill.config.json, when present: a JSON object with only type (the type
@@ -67,7 +66,6 @@ known_connectors: set[str] | None = None
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".avif", ".heic", ".svg", ".bmp", ".tif", ".tiff"}
 JUNK_NAMES = {".DS_Store", "Thumbs.db", "desktop.ini", "Icon\r"}
 JUNK_DIRS = {"__MACOSX", ".Spotlight-V100", ".Trashes", ".fseventsd"}
-LICENSE_RE = re.compile(r"^LICEN[CS]E(\.(md|txt))?$", re.I)
 
 failures: list[str] = []
 notes: list[str] = []
@@ -258,8 +256,6 @@ def check_skill(skill: Path, names: dict[str, list[str]], type_name: str) -> tup
             fail(path, "is a symbolic link; skills can't carry links")
         elif path.name in JUNK_NAMES or path.name.startswith("._") or JUNK_DIRS & set(path.parts):
             fail(path, "is OS junk; delete it")
-    if not any(LICENSE_RE.match(p.name) for p in skill.iterdir() if p.is_file()):
-        fail(skill, "has no LICENSE file")
     name = check_frontmatter(skill / "SKILL.md")
     if name:
         names.setdefault(" ".join(name.split()).casefold(), []).append(rel(skill))
