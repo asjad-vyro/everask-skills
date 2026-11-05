@@ -5,7 +5,7 @@ The 61 launch skills for the EverAsk Skills Library. Each skill is a folder with
 - 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
 - The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
 
-Each folder also has a `skill.config.json` of our own, with the skill's Library type, example prompts and connector badges, and the 58 open-source skills each have a `cover.webp` for their Library card.
+Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
 ## Import
 
@@ -48,7 +48,7 @@ email/
   - `connectors`: up to 10, written as the backend's slugs (lowercase letters, digits, `-` or `_`). They show as badges and don't connect anything.
 
   It must be valid JSON, so no trailing commas or comments. The import skips any value outside these limits and flags it; the check below catches both before you push.
-- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. The 58 open-source skills each have a 600×800 `cover.webp`; the 3 slides skills have no cover yet.
+- **Covers** are optional: one image named `cover` next to `SKILL.md`, as `.webp` (preferred), `.png`, `.jpg`, `.jpeg` or `.gif`, up to 5 MB and kept small. Every skill here has a 600×800 `cover.webp`.
 - **Before you push**, run `uv run scripts/validate.py` (or `pip install pyyaml`, then `python3 scripts/validate.py`). It checks the import rules and exits non-zero on any failure. Add `--connectors <file>`, with the backend's slugs one per line, to check that every connector exists.
 
 ## Skills
