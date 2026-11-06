@@ -1,0 +1,14 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Make 30 seconds of calm background music for this product demo, with a hit when the logo appears.",
+    "Add upbeat music to this Reel and keep it under my voiceover.",
+    "Create a 10-second intro sting for my podcast: warm and jazzy, ending on a clean hit."
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox",
+    "youtube",
+    "instagram"
+  ]
+}

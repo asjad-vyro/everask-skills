@@ -5,7 +5,8 @@ description: >
   video models such as Seedance, Kling, Veo, Sora, Runway, Wan and MiniMax.
   Each prompt names the subject, action, setting, framing and camera move in
   precise film language, keeps characters and products identical from shot to
-  shot, and fits the chosen model's preferred format and length. Can also
+  shot, and fits the chosen model's preferred format and length, with
+  detailed guides for Seedance, MiniMax, Kling and Google Omni. Can also
   generate the clips in EverAsk when asked. Use it for "write a video prompt",
   "prompt for Veo, Sora or Kling", "turn this script into AI video prompts",
   "shot list for an AI video" or "make my video prompt more cinematic".
@@ -36,12 +37,14 @@ If the user named a model, write for it. If they want EverAsk to make the clips,
 - **Dialogue, or sound made with the picture**: Seedance, Kling, Wan or MiniMax.
 - **Long single takes**: Seedance, Kling 4.0 or Wan.
 - **Fast, cheap drafts**: MiniMax.
-- **A photo of a person speaking a script**: HeyGen Avatar 4. The prompt is the script plus a line on delivery.
+- **A photo of a person speaking a script**: HeyGen Avatar 4. The prompt is only the words to be spoken; the voice and delivery go in `options` (`voice`, `talking_style`).
 - **Changing a clip that already exists**: a model that edits video, such as Google Omni Flash or Kling 4.0. Write the change as an instruction: "make it night, keep everything else the same".
 
 ## Step 3: Break it into shots
 
-Plan one shot per generation, usually 3 to 10 seconds each. Seedance can take several shots in one prompt, written as `Shot 1 (...)`, `Shot 2 (...)`; other models get one shot per prompt. Give each shot one action and one camera move.
+Plan one shot per generation, usually 3 to 10 seconds each. Seedance can take several shots in one prompt, written as `Shot 1 (...)`, `Shot 2 (...)`; other models get one shot per prompt. Give each shot one action and one camera move, and only as much motion as its length can hold.
+
+Say at the top of each prompt whether it's one continuous take or several shots; some models cut on their own otherwise.
 
 ## Step 4: Write each prompt
 
@@ -66,21 +69,25 @@ Then add the light, the look (film stock, grade, art style) and, if the model ma
 - **Keep text out of the picture.** Models misspell words, so add titles and logos in the edit. If a word must appear, keep it to 1 to 3 words in quotes.
 - **Keep dialogue short**: about 10 words a line at most, with the speaker named, as in `The chef says: "Taste this."`
 - **Write positively.** Say what should be there. Use "no ..." only in a negative prompt field, where the model has one.
+- **Time the beats** with ranges, such as `[0-3s] ... [3-6s] ...`, when a clip has more than one.
+- **Give each reference one job**, say what it is ("Image 1 is the red sneaker"), and cite it the way the `video_generate` tool's description says for that model.
 
 ## Model notes
 
-These are starting points; the model's own current guide wins.
+Before writing for Seedance, MiniMax, Kling or Google Omni, read that model's guide: call `skill_view` with this skill's name and `file_path` set to `references/seedance.md`, `references/minimax.md`, `references/kling.md` or `references/google-omni.md`. These are starting points; the model's own current guide wins.
 
 | Model | Format | Length |
 |---|---|---|
-| Seedance | The structure above, very literal about camera terms. Multi-shot as `Shot 1 (...)`, `Shot 2 (...)`. Quoted dialogue is lip-synced. Name each reference image, as in "Reference 1: the red sneaker". | 80 to 150 words a shot; up to about 300 for a multi-shot prompt |
-| Kling | Subject, motion, scene, camera. Plain and direct. | 40 to 100 words |
+| Seedance | Labelled sections: style, scene, characters, location, first frame, shots, camera, physics, light, audio. Very literal about camera terms. Quoted dialogue is lip-synced. Guide: `references/seedance.md`. | 80 to 150 words a shot; up to about 300 for a multi-shot prompt |
+| MiniMax H3 | One paragraph: subject, action, camera path, setting, light, sound. Guide: `references/minimax.md`. | 60 to 120 words |
+| Kling | Subject, motion, scene, camera. Plain and direct. Guide: `references/kling.md`. | 40 to 100 words |
+| Google Omni Flash | Prose with timed beats; on-screen text and edits by instruction. Guide: `references/google-omni.md`. | 40 to 100 words; edits much shorter |
 | Veo | Rich prose that covers subject, action, scene, camera, lens, light, style, sound and dialogue. | 100 to 250 words |
 | Sora | A prose paragraph first, then a camera block (lens, light, 3 to 5 colours), then the action beats. Short dialogue. | 100 to 250 words |
 | Runway | Mostly image-to-video: describe the motion, not the look, in positive terms. | Under 60 words |
 | Wan | Detailed, specific description. | 80 to 200 words |
 | LTX | One paragraph in time order. | Under 80 words |
-| MiniMax, Pika, Pixverse, Luma | One clear action, with the camera move stated plainly. | 40 to 100 words |
+| Pika, Pixverse, Luma | One clear action, with the camera move stated plainly. | 40 to 100 words |
 
 For any other model, use the five parts at 60 to 150 words.
 

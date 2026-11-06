@@ -1,0 +1,14 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Turn this 30-second ad script into a voiceover in a warm, confident female voice.",
+    "Narrate my product demo video scene by scene and put the voice on the video.",
+    "Record our phone menu greeting in a clear British voice, as an MP3."
+  ],
+  "connectors": [
+    "googledocs",
+    "notion",
+    "googledrive",
+    "dropbox"
+  ]
+}
