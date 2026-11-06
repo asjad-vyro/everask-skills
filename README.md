@@ -1,9 +1,10 @@
 # EverAsk Skills
 
-The 61 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
+The 67 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
 
 - 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
 - The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
+- The 6 video skills in Marketing are our own too. They run on EverAsk's own tools (`media_analyze`, `audio_transcribe`, `video_generate`, and ffmpeg in the sandbox) and use ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills)'s video production notes; none of its text is copied.
 
 Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
@@ -18,7 +19,7 @@ One import gives every skill the same type, so import each type folder with its 
 | Email | https://github.com/asjad-vyro/everask-skills/tree/main/email | 7 |
 | Data | https://github.com/asjad-vyro/everask-skills/tree/main/data | 9 |
 | Engineering | https://github.com/asjad-vyro/everask-skills/tree/main/engineering | 3 |
-| Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 14 |
+| Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 20 |
 | Research | https://github.com/asjad-vyro/everask-skills/tree/main/research | 7 |
 | Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 3 |
 
@@ -115,16 +116,18 @@ email/
 | Prompt Engineer | [engineering/prompt-engineer](engineering/prompt-engineer) | [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills/tree/078a25cc5bfd8011459be7b91d004e900c1d02d3/skills/prompt-engineer) | MIT |
 | README Writer | [engineering/crafting-effective-readmes](engineering/crafting-effective-readmes) | [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit/tree/3027f20f3181758385a1bb8c022d4041dfb4de84/skills/crafting-effective-readmes) | MIT |
 
-### Marketing (14)
+### Marketing (20)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
 | Ad Copy Generator | [marketing/ad-creative](marketing/ad-creative) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/ad-creative) | MIT |
 | AI Search Visibility (GEO) | [marketing/ai-seo](marketing/ai-seo) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/ai-seo) | MIT |
+| AI Video Prompt Writer | [marketing/ai-video-prompts](marketing/ai-video-prompts) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 | Brand Voice Guide Builder | [marketing/guideline-generation](marketing/guideline-generation) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/partner-built/brand-voice/skills/guideline-generation) | MIT |
 | Churn Prevention | [marketing/churn-prevention](marketing/churn-prevention) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/churn-prevention) | MIT |
 | Comparison & Alternative Pages | [marketing/competitors](marketing/competitors) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/competitors) | MIT |
 | Content Strategy Planner | [marketing/content-strategy](marketing/content-strategy) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/content-strategy) | MIT |
+| Long Video to Social Clips | [marketing/long-video-to-clips](marketing/long-video-to-clips) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 | Marketing Copywriter | [marketing/copywriting](marketing/copywriting) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copywriting) | MIT |
 | Marketing Plan Builder | [marketing/marketing-plan](marketing/marketing-plan) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/marketing-plan) | MIT |
 | Multichannel Content Writer | [marketing/content-creation](marketing/content-creation) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/marketing/skills/content-creation) | Apache-2.0 |
@@ -133,6 +136,10 @@ email/
 | Sales Collateral Builder | [marketing/sales-enablement](marketing/sales-enablement) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/sales-enablement) | MIT |
 | SEO Audit | [marketing/seo-audit](marketing/seo-audit) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/seo-audit) | MIT |
 | Social Media Content | [marketing/social](marketing/social) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/social) | MIT |
+| Video Breakdown and Remix | [marketing/video-breakdown-remix](marketing/video-breakdown-remix) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
+| Video Script and Shot List | [marketing/video-script](marketing/video-script) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
+| Video Subtitles and Translations | [marketing/video-subtitles](marketing/video-subtitles) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
+| YouTube Publish Pack | [marketing/youtube-publish-pack](marketing/youtube-publish-pack) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 
 ### Research (7)
 

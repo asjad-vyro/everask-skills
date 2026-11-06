@@ -1,0 +1,14 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write a 6-minute YouTube script explaining compound interest to beginners.",
+    "Script a 45-second Reel announcing our new feature: shared calendars for teams.",
+    "Turn this blog post into a 3-minute explainer script with a shot list."
+  ],
+  "connectors": [
+    "googledocs",
+    "notion",
+    "youtube",
+    "googledrive"
+  ]
+}

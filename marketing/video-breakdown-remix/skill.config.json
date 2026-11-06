@@ -1,0 +1,14 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Break down this Reel and tell me why it works, then give me 3 versions for my skincare brand.",
+    "Why did this TikTok take off? Remix it for our budgeting app.",
+    "Analyse this competitor's ad shot by shot and make an original version for our coffee subscription."
+  ],
+  "connectors": [
+    "instagram",
+    "youtube",
+    "googledrive",
+    "dropbox"
+  ]
+}
