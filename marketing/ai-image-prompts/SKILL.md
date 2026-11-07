@@ -130,6 +130,8 @@ Look at each image before presenting it, with `media_analyze` if you need to. Is
 
 Don't switch to another model without telling the user.
 
+Then reply as in Step 7, with the model and why and the prompts you used, so the user can make more. For a set, that's the style block and then a table of the images and their prompts. If you made extra takes, say which images are the final ones.
+
 ## What not to do
 
 - Don't put a real person's likeness, or another brand's logo or characters, into an image unless they're the user's own or the user has the rights.

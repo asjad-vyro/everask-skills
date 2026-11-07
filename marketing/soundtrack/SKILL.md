@@ -91,6 +91,10 @@ Major keys sound bright (C, G) or triumphant (D, B flat); minor keys sound serio
 
 Call `music_generate` with `prompt`, `model`, `instrumental: true` and, for the models that take it, `duration_seconds`. Make one track per piece. If a result is wrong, change one thing in the prompt (the instruments, the tempo or the energy) rather than everything, and say what you changed.
 
+Make at most three takes of a piece, counting every model you try: each one uses credits and adds a card to the chat. After the third, stop generating. Deliver the closest take and say what's off, or, if none is usable, tell the user what went wrong and offer to try again later.
+
+Never make the music yourself in code instead, with Python, ffmpeg tones or anything else, even if the generator seems broken. It sounds cheap, and it isn't what the user asked for.
+
 Download the result into the sandbox: `curl -L -o music.mp3 URL`.
 
 ## Step 6: Fit, mix and finish
@@ -152,5 +156,6 @@ Before the user puts generated music in an ad or a monetised video, suggest they
 - Don't stretch, speed up or slow down a track to fit; trim it or generate it again.
 - Don't let the music cover the voice.
 - Don't hand over a track you haven't checked with `media_analyze`.
-- If generation fails or keeps missing the brief after three tries, say what went wrong and offer to try again later. Don't build the music yourself in code.
+- Don't make more than three takes of one piece. If generation fails, say what went wrong and offer to try again later.
+- Don't build the music yourself in code.
 - Don't show the user scratch files.

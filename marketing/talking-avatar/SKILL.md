@@ -115,15 +115,15 @@ Download the video and ask `media_analyze` to watch the start, middle and end, a
 - Do the expression and head movement suit the words? Is there any flicker or warping?
 - Are the captions spelled right and clear of the face? Is any word said wrong?
 
-Vision models can report lip sync as fine when the mouth never moves, so also check it on frames. Take one second of speech from the middle as a strip of six frames, and ask `media_analyze` to describe the mouth in each frame, then compare the six descriptions:
+Vision models can report lip sync as fine when the face never moves, so also check that the picture moves at all:
 
 ```bash
-ffmpeg -y -loglevel error -ss 8 -t 1 -i presenter.mp4 -vf "fps=6,scale=320:-1,tile=6x1" mouth-strip.jpg
+ffmpeg -hide_banner -nostats -i presenter.mp4 -map 0:v:0 -vf "freezedetect=n=-60dB:d=2" -f null - 2>&1 | grep -E 'freeze_(start|duration)'
 ```
 
-If the mouth is the same in all six frames while someone is speaking, the face isn't talking: render that segment again.
+A talking presenter is never completely still for two seconds, so this should print nothing. Each `freeze_start` marks a stretch where the picture doesn't change at all. If that happens while someone is speaking, the face isn't talking: don't deliver it as a finished video.
 
-Fix what failed, and render only that segment again:
+If a check fails, don't call `video_generate` again in the same turn. Every render uses credits, and EverAsk refuses a second video in a turn unless the user agreed to more. Tell the user what went wrong and what you'll change, and render again once they say so. Render only the segment that failed:
 
 | Problem | Fix |
 |---|---|
@@ -150,14 +150,17 @@ ffmpeg -y -loglevel error -i seg1.mp4 -i seg2.mp4 -i seg3.mp4 -filter_complex \
 Publish a joined video with `publish_artifact` (`kind: "video"`); a single segment is already in the chat. Then reply with:
 
 - the video, its length, and the voice, style and aspect ratio used;
-- what you checked, and a request to watch it once before posting: automated checks can miss a mouth that drifts or doesn't move, so don't call the lip sync verified;
+- what you checked, such as the photo, the length, the freeze check and the captions. Don't call the lip sync good, matched or verified: automated checks can't confirm it;
 - the script as spoken;
-- a reminder that platforms such as YouTube, TikTok and Instagram ask creators to label realistic AI-generated people, so turn on the AI label when posting.
+- these two lines, which every reply ends with:
+  - "Please watch it once before posting: automated checks can miss lips that drift or don't move."
+  - "When you post it, turn on the platform's AI label: YouTube, TikTok and Instagram ask creators to label realistic AI-generated people."
 
 ## What not to do
 
 - Don't animate anyone without their consent, or a public figure or a child.
 - Don't put words in the presenter's mouth that the user hasn't approved: claims, prices, endorsements or quotes.
 - Don't render a long video before the user has approved the script, the voice and the number of segments.
+- Don't tell the user the lip sync is good or verified; ask them to watch it.
 - Don't use a frame from a rendered video as the photo for the next segment; always use the original photo.
 - Don't show the user scratch files.

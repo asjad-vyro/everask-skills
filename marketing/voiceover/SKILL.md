@@ -54,8 +54,6 @@ Then check the length. Count the words with `wc -w` in the sandbox, rather than 
 
 If the script is too long for its slot, cut words. Don't plan to speed the voice up; a rushed read sounds worse than a shorter script.
 
-Put the final script in your reply before you call `audio_generate`, so the user sees what will be read.
-
 ## Step 3: Cast the voice
 
 Pick the model:
@@ -95,6 +93,8 @@ Call `audio_generate` with `text` and `voice`, plus `model: "ElevenLabs v4"` if 
 - **Audio tags** work on ElevenLabs v4 only. Put the tag just before the words it colours, as in `[whispering] Don't tell anyone.`, and use a few, where the delivery matters. Leave tags out of Inworld scripts, which may read them aloud.
 
 Each call returns an audio URL. Download every part into the sandbox with `curl -L -o part01.mp3 URL`.
+
+If the call is refused because the user's plan doesn't include voice generation, still give them the final script, the respellings and the voice you'd use, so the work isn't lost.
 
 ## Step 5: Join and finish
 
