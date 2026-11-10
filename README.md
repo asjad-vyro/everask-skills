@@ -1,10 +1,11 @@
 # EverAsk Skills
 
-The 71 launch skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
+The 72 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
 
 - 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
 - The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
 - The 10 video, voice, music and image skills in Marketing are our own too. They run on EverAsk's own tools (`media_analyze`, `audio_transcribe`, `audio_generate`, `music_generate`, `image_generate`, `video_generate`, and ffmpeg in the sandbox) and use ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b)'s video production notes and provider guides; none of its text is copied.
+- Swarm Rebuild Video in Website is our own `SKILL.md` and recorder around the page script of [Swarm Rebuild](https://github.com/DhvanilPatel/swarm-cursors/tree/3d49e0ac96172eb6af7ae8229b2152121bed2092), a tribute to Joel Califa's [Swarm](https://califa.github.io/swarm-site/). Its `scripts/swarm.js` is copied unchanged. That project has no licence yet and asks that its code not be reused without checking with its author and Joel Califa.
 
 Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
@@ -21,7 +22,7 @@ One import gives every skill the same type, so import each type folder with its 
 | Engineering | https://github.com/asjad-vyro/everask-skills/tree/main/engineering | 3 |
 | Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 24 |
 | Research | https://github.com/asjad-vyro/everask-skills/tree/main/research | 7 |
-| Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 3 |
+| Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 4 |
 
 Each skill folder looks like this:
 
@@ -157,10 +158,11 @@ email/
 | Search Across Your Apps | [research/enterprise-search](research/enterprise-search) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/enterprise-search/skills/search) | Apache-2.0 |
 | User Research Synthesizer | [research/synthesize-research](research/synthesize-research) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/product-management/skills/synthesize-research) | Apache-2.0 |
 
-### Website (3)
+### Website (4)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
 | Landing Page CRO Review | [website/cro](website/cro) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/cro) | MIT |
+| Swarm Rebuild Video | [website/swarm-rebuild](website/swarm-rebuild) | Written for EverAsk; `scripts/swarm.js` is from [DhvanilPatel/swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors/tree/3d49e0ac96172eb6af7ae8229b2152121bed2092/swarm-rebuild) | None yet |
 | UX Microcopy Writer | [website/ux-copy](website/ux-copy) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/design/skills/ux-copy) | Apache-2.0 |
 | Website Structure Planner | [website/site-architecture](website/site-architecture) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/site-architecture) | MIT |
