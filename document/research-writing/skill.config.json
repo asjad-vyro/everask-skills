@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Polish this abstract for a journal: We studied whether weekly quizzes help students remember more. 60 students took part for 8 weeks. Quiz students scored higher on the final exam (mean 78 vs 71, p = 0.02) than students who only reread notes.",
+    "Draft a point-by-point reply to this reviewer comment: 'The sample of 48 participants is too small to support the causal claims in Section 4.' Our design was correlational and we did not run a power analysis.",
+    "Rewrite this introduction opening so it starts with the problem, not the method: 'Deep learning has shown great promise in many fields. In this paper we propose a model for detecting cracks in bridge photos.'",
+    "Help me plan a paper: we compared an app-based and a group-class sleep program in 120 nurses over 6 weeks and the app group slept better. I need an outline and a list of the evidence still missing."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Find the latest arXiv papers on retrieval-augmented generation and give me a reading list of 5.",
+    "Papers by Yann LeCun from the last two years, newest first, with one line on each.",
+    "Summarise arXiv 1706.03762 and list related work I should read next.",
+    "Give me BibTeX entries for arXiv 1706.03762 and arXiv 1810.04805."
+  ]
+}

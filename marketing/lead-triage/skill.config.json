@@ -1,0 +1,19 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Score this demo request for my payroll software (we sell to HR leaders at 50 to 500 person companies): \"Hi, I'm Dana Ortiz, Head of People at Kestrel Labs, 220 staff. We switch payroll providers in January. Can we get a demo this week?\" Worth a call today?",
+    "Is Harbor & Pine Coffee Roasters, a 25-person roaster selling online and wholesale, a good lead for my packaging supply business? Qualify it, research what you can and tell me what to send first.",
+    "Rank these 5 leads and tell me who to call first: Sam, CEO of a 30-person fintech, asked for pricing. Lee, a university intern. Ana, VP Sales at a 400-person SaaS firm, wants a demo Friday. Tom, SEO freelancer pitching us. Mia, ops manager at a 90-person retailer, downloaded an ebook.",
+    "Rank the leads in my attached spreadsheet and give me the top 10 to contact this week, with a reason and a first message idea for each. Our best customers are 50 to 300 person UK retailers."
+  ],
+  "connectors": [
+    "hubspot",
+    "salesforce",
+    "pipedrive",
+    "attio",
+    "close",
+    "apollo",
+    "clay",
+    "gmail"
+  ]
+}

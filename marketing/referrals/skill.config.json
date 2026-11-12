@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Design a referral program for my $15/month subscription app. People stay about 4 months and it costs me $40 in ads to get one customer. What should the reward be?",
+    "How should I set up a referral program for my Shopify store?",
+    "Set up an affiliate program for my $199 online course. What commission, cookie window and payout rules should I use?",
+    "Draft a reply to this 1-star Google review for our salon: 'Waited 40 minutes past my booked time and nobody even said sorry.'"
+  ],
+  "connectors": [
+    "shopify",
+    "stripe",
+    "hubspot",
+    "klaviyo",
+    "mailchimp"
+  ]
+}

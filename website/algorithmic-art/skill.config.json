@@ -1,0 +1,9 @@
+{
+  "type": "website",
+  "example_prompts": [
+    "Make generative art inspired by ocean currents, with sliders for speed and colour.",
+    "Create a flow-field piece I can re-seed until I like it, then save as a PNG.",
+    "Make an animated particle piece for my band's album art, neon pink and electric blue on black, with a seed button so I can find my favourite version.",
+    "Make a calm, minimal generative piece inspired by tide pools, and let me flip through different seeds."
+  ]
+}

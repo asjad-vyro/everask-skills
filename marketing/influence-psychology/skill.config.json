@@ -1,0 +1,9 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Score this on the 7 principles of persuasion and fix it: 'Last chance! Offer ends in 09:59. Only 3 spots left. Join thousands of happy customers.'",
+    "Make this cold email more persuasive without being pushy: 'Hi Sam, we make scheduling software for dental clinics. Want a demo this week? Reply to book a time.'",
+    "Is a countdown timer that restarts for every visitor a dark pattern? What should I use instead?",
+    "Add social proof and authority to my homepage headline 'Bookkeeping for freelancers'. We have 40 paying users, 18 reviews averaging 4.6 stars, and a founder who is a former accountant."
+  ]
+}

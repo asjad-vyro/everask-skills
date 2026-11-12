@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Write a content brief for \"best CRM for small business\". The readers are founders of companies with 5 to 20 people.",
+    "Brief my writer on a \"Notion vs Obsidian\" post for students who take a lot of notes.",
+    "Outline a post that can outrank the top results for \"onboarding checklist\", and tell me what those results leave out.",
+    "I run a dental clinic and want a blog post to rank for \"teeth whitening cost\". What should it cover?"
+  ],
+  "connectors": [
+    "ahrefs",
+    "semrush",
+    "google_search_console",
+    "googledocs",
+    "notion"
+  ]
+}

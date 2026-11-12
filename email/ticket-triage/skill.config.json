@@ -1,0 +1,21 @@
+{
+  "type": "email",
+  "example_prompts": [
+    "Triage this ticket and write the first reply: \"I was charged twice for my annual plan on 3 November and nobody has answered my first email.\"",
+    "A customer wrote: \"Since this morning's update nobody on our team can sign in with SSO, we all get a 403.\" How urgent is it and who should handle it?",
+    "Is this a bug or a feature request? \"The CSV export used to include every row, but since last week it stops at 1,000.\" Give me a priority, who should take it and a first reply.",
+    "Rank these three tickets and say who should handle each: (1) how do I invite a teammate, (2) all our project files vanished after last night's sync, (3) please add dark mode."
+  ],
+  "connectors": [
+    "zendesk",
+    "intercom",
+    "freshdesk",
+    "gorgias",
+    "hubspot",
+    "salesforce",
+    "slack",
+    "microsoft_teams",
+    "gmail",
+    "notion"
+  ]
+}

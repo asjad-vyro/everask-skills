@@ -1,0 +1,9 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write a 90-second upbeat birthday song for my friend Maya, who loves hiking and bad puns, and make the track.",
+    "Write lyrics for a sad country song about leaving my hometown.",
+    "Write a 30-second jingle for my coffee shop, Little Owl Coffee, and make the track.",
+    "Turn this poem into a folk song and make it: The porch light hums, the kettle sings, / my father whistles through the cold, / and every small and ordinary thing / is gold, is gold, is gold."
+  ]
+}

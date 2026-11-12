@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "We just raised a $2M seed for our B2B SaaS and have six people: two founders, three engineers and a designer. Who should we hire next, and what will it do to our runway? We have about 15 months now.",
+    "We're two technical founders at pre-seed. What should our first five hires be, in what order, and roughly what should we pay each of them?",
+    "Build a 12-month hiring plan and budget for a 10-person seed-stage SaaS startup in London that wants to reach 18 people.",
+    "What equity should we offer our first five employees, and how big should our option pool be at seed? We have two founders and 4-year vesting."
+  ]
+}

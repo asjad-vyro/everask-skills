@@ -1,0 +1,9 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Find remote senior Python backend jobs posted in the last two weeks and show me the best 10",
+    "Who is hiring product designers in London? Give me a shortlist with pay where it is listed",
+    "Entry-level data analyst jobs in the US, remote only, newest first",
+    "Find marketing manager jobs in Berlin"
+  ]
+}

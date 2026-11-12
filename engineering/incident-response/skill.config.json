@@ -1,0 +1,20 @@
+{
+  "type": "engineering",
+  "example_prompts": [
+    "Checkout has been returning 500 errors since a deploy ten minutes ago and about 90% of payments are failing. Set the severity and tell me what to do first.",
+    "Production is down and I'm the on-call engineer. Give me the first 15 minutes of steps and a first status update I can post.",
+    "Write a customer update about today's outage: image uploads failed for about 70 minutes this morning and are working again.",
+    "Write a blameless postmortem for last night's outage. A config change at 22:10 broke checkout for about half of users: errors from 22:14, on-call paged 22:31, rolled back 22:48, recovered 23:02."
+  ],
+  "connectors": [
+    "slack",
+    "pagerduty",
+    "datadog",
+    "sentry",
+    "grafana",
+    "microsoft_teams",
+    "jira",
+    "linear",
+    "github"
+  ]
+}

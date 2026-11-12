@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "We're a US online shop and want to email our 3,000 EU newsletter subscribers a discount code next week. Is that allowed, and what do we need first?",
+    "Can we use customer testimonials in our Instagram ads? Check which rules apply and whether we can go ahead.",
+    "We're adding face-ID login to our fitness app for users in the US and the EU. Which privacy laws apply and what do we need before launch?",
+    "We want to launch a referral program that pays customers $20 in cash for each friend they bring in. What rules and approvals should we check first?"
+  ]
+}

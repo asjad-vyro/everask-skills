@@ -1,0 +1,18 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Research Ramp before tomorrow's call and score their fit for us. We sell SOC 2 compliance automation to B2B software companies with 50 to 500 employees.",
+    "Find the right person to approach at Flexport for a freight-invoice audit tool, and give me three outreach hooks.",
+    "Look into Basecamp, Linear and Loom and tell me which is the best fit for our customer-onboarding software.",
+    "Check whether Webflow is already in our HubSpot, then write a prospect brief for our localisation service."
+  ],
+  "connectors": [
+    "hubspot",
+    "salesforce",
+    "attio",
+    "pipedrive",
+    "apollo",
+    "clay",
+    "linkedin"
+  ]
+}

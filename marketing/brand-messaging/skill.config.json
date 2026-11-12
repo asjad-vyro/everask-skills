@@ -1,0 +1,9 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Write a one-liner for my bakery. We make custom birthday cakes for busy parents who forget to order in time.",
+    "Rework our homepage so the customer is the hero. We're a three-person accounting firm for restaurant owners.",
+    "Build a brand script for my yoga studio. Our students are beginners who feel intimidated by regular classes.",
+    "My messaging isn't landing. We sell a budgeting app for couples. Clarify the message for us."
+  ]
+}

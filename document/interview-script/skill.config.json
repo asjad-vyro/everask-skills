@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Write a 30-minute interview script to learn how people plan and cook weeknight dinners, for my meal-kit startup",
+    "Draft questions for a 45-minute call with customers who cancelled our budgeting app in the last three months",
+    "Make a jobs-to-be-done interview guide for finance managers at small companies who still do month-end close in spreadsheets",
+    "Are these interview questions leading? 1) Don't you hate booking appointments by phone? 2) Would you pay for an app that books them for you? Rewrite any that are."
+  ]
+}

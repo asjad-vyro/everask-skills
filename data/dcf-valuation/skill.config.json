@@ -1,0 +1,12 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Build a DCF for a SaaS company with $500M revenue growing 25% fading to 15% over five years, EBITDA margin rising from 20% to 30%, 100M shares and a $45 share price.",
+    "Value a coffee shop that makes $400k in revenue and $60k in profit. Give me a value range and list every assumption.",
+    "Show a sensitivity table of discount rate against terminal growth for a business with $80M free cash flow growing 6% a year, $200M net debt and 50M shares."
+  ],
+  "connectors": [
+    "googlesheets",
+    "excel"
+  ]
+}

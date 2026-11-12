@@ -1,0 +1,9 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Run a war council on raising our prices 20%. We have 340 customers on a $49 monthly plan and lose about 3% of them a month.",
+    "Stress-test my plan to quit my job and go full-time on my startup. I have 8 months of savings and 40 paying users.",
+    "Build or buy our billing system? We're 6 engineers and our pricing changes about once a quarter. Convene the council.",
+    "Get a skeptical CFO's and a customer's take on opening a second office in Berlin next year."
+  ]
+}

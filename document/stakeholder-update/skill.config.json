@@ -1,0 +1,21 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Write my weekly update for my VP: we shipped onboarding v2, payments is blocked on legal review, and the churn dashboard slipped a week.",
+    "We launched bulk export today for all paid plans. Write a customer announcement and a 150-word summary for my exec team.",
+    "Our API migration is slipping two weeks because the vendor sandbox is late. Draft an escalation to leadership that leads with the delay and asks for a decision.",
+    "Turn these into a monthly board update: signed 3 new enterprise customers, hiring is a month behind plan, runway unchanged."
+  ],
+  "connectors": [
+    "linear",
+    "jira",
+    "asana",
+    "clickup",
+    "monday",
+    "slack",
+    "fireflies",
+    "notion",
+    "confluence",
+    "googledocs"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Proofread this clause: \"The Supplier shall deliver the goods within ten (14) days of the order date. The Buyer shall pay each invoice within thirty (30) days of delivery. If the Seller delivers late, the Buyer may cancel the order.\"",
+    "Find the inconsistencies in this paragraph: \"The Licensee shall pay the Fee on 1 June 2027. If the Company pays late, interest runs from 15 June 2027. The Fee is due on 1 July 2027.\"",
+    "Do a final check of the attached contract before we send it for signature: cross-references, clause numbering, defined terms, dates and typos.",
+    "Proofread the attached terms of service and list every error with its clause number and a suggested fix."
+  ]
+}

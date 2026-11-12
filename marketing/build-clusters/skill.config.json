@@ -1,0 +1,14 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Build a topic cluster around 'remote onboarding' for our HR blog, with internal links and a writing order",
+    "Map pillar and spoke posts for 'home espresso', with the internal links between them",
+    "We already have posts on SPF, DKIM and warming up a new sending domain. What else should we cover to own email deliverability?",
+    "Group these keywords into pages: v60 recipe, pour over ratio, pour over coffee ratio, aeropress recipe, how to use an aeropress, best coffee grinder"
+  ],
+  "connectors": [
+    "google_search_console",
+    "ahrefs",
+    "semrush"
+  ]
+}

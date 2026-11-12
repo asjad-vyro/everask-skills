@@ -1,0 +1,13 @@
+{
+  "type": "research",
+  "example_prompts": [
+    "Audit this blog post for E-E-A-T and tell me the five fixes that matter most: https://stripe.com/blog/rate-limiters",
+    "Will AI search cite this article? Score it and show me what's missing: https://martinfowler.com/articles/microservices.html",
+    "Is this good enough to publish? Check the author signals, the sources and how fresh it is: https://www.nngroup.com/articles/how-users-read-on-the-web/"
+  ],
+  "connectors": [
+    "google_search_console",
+    "ahrefs",
+    "semrush"
+  ]
+}

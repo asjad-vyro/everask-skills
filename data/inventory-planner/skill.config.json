@@ -1,0 +1,17 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "I sell three products. Last 4 weeks of sales, oldest first: oat milk powder 84, 77, 91, 84; matcha tin 35, 28, 35, 28; chai blend 49, 49, 42, 42. On hand: 150, 260, 100. Lead times: 14, 21, 10 days. What should I reorder and how much?",
+    "I have 400 units of an item that sells about 2 a day, my supplier takes 30 days, and each unit cost me 8. Am I overstocked, and should I order anything?",
+    "Here's my sales export and my stock count. What do I need to reorder this week, and how much cash is sitting in stuff that isn't moving?",
+    "My best-selling candle sells about 12 a day and my supplier takes 21 days. I have 70 on the shelf and 200 more on order. What's my reorder point, and do I need to order now?"
+  ],
+  "connectors": [
+    "shopify",
+    "square",
+    "quickbooks",
+    "googlesheets",
+    "excel",
+    "airtable"
+  ]
+}

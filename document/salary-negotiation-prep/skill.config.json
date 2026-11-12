@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "I got a $95k offer as a marketing manager in Denver and I have 5 years of experience. How much should I counter with, and what do I say?",
+    "Write me a counter-offer email. They offered $120,000 base with a 10% bonus, I have another offer at $130,000, and I'd like a signing bonus too.",
+    "Compare two offers for me. A: $140,000 base, 15% bonus, $80,000 in RSUs over 4 years. B: $150,000 base, no bonus, no equity. Which is worth more in year one?",
+    "A recruiter just asked what my salary expectations are for a product designer role in Toronto. What should I say?"
+  ]
+}

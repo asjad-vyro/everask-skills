@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--
+  Page shell for a generative-art piece. scripts/build_art.py fills the double-brace placeholders
+  from spec.json and sketch.js. Do not edit a built page by hand: change the spec or the sketch and rebuild.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+<style>
+  :root {
+    --ink: #1f2328;
+    --paper: #f4f5f7;
+    --paper-2: #eceef2;
+    --muted: #6b7280;
+    --line: #dfe2e8;
+    --accent: #3f51b5;
+    --accent-hover: #34429a;
+    --slate: #475569;
+    --slate-hover: #384454;
+    --teal: #0f766e;
+    --teal-hover: #0c5f58;
+    --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-title: Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  [hidden] { display: none !important; }
+
+  body {
+    font-family: var(--font-ui);
+    background: linear-gradient(135deg, var(--paper) 0%, var(--paper-2) 100%);
+    min-height: 100vh;
+    color: var(--ink);
+  }
+
+  .container { display: flex; min-height: 100vh; padding: 20px; gap: 20px; }
+
+  /* Sidebar */
+  .sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(31, 35, 40, 0.10);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 40px);
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
+  .sidebar h1 {
+    font-family: var(--font-title);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .sidebar .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+
+  .control-section { margin-bottom: 28px; }
+  .control-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .control-section h3::before { content: '\2022'; color: var(--accent); font-weight: bold; }
+
+  /* Seed */
+  .seed-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-bottom: 10px; }
+  .seed-row .button { width: auto; padding: 10px 18px; }
+  .seed-input {
+    width: 100%;
+    background: var(--paper);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .seed-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.15);
+    background: #fff;
+  }
+  .seed-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+  /* Sliders */
+  .control-group { margin-bottom: 18px; }
+  .control-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+  .slider-container { display: flex; align-items: center; gap: 12px; }
+  .slider-container input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: var(--line);
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .slider-container input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); background: var(--accent-hover); }
+  .slider-container input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  .value-display {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    min-width: 56px;
+    text-align: right;
+  }
+
+  /* Colour pickers */
+  .color-group { margin-bottom: 14px; }
+  .color-group label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  .color-picker-container { display: flex; align-items: center; gap: 8px; }
+  .color-picker-container input[type="color"] {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+  }
+  .color-value { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+  /* Buttons */
+  .button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+    width: 100%;
+  }
+  .button:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .button:active { transform: translateY(0); }
+  .button.secondary { background: var(--slate); }
+  .button.secondary:hover { background: var(--slate-hover); }
+  .button.tertiary { background: var(--teal); }
+  .button.tertiary:hover { background: var(--teal-hover); }
+  .button-row { display: flex; gap: 8px; margin-bottom: 8px; }
+  .button-row .button { flex: 1; }
+
+  /* Canvas */
+  .canvas-area { flex: 1; display: flex; align-items: center; justify-content: center; min-width: 0; }
+  #canvas-container { width: 100%; max-width: 1000px; text-align: center; }
+  #canvas-container canvas {
+    display: block;
+    margin: 0 auto;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    max-height: calc(100vh - 40px);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(31, 35, 40, 0.12);
+    background: #fff;
+  }
+  .loading { padding: 40px; text-align: center; font-size: 16px; color: var(--muted); }
+
+  #error-banner {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 12px 16px;
+    background: #fdecea;
+    color: #7a1c14;
+    border: 1px solid #f3b8b1;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 10;
+  }
+
+  @media (max-width: 820px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; position: static; max-height: none; }
+    .canvas-area { order: -1; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <h1>{{TITLE}}</h1>
+    <div class="subtitle">{{SUBTITLE}}</div>
+
+    <section class="control-section">
+      <h3>Seed</h3>
+      <div class="seed-row">
+        <input type="number" id="seed-input" class="seed-input" min="1" step="1" value="{{SEED}}" aria-label="Seed number" onchange="Studio.goToSeed()">
+        <button class="button" onclick="Studio.goToSeed()">Go</button>
+      </div>
+      <div class="seed-controls">
+        <button class="button secondary" onclick="Studio.prev()">&larr; Prev</button>
+        <button class="button secondary" onclick="Studio.next()">Next &rarr;</button>
+      </div>
+      <button class="button tertiary" onclick="Studio.random()">&#8635; Random</button>
+    </section>
+
+    {{PARAM_SECTION}}
+
+    {{COLOR_SECTION}}
+
+    <section class="control-section">
+      <h3>Actions</h3>
+      <div class="button-row">
+        <button class="button" onclick="Studio.regenerate()">Regenerate</button>
+        <button class="button" onclick="Studio.reset()">Reset</button>
+      </div>
+      <div class="button-row">
+        <button class="button secondary" id="pause-button" onclick="Studio.togglePause()">Pause</button>
+        <button class="button secondary" onclick="Studio.download()">Download PNG</button>
+      </div>
+    </section>
+  </aside>
+
+  <main class="canvas-area">
+    <div id="canvas-container"><div class="loading">Initializing generative art...</div></div>
+  </main>
+</div>
+<div id="error-banner" role="alert" hidden></div>
+
+<script>
+// ---------------------------------------------------------------------------
+// Page code. The sketch (next script block) uses `params` and defines
+// initializeSystem() and, for an animated piece, draw().
+// ---------------------------------------------------------------------------
+const SPEC = {{SPEC_JSON}};
+
+let params = { seed: SPEC.seed };
+SPEC.params.forEach(function (p) { params[p.id] = p.value; });
+params.colorPalette = SPEC.colors.map(function (c) { return c.value; });
+const defaultParams = JSON.parse(JSON.stringify(params));
+
+function showError(message) {
+  const banner = document.getElementById('error-banner');
+  banner.textContent = message;
+  banner.hidden = false;
+}
+
+if (typeof p5 === 'undefined') {
+  showError('The drawing library (p5.js) did not load. Check your internet connection and reload the page.');
+}
+
+function el(id) { return document.getElementById(id); }
+
+function decimals(step) {
+  const s = String(step);
+  if (s.indexOf('e-') !== -1) return Math.min(8, parseInt(s.split('e-')[1], 10));
+  const i = s.indexOf('.');
+  return i === -1 ? 0 : s.length - i - 1;
+}
+function fmt(value, step) { return Number(value).toFixed(decimals(step)); }
+
+// p5 calls setup() once. It makes the canvas, then starts the sketch.
+function setup() {
+  pixelDensity(1);
+  const cnv = createCanvas(SPEC.canvas[0], SPEC.canvas[1]);
+  cnv.parent('canvas-container');
+  const loading = document.querySelector('.loading');
+  if (loading) loading.style.display = 'none';
+  if (typeof draw !== 'function') el('pause-button').hidden = true;
+  Studio.begin();
+}
+
+const Studio = {
+  queued: false,
+  timer: null,
+  paused: false,
+  suspect: false,
+
+  // (Re)start the piece from the current seed, settings and colours.
+  begin: function () {
+    clearTimeout(this.timer);
+    el('error-banner').hidden = true;
+    try {
+      initializeSystem();
+      if (typeof draw === 'function') {
+        if (this.suspect) { noLoop(); }   // a draw() error can leave the loop dead; restart it cleanly
+        loop();
+      } else {
+        noLoop();                          // static piece: initializeSystem() drew everything
+      }
+    } catch (err) {
+      noLoop();
+      showError('This piece hit an error: ' + err.message + '. Try Regenerate or another seed.');
+    }
+    this.suspect = false;
+    this.paused = false;
+    this.syncPause();
+  },
+
+  // Restart soon. Clicks restart at most once per frame; a colour drag passes a delay and restarts when it pauses.
+  restart: function (delay) {
+    if (delay) {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => { this.begin(); }, delay);
+      return;
+    }
+    if (this.queued) return;
+    this.queued = true;
+    requestAnimationFrame(() => { this.queued = false; this.begin(); });
+  },
+
+  setSeed: function (n) {
+    params.seed = n;
+    el('seed-input').value = n;
+    this.restart();
+  },
+  goToSeed: function () {
+    const n = parseInt(el('seed-input').value, 10);
+    if (Number.isFinite(n) && n >= 1) { this.setSeed(n); } else { el('seed-input').value = params.seed; }
+  },
+  prev: function () { this.setSeed(Math.max(1, params.seed - 1)); },
+  next: function () { this.setSeed(params.seed + 1); },
+  random: function () { this.setSeed(Math.floor(Math.random() * 999999) + 1); },   // picks the seed only; the art never uses Math.random
+  regenerate: function () { this.restart(); },
+
+  // While a slider is dragged only its number updates. The setting is applied, and the piece
+  // restarted, when the slider is released (commit). A "live" slider applies at once and never restarts.
+  param: function (id, raw, commit) {
+    const p = SPEC.params.find(function (q) { return q.id === id; });
+    const v = parseFloat(raw);
+    el('v-' + id).textContent = fmt(v, p.step);
+    if (p.live || commit) params[id] = v;
+    if (commit && !p.live) this.restart();
+  },
+  color: function (i, hex) {
+    params.colorPalette[i] = hex;
+    el('cv-' + i).textContent = hex;
+    this.restart(150);
+  },
+
+  // Back to how the piece first opened: starting seed, settings and colours.
+  reset: function () {
+    Object.keys(defaultParams).forEach(function (k) {
+      if (k !== 'colorPalette') params[k] = defaultParams[k];
+    });
+    defaultParams.colorPalette.forEach(function (hex, i) { params.colorPalette[i] = hex; });
+    el('seed-input').value = params.seed;
+    SPEC.params.forEach(function (p) {
+      el('p-' + p.id).value = params[p.id];
+      el('v-' + p.id).textContent = fmt(params[p.id], p.step);
+    });
+    SPEC.colors.forEach(function (c, i) {
+      el('c-' + i).value = params.colorPalette[i];
+      el('cv-' + i).textContent = params.colorPalette[i];
+    });
+    this.restart();
+  },
+
+  togglePause: function () {
+    this.paused = !this.paused;
+    if (this.paused) { noLoop(); } else { loop(); }
+    this.syncPause();
+  },
+  syncPause: function () { el('pause-button').textContent = this.paused ? 'Play' : 'Pause'; },
+
+  download: function () { saveCanvas(SPEC.fileName + '-seed-' + params.seed, 'png'); }
+};
+
+// Show errors on the page instead of leaving a silent blank canvas.
+window.addEventListener('error', function (e) {
+  if (!e || (e.message && e.message.indexOf('ResizeObserver') !== -1)) return;
+  Studio.suspect = true;
+  showError('This piece hit an error: ' + (e.message || 'unknown') + '. Try Regenerate or another seed.');
+});
+</script>
+
+<script>
+// ---------------------------------------------------------------------------
+// The sketch for this piece (from sketch.js)
+// ---------------------------------------------------------------------------
+{{SKETCH}}
+</script>
+</body>
+</html>

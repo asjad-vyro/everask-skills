@@ -1,0 +1,16 @@
+{
+  "type": "website",
+  "example_prompts": [
+    "Audit https://www.w3.org/WAI/demos/bad/before/home.html for WCAG AA and tell me what to fix first.",
+    "Is this accessible? <div class=\"btn\" onclick=\"buy()\"><img src=\"cart.svg\"></div> <input type=\"text\" placeholder=\"Email\">",
+    "Our signup page uses light grey #aaaaaa helper text on white and placeholder-only fields. What will a WCAG AA audit flag, and how do I fix it?",
+    "Check this screenshot of our checkout page for accessibility problems before handoff."
+  ],
+  "connectors": [
+    "figma",
+    "jira",
+    "linear",
+    "asana",
+    "github"
+  ]
+}

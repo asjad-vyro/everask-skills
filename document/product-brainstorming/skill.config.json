@@ -1,0 +1,9 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Stress-test my idea: a $9 a month meal-kit subscription for college students, delivered to dorms. I'm a solo founder with $5,000 to start.",
+    "Brainstorm ways to cut onboarding drop-off in our fitness app without building new features. About half of new users quit in the first week.",
+    "Play devil's advocate: we sell design templates and want to add a marketplace where other creators sell theirs. What could go wrong?",
+    "Give me six different ways to help new hires at a remote company feel less lost in their first two weeks, and tell me which one you would try first."
+  ]
+}
