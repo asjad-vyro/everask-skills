@@ -1,12 +1,12 @@
 # EverAsk Skills
 
-The 102 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
+The 99 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
 
 - 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
 - The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
 - The 10 video, voice, music and image skills in Marketing are our own too. They run on EverAsk's own tools (`media_analyze`, `audio_transcribe`, `audio_generate`, `music_generate`, `image_generate`, `video_generate`, and ffmpeg in the sandbox) and use ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b)'s video production notes and provider guides; none of its text is copied.
 - Swarm Rebuild Video in Website is our own `SKILL.md` and recorder around the page script of [Swarm Rebuild](https://github.com/DhvanilPatel/swarm-cursors/tree/3d49e0ac96172eb6af7ae8229b2152121bed2092), a tribute to Joel Califa's [Swarm](https://califa.github.io/swarm-site/). Its `scripts/swarm.js` is copied unchanged. That project has no licence yet and asks that its code not be reused without checking with its author and Joel Califa.
-- 30 more (added November 2026) are adapted for EverAsk rather than copied: rewritten as numbered steps for its agent, with other products' machinery and promotion removed, connectors made optional, and each one tested end to end. 27 come from the open-source repos linked in the tables; Job Search, arXiv Paper Finder and Songwriter are our own, rebuilt from skills bundled with the agent.
+- 27 more (added November 2026) are adapted for EverAsk rather than copied: rewritten as numbered steps for its agent, with other products' machinery and promotion removed, connectors made optional, and each one tested end to end. 24 come from the open-source repos linked in the tables; Job Search, arXiv Paper Finder and Songwriter are our own, rebuilt from skills bundled with the agent.
 
 Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
@@ -16,13 +16,13 @@ One import gives every skill the same type, so import each type folder with its 
 
 | Type | Link | Skills |
 |---|---|---|
-| Document | https://github.com/asjad-vyro/everask-skills/tree/main/document | 25 |
+| Document | https://github.com/asjad-vyro/everask-skills/tree/main/document | 23 |
 | Slides | https://github.com/asjad-vyro/everask-skills/tree/main/slides | 3 |
 | Email | https://github.com/asjad-vyro/everask-skills/tree/main/email | 9 |
 | Data | https://github.com/asjad-vyro/everask-skills/tree/main/data | 12 |
 | Engineering | https://github.com/asjad-vyro/everask-skills/tree/main/engineering | 4 |
 | Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 31 |
-| Research | https://github.com/asjad-vyro/everask-skills/tree/main/research | 12 |
+| Research | https://github.com/asjad-vyro/everask-skills/tree/main/research | 11 |
 | Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 6 |
 
 Each skill folder looks like this:
@@ -56,7 +56,7 @@ email/
 
 ## Skills
 
-### Document (25)
+### Document (23)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -76,11 +76,9 @@ email/
 | Performance Review Writer | [document/performance-review](document/performance-review) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/human-resources/skills/performance-review) | Apache-2.0 |
 | PRD Writer | [document/create-prd](document/create-prd) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills/tree/2a12295a7717569baa7be181b4cfebe3ca38a6bb/pm-execution/skills/create-prd) | MIT |
 | Pricing Strategy | [document/pricing](document/pricing) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/pricing) | MIT |
-| Product Idea Sparring Partner | [document/product-brainstorming](document/product-brainstorming) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/product-management/skills/product-brainstorming) | Apache-2.0 |
 | Proposal and Quote Builder | [document/proposal-builder](document/proposal-builder) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/proposal-builder) | Apache-2.0 |
 | Public Speaking Coach | [document/public-speaking](document/public-speaking) | [RefoundAI/lenny-skills](https://github.com/RefoundAI/lenny-skills/tree/13598cc54e09399bc1bc1398b0fca284110efb2f/skills/public-speaking) | MIT |
 | RFP Responder | [document/rfp-responder](document/rfp-responder) | [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills/tree/e4a1dc3695908dd5a6c811cc76ab7aa4cf95f2f0/commercial/skills/rfp-responder) | MIT |
-| Salary Negotiation Prep | [document/salary-negotiation-prep](document/salary-negotiation-prep) | [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills/tree/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/salary-negotiation-prep) | MIT |
 | SEO Content Brief | [document/seo-content-brief](document/seo-content-brief) | [calm-north/seojuice-skills](https://github.com/calm-north/seojuice-skills/tree/c1f633bea512365ba04477076369e418ecc82ffd/skills/brief) | MIT |
 | SOP and Process Writer | [document/process-doc](document/process-doc) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/operations/skills/process-doc) | Apache-2.0 |
 | Stakeholder Update Writer | [document/stakeholder-update](document/stakeholder-update) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/product-management/skills/stakeholder-update) | Apache-2.0 |
@@ -170,7 +168,7 @@ email/
 | Voiceover Producer | [marketing/voiceover](marketing/voiceover) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/.agents/skills) | — |
 | YouTube Publish Pack | [marketing/youtube-publish-pack](marketing/youtube-publish-pack) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 
-### Research (12)
+### Research (11)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -178,7 +176,6 @@ email/
 | arXiv Paper Finder | [research/paper-finder](research/paper-finder) | Written for EverAsk, from a skill bundled with the agent | — |
 | Catch-Up Digest | [research/activity-digest](research/activity-digest) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/enterprise-search/skills/digest) | Apache-2.0 |
 | Competitor Brief and Battlecard | [research/competitive-brief](research/competitive-brief) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/marketing/skills/competitive-brief) | Apache-2.0 |
-| Decision War Council | [research/war-council](research/war-council) | [zapier/wade-skills](https://github.com/zapier/wade-skills/tree/b7b86e78ae2e1235bebac8668edd834b34176c19/skills/war-council) | MIT |
 | Fact Checker | [research/blog-factcheck](research/blog-factcheck) | [AgriciDaniel/claude-blog](https://github.com/AgriciDaniel/claude-blog/tree/354442348815a7f0327077ad89af2c43cf4b4ab4/skills/blog-factcheck) | MIT |
 | Job Search | [research/job-search](research/job-search) | Written for EverAsk, from a skill bundled with the agent | — |
 | Market Sizing (TAM, SAM, SOM) | [research/market-sizing-analysis](research/market-sizing-analysis) | [wshobson/agents](https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/startup-business-analyst/skills/market-sizing-analysis) | MIT |
