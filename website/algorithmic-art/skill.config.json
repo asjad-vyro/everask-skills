@@ -1,5 +1,8 @@
 {
   "type": "website",
+  "tags": [
+    "website"
+  ],
   "example_prompts": [
     "Make generative art inspired by ocean currents, with sliders for speed and colour.",
     "Create a flow-field piece I can re-seed until I like it, then save as a PNG.",

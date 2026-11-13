@@ -1,5 +1,8 @@
 {
   "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
   "example_prompts": [
     "Score this on the 7 principles of persuasion and fix it: 'Last chance! Offer ends in 09:59. Only 3 spots left. Join thousands of happy customers.'",
     "Make this cold email more persuasive without being pushy: 'Hi Sam, we make scheduling software for dental clinics. Want a demo this week? Reply to book a time.'",

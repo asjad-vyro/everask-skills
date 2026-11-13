@@ -1,5 +1,9 @@
 {
   "type": "document",
+  "tags": [
+    "document",
+    "marketing"
+  ],
   "example_prompts": [
     "Write a content brief for \"best CRM for small business\". The readers are founders of companies with 5 to 20 people.",
     "Brief my writer on a \"Notion vs Obsidian\" post for students who take a lot of notes.",

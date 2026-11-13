@@ -1,5 +1,9 @@
 {
   "type": "data",
+  "tags": [
+    "data",
+    "document"
+  ],
   "example_prompts": [
     "Build a P&L for March from these totals: product sales 84,200, consulting 12,500, cost of goods 31,300, salaries 28,000, rent 4,500, marketing 6,100, software 1,900, loan interest 650.",
     "This quarter: revenue 410k, cost of sales 205k, operating expenses 150k. Last quarter: revenue 380k, cost of sales 190k, operating expenses 128k. Build the income statement with variances and tell me what to look at.",

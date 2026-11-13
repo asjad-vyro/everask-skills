@@ -1,5 +1,8 @@
 {
   "type": "document",
+  "tags": [
+    "document"
+  ],
   "example_prompts": [
     "We're a US online shop and want to email our 3,000 EU newsletter subscribers a discount code next week. Is that allowed, and what do we need first?",
     "Can we use customer testimonials in our Instagram ads? Check which rules apply and whether we can go ahead.",

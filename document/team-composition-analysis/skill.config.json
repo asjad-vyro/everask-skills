@@ -1,5 +1,8 @@
 {
   "type": "document",
+  "tags": [
+    "document"
+  ],
   "example_prompts": [
     "We just raised a $2M seed for our B2B SaaS and have six people: two founders, three engineers and a designer. Who should we hire next, and what will it do to our runway? We have about 15 months now.",
     "We're two technical founders at pre-seed. What should our first five hires be, in what order, and roughly what should we pay each of them?",

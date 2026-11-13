@@ -1,5 +1,8 @@
 {
   "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
   "example_prompts": [
     "Design a referral program for my $15/month subscription app. People stay about 4 months and it costs me $40 in ads to get one customer. What should the reward be?",
     "How should I set up a referral program for my Shopify store?",

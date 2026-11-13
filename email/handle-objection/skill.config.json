@@ -1,5 +1,9 @@
 {
   "type": "email",
+  "tags": [
+    "email",
+    "marketing"
+  ],
   "example_prompts": [
     "A prospect says we're 30% more expensive than a competitor and is leaning their way. How do I respond?",
     "My client says they don't have budget this quarter. Write me a reply that keeps the deal alive and a plan for following up.",

@@ -1,5 +1,9 @@
 {
   "type": "marketing",
+  "tags": [
+    "marketing",
+    "data"
+  ],
   "example_prompts": [
     "Define MQL and SQL stages, handoff SLAs and rejection reasons for our B2B SaaS. We get about 300 inbound leads a month and have 3 SDRs, 4 AEs and HubSpot.",
     "Build me a lead scoring model with point values and an MQL threshold for a sales-led SaaS with a $15k average contract.",

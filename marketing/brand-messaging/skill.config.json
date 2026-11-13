@@ -1,5 +1,8 @@
 {
   "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
   "example_prompts": [
     "Write a one-liner for my bakery. We make custom birthday cakes for busy parents who forget to order in time.",
     "Rework our homepage so the customer is the hero. We're a three-person accounting firm for restaurant owners.",

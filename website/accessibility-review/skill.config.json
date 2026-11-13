@@ -1,5 +1,9 @@
 {
   "type": "website",
+  "tags": [
+    "website",
+    "engineering"
+  ],
   "example_prompts": [
     "Audit https://www.w3.org/WAI/demos/bad/before/home.html for WCAG AA and tell me what to fix first.",
     "Is this accessible? <div class=\"btn\" onclick=\"buy()\"><img src=\"cart.svg\"></div> <input type=\"text\" placeholder=\"Email\">",

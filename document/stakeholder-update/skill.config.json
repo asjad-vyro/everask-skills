@@ -1,5 +1,9 @@
 {
   "type": "document",
+  "tags": [
+    "document",
+    "email"
+  ],
   "example_prompts": [
     "Write my weekly update for my VP: we shipped onboarding v2, payments is blocked on legal review, and the churn dashboard slipped a week.",
     "We launched bulk export today for all paid plans. Write a customer announcement and a 150-word summary for my exec team.",

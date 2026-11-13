@@ -1,5 +1,8 @@
 {
   "type": "email",
+  "tags": [
+    "email"
+  ],
   "example_prompts": [
     "Triage this ticket and write the first reply: \"I was charged twice for my annual plan on 3 November and nobody has answered my first email.\"",
     "A customer wrote: \"Since this morning's update nobody on our team can sign in with SSO, we all get a 403.\" How urgent is it and who should handle it?",

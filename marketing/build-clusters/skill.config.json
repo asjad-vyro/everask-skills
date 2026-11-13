@@ -1,5 +1,9 @@
 {
   "type": "marketing",
+  "tags": [
+    "marketing",
+    "research"
+  ],
   "example_prompts": [
     "Build a topic cluster around 'remote onboarding' for our HR blog, with internal links and a writing order",
     "Map pillar and spoke posts for 'home espresso', with the internal links between them",

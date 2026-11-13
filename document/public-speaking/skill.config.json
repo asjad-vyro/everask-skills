@@ -1,5 +1,8 @@
 {
   "type": "document",
+  "tags": [
+    "document"
+  ],
   "example_prompts": [
     "I have to give a toast at my sister's wedding next week and I'm terrified. Help me plan it and get through it.",
     "My 10-minute talk opens with 'Thanks for having me, today I'll walk you through the agenda.' Rewrite the opening so people actually listen, and tell me what else to fix.",

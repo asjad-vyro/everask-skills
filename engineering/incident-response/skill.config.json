@@ -1,5 +1,9 @@
 {
   "type": "engineering",
+  "tags": [
+    "engineering",
+    "document"
+  ],
   "example_prompts": [
     "Checkout has been returning 500 errors since a deploy ten minutes ago and about 90% of payments are failing. Set the severity and tell me what to do first.",
     "Production is down and I'm the on-call engineer. Give me the first 15 minutes of steps and a first status update I can post.",

@@ -1,5 +1,9 @@
 {
   "type": "marketing",
+  "tags": [
+    "marketing",
+    "data"
+  ],
   "example_prompts": [
     "Score this demo request for my payroll software (we sell to HR leaders at 50 to 500 person companies): \"Hi, I'm Dana Ortiz, Head of People at Kestrel Labs, 220 staff. We switch payroll providers in January. Can we get a demo this week?\" Worth a call today?",
     "Is Harbor & Pine Coffee Roasters, a 25-person roaster selling online and wholesale, a good lead for my packaging supply business? Qualify it, research what you can and tell me what to send first.",

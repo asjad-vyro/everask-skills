@@ -1,5 +1,9 @@
 {
   "type": "research",
+  "tags": [
+    "research",
+    "marketing"
+  ],
   "example_prompts": [
     "Audit this blog post for E-E-A-T and tell me the five fixes that matter most: https://stripe.com/blog/rate-limiters",
     "Will AI search cite this article? Score it and show me what's missing: https://martinfowler.com/articles/microservices.html",
