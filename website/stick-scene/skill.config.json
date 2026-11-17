@@ -1,0 +1,18 @@
+{
+  "type": "website",
+  "tags": [
+    "website",
+    "marketing"
+  ],
+  "example_prompts": [
+    "My app turns meeting recordings into action items. Make a stick figure animation for my landing page that shows what it does.",
+    "Make a little doodle scene for my hero section: a stick figure feeds invoices into a machine and they come out paid.",
+    "Show our three features as three matching stick figure scenes I can embed on my site."
+  ],
+  "connectors": [
+    "webflow",
+    "wix",
+    "shopify",
+    "github"
+  ]
+}
