@@ -32,6 +32,7 @@ Do every sum in `execute_code` (Python) and copy the results into the reply. No 
 - If variable cost is a ratio: Variable Cost Ratio = Variable Costs / Revenue (or the given %); Contribution Margin Ratio = 1 - Variable Cost Ratio.
 - Break-Even Revenue = Total Fixed Costs / Contribution Margin Ratio.
 - Break-Even Units = Total Fixed Costs / Contribution per Unit (or Break-Even Revenue / Price). Always round units UP to the next whole unit, because selling a fraction of a unit does not reach break-even. Show the unrounded figure too.
+- Do the arithmetic exactly before rounding up: use `fractions.Fraction` or `decimal.Decimal` for every input, or `math.ceil(round(x, 6))`. A float result like 300.0000001 must give 300 units, not 301. Before you write the reply, check that units x contribution per unit matches the break-even revenue in each row.
 - Margin of Safety % = (Current Revenue - Break-Even Revenue) / Current Revenue x 100, only if current revenue is given. If current revenue is below break-even, say it is a shortfall, and show the gap in revenue.
 - Daily or weekly equivalent if it helps the user (e.g. units per day over the days they said they trade). Only use trading days the user gave.
 
@@ -72,7 +73,7 @@ What-if
 ```
 
 Then, in two to four sentences:
-- What it means in plain words (e.g. how many units or how much revenue per period just covers costs).
+- What it means in plain words (e.g. how many units or how much revenue per period just covers costs). Every number in these sentences must come from the same code run. Do not add example volumes or profit illustrations the user did not ask for. If you include one, compute it in code and label it "assumption".
 - Which lever moves break-even most in the sensitivity table.
 - The assumptions you made, each named.
 

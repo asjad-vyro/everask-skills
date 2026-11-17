@@ -23,11 +23,11 @@ Using the same file, define the trigger, each action, each decision gate with an
 
 ## Step 4: Pick the tool and estimate the impact
 
-Read `references/tools-and-estimation.md`. Compare the candidate platforms against this process's needs and recommend one (plus a hybrid if it helps). Do not quote platform prices or app counts from memory: run one `web_search` for the recommended platform's current pricing and link what you found, or write "check current pricing" and use clearly labelled assumptions. Do every sum (hours per run, per month, per year, cost, break-even) in `execute_code` and copy the results into the reply. Never do the maths in your head. Use ranges, show the formula, and use the user's own volume and hourly cost or label yours as assumptions.
+Read `references/tools-and-estimation.md`. Compare the candidate platforms against this process's needs and recommend one (plus a hybrid if it helps). Do not quote platform prices or app counts from memory: run one `web_search` for the recommended platform's current pricing and link what you found, or write "check current pricing" and use clearly labelled assumptions. Do every sum (hours per run, per month, per year, cost, break-even) in `execute_code` and copy the results into the reply. Never do the maths in your head. This includes every percentage or share quoted in prose (for example "phase 1 covers X% of hands-on time"), every waiting-time figure (sum the wait column in code, both before and after), and every table total. A table total must equal the exact sum of its rows, with no rounding to a nicer number. Operations or tasks per run are always labelled "Assumption:". Quote a platform tier limit (tasks, operations, app counts) only if it appears in the search result you linked. Otherwise write "check current plan limits". Quote prices with their billing basis (monthly or annual), and only as they appear in the search result. Use ranges, show the formula, and use the user's own volume and hourly cost or label yours as assumptions.
 
 ## Step 5: Write the reply
 
-The whole document goes in the reply, in full, in this order. Use plain text, no emojis. The two diagrams are fenced `mermaid` code blocks (`flowchart TD`, descriptive node IDs, labelled edges, colour classes from the reference file); keep each under about 20 nodes.
+The whole document goes in the reply, in full, in this order. The reply's first line is the `#` heading, with no preamble such as "I'll load the skill". Use plain text, no emojis. The two diagrams are fenced `mermaid` code blocks (`flowchart TD`, descriptive node IDs, labelled edges, colour classes from the reference file); keep each under about 20 nodes. Never use the reserved words `end`, `start`, `graph`, `subgraph`, `style`, `class` or `click` as node IDs. Use camelCase IDs such as `startNode` and `endNode`.
 
 1. `# Workflow Automation: <process name>` and one-paragraph summary with the headline saving as a range
 2. Assumptions (list)
@@ -41,7 +41,7 @@ The whole document goes in the reply, in full, in this order. Use plain text, no
 
 ## Hard rules
 
-- Never invent figures, customers, tool limits or prices. Anything not given by the user or a search result is labelled as an assumption.
+- Never invent figures, customers, tool limits or prices. Anything not given by the user or a search result is labelled as an assumption. Do not present a guess as "typical" or industry-standard; label it "Assumption:".
 - Every step the user named appears in the current-state table and diagram.
 - Every decision has an explicit rule and a default path when data is missing.
 - High-risk actions (payments, deletions, external messages) keep a human approval step.

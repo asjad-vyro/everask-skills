@@ -76,7 +76,7 @@ Use this order and these headings. Values in angle brackets come from the user's
 <three lines: review cadence by RAG, closure criteria, archive closed risks rather than deleting them>
 ```
 
-Use words in the RAG column ("Red - Critical", "Amber - Medium", "Green - Negligible"), so the table reads without colour. Status is Open, Mitigating or Closed; new risks are Open. Review dates: Red weekly, Amber fortnightly (Medium) or monthly (Low), Green only if context changes. Work the dates out from today's date in `execute_code`.
+Use words in the RAG column ("Red - Critical", "Amber - Medium", "Green - Negligible"), so the table reads without colour. Status is Open, Mitigating or Closed; new risks are Open. In the Top 5 table, Mitigation status is the same Status word (Open, Mitigating or Closed) and nothing else: no claims like "not yet booked", "being sought" or "not started" unless the user said so. Do not add commentary on ties; if you mention order at all, cite only the Step 3 rule (Score, then Impact, then Likelihood). Review dates: Red weekly, Amber fortnightly (Medium) or monthly (Low), Green only if context changes. Work the dates out from today's date in `execute_code`.
 
 Closure criteria to state: the event can no longer occur (milestone passed, contract signed); or the score is 1 to 3 and the team formally accepts it; or it happened and moved to the issues log.
 
@@ -84,6 +84,8 @@ Closure criteria to state: the event can no longer occur (milestone passed, cont
 
 - Every figure in the reply (L, I, Score, counts, ranks) comes from the `execute_code` output.
 - Do not invent facts: no vendor names, people, dates, budgets, percentages or past incidents the user did not give. Where you need a value, write "not given" or mark an assumption.
+- Mitigations, contingencies and Decisions needed contain no calendar date, month or deadline the user did not give; use relative wording instead ("before launch", "at least two weeks before <user's date>"). Review dates from Step 5 are the only computed dates.
+- Do not state unstated project facts (for example "no float", "handles card data") as context; write them as "if ... *(assumed)*" and list them in Assumptions.
 - Owners are role titles (for example "Engineering lead"), not made-up people. Use a person's name only if the user gave it. Never "the team" or "TBD".
 - A mitigation is an action being taken to cut likelihood or impact, not "monitor and review". Every Red risk has a contingency: what to do if the mitigation fails. Amber and Green may say "none needed".
 - Likelihood and impact for risks you add are judgement calls: say so in the Assumptions section and invite the user to adjust.

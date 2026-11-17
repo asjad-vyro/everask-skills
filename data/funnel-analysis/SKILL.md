@@ -42,7 +42,16 @@ If the script reports a missing column, read the column names it prints and reru
 
 ## Step 3: Write the report
 
-Read `references/funnel_design_guide.md` once before you write the hypotheses and the prioritisation. Reply with this shape, in full:
+Read `references/funnel_design_guide.md` once before you write the hypotheses and the prioritisation. While writing:
+
+1. Every rate you restate in a sentence must be copied from the script's table and must name its denominator. For example, write "30% of the 300 who added a card". Do not turn a rate into "N in 100" or "about half" phrasing; give the exact figure from the output, such as "320 of 680 lost (47%)".
+2. Judge severity only against the user's own other steps or segments, for example "the largest loss of any step". Never call a rate extreme, unusual, normal, typical, healthy or within range. Never say what "usually" happens.
+3. Do not state facts about the user's product, site or UI that the data does not show. Phrase each such hypothesis as a condition, for example "if the plan screen is where price first appears, ...".
+4. Recommendations may name only steps, segments and columns that exist in the data. Do not mention ad sets, pages or campaigns unless they are in the data.
+5. Do not add numbers that the script did not print, such as your own recovery estimates "at current downstream rate". Write "value not given" instead.
+6. Start the reply with the report heading, with no narration about loading the skill or running tools.
+
+Reply with this shape, in full:
 
 ```
 # <Funnel name> - funnel analysis
@@ -86,6 +95,7 @@ If the user gave no segments, no timestamps or no value per conversion, leave ou
 
 - Every figure comes from the user's data or the script output. Never invent a rate, a benchmark ("typical SaaS conversion is...") or a revenue number. If asked how the funnel compares with others, say no benchmark was given and offer to search the web.
 - Hypotheses are labelled as hypotheses. The data shows where users leave, not why.
+- Never describe a rate as normal, typical, healthy, extreme, unusual or "within range", and never make general claims such as "X usually leaks most". Compare only within the user's own data.
 - Rank by users lost as well as by rate; name both when they differ.
 - Recovery value is an upper bound, never a forecast.
 - Finish in one reply. Do not stop to ask for approval or more detail.

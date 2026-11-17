@@ -16,11 +16,12 @@ A good result is one reply holding a verdict (BLOCKED, AT RISK or CLEARED), find
 - Do all counting (words, links, images, SPF lookups, dates, percentages) in `execute_code` and copy the results. No mental maths.
 - The result is not legal advice. Say so in one line in the report.
 - Sending stays a draft. Never send an email.
-- Do not build a file unless the user asks for one. The report goes in the reply, in full.
+- Do not build a file unless the user asks for one. The report goes in the reply, in full, starting with its heading and no preamble.
+- Gate counts are tallied from the finished findings' tags in `execute_code`.
 
 ## Evidence labels
 
-Tag each claim: **provider-verified** (mailbox-provider or standards documentation), **vendor** (tool-vendor claim, no independent method), **contested** (credible sources disagree), **practitioner** (expert consensus, uncontrolled). Never present a vendor number as a rule. Where no evidence exists, say so.
+Tag each claim: **provider-verified** (mailbox-provider or standards documentation that states this exact point; a fake `Re:` subject is a deception and compliance issue, not a provider scoring rule), **vendor** (tool-vendor claim, no independent method), **contested** (credible sources disagree), **practitioner** (expert consensus, uncontrolled). Never present a vendor number as a rule. Where no evidence exists, say so.
 
 ## The order that decides placement
 
@@ -94,7 +95,7 @@ Regime: <B2B cold | B2C bulk> · Volume: <the user's figure or "not given"> · R
 Gate: <n> BLOCKER, <n> RISK, <n> ADVISORY gives <verdict>. Not legal advice.
 ```
 
-Use real counts for the gate line. Put corrected records or a rewritten opt-out line directly under the relevant fix when the user's input makes that possible (for example a corrected SPF record built from the includes they listed).
+Use real counts for the gate line: after writing the Findings, paste them into `execute_code`, count the `[BLOCKER]`, `[RISK]` and `[ADVISORY]` tags, and copy those numbers into the Gate line unchanged. Write the Gate line's last sentence exactly as "Not legal advice." Start the reply with the `# Deliverability Review` heading, with no preamble such as "I'll load the skill". Each finding must come from the user's draft, records, volumes or named regions. Do not add catch-all or speculative findings (for example an "EU generally" item beyond the countries the user named). Put corrected records or a rewritten opt-out line directly under the relevant fix when the user's input makes that possible (for example a corrected SPF record built from the includes they listed).
 
 ## Things to get right
 

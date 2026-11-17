@@ -23,7 +23,14 @@ If there is no usable data at all (only a question, nothing attached), do not in
 
 ## Step 2: Prepare the file
 
-Use `read_file` or `execute_code` to look at the columns and first rows. Save pasted rows to `/tmp/.scratch/cohort-retention-analysis/input.csv`. For an Excel file, convert the right sheet to CSV in the same folder with pandas. Note rows with missing ids or dates, and remove test or internal accounts if the data marks them.
+Use `read_file` or `execute_code` to look at the columns and first rows. Save pasted rows to `/tmp/.scratch/cohort-retention-analysis/input.csv`.
+
+If the user pasted aggregate counts (users per cohort and active counts per later period) instead of per-user rows, the script cannot run. Do these steps instead:
+1. Read `references/retention-patterns.md`.
+2. Compute every percentage with `execute_code` and copy the results.
+3. List P0 = 100% under Assumptions, unless period 0 counts were given.
+4. Treat bounded counts as not nested, since users active in one period need not be active in the next. Never derive "X users didn't come back" or period-to-period churn from them. Never project future periods or cohorts.
+5. Then go to Step 4. For an Excel file, convert the right sheet to CSV in the same folder with pandas. Note rows with missing ids or dates, and remove test or internal accounts if the data marks them.
 
 ## Step 3: Run the script
 
@@ -34,9 +41,9 @@ mkdir -p /tmp/.scratch/cohort-retention-analysis
 python3 SKILL_DIR/scripts/cohort_matrix.py --input <csv> --user-col <id column> --cohort-col <cohort date column> --activity-col <activity date column> --granularity monthly --min-size 30 --out-prefix /tmp/.scratch/cohort-retention-analysis/out
 ```
 
-Add `--segment-col <column>` to compare channels, plans or regions (cohort matrices are printed per segment). Add `--users <file>` when cohort dates are in a separate users file. Add `--as-of YYYY-MM-DD` when the data is known to be complete only up to a date earlier than its last row.
+Add `--segment-col <column>` to compare channels, plans or regions (cohort matrices are printed per segment). Add `--users <file>` when cohort dates are in a separate users file. Add `--as-of YYYY-MM-DD` when the data is known to be complete only up to a date earlier than its last row. If the user states the data runs through a date (e.g. "through the end of April 2024"), always pass that date (`--as-of 2024-04-30`), even when the last row is earlier. Never take the completeness date from the last row when the user gave one.
 
-The script prints the matrix (percent of the cohort active in each period; blank means the period has not happened yet, which is not 0%), the size-weighted average per period, cohorts under the minimum size, and counts of dropped rows. It also writes CSVs with the `out` prefix. If it exits with a column error, fix the column names and rerun.
+The script prints the matrix (percent of the cohort active in each period; blank means the period has not happened yet, which is not 0%), the size-weighted average per period, cohorts under the minimum size, and counts of dropped rows. It also writes CSVs with the `out` prefix. If it exits with a column error, fix the column names and rerun. A cell the script prints as 0.0% is a real zero: report it as 0%, with no footnote. Only blank cells are "not observed yet".
 
 ## Step 4: Read the result
 
@@ -50,7 +57,14 @@ Causes are hypotheses; label them "possible reason" and never state one as fact.
 
 ## Step 5: Deliver in the reply
 
-Put the whole result in the reply. If the user asked for a chart, or the matrix is larger than about 8 cohorts, also call `render_chart` with retention curves (one line per cohort, x = period number, y = percent), using values from the script output. Offer the CSVs only if the user asked for files, then publish them with `publish_artifact` (`kind: "file"`).
+Put the whole result in the reply. Start directly with the `## Cohort retention` heading, with no narration such as "I'll start by loading...". Do not end with a question or offer.
+
+Check these before sending:
+- Every finding matches the printed matrix. Do not say a period is unobserved if the matrix shows a value for it.
+- Period words match the granularity (months for monthly, weeks for weekly).
+- Data-quality notes go in Caveats, one line each.
+
+If the user asked for a chart, or the matrix is larger than about 8 cohorts, also call `render_chart` with retention curves (one line per cohort, x = period number, y = percent), using values from the script output. Offer the CSVs only if the user asked for files, then publish them with `publish_artifact` (`kind: "file"`).
 
 Reply shape:
 
@@ -94,5 +108,6 @@ Adjust names to what the user told you.
 
 - Never invent users, rates, dates, channels or benchmarks. Mark anything not in the data as an assumption, and write "not given" for missing facts. Do not quote industry benchmarks unless the user supplied them.
 - All arithmetic is done by the script or `execute_code`, then copied. No mental maths.
+- Never derive "users who didn't come back" or period-to-period churn from bounded counts, and never project future periods.
 - Blank (immature) cells are never reported as zero, and cohorts are compared only at the same period number.
 - Do not open with questions; decide, state the assumption, deliver. Use `clarify` only if no data can be found anywhere in the message or attachments.

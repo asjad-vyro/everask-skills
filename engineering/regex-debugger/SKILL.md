@@ -55,13 +55,13 @@ If a pattern raises an error, show the error text and fix that first. Time a sus
 
 ## Step 5: Fix or write the pattern
 
-Give the corrected pattern, then re-run it on the full test set and confirm every expected result in the table. If a requirement cannot be met by a regex alone (nesting, calendar validity such as day 30 of February, real email or URL validation, HTML parsing), say so plainly, give the best practical pattern, and name the follow-up check to do in code (a date parser, a URL parser, an HTML parser). Show that caveat in the table with a test string that slips through.
+Give the corrected pattern, then re-run it on the full test set and confirm every expected result in the table. If a requirement cannot be met by a regex alone (nesting, calendar validity such as day 30 of February, real email or URL validation, HTML parsing), say so plainly, give the best practical pattern, and name the follow-up check to do in code (a date parser, a URL parser, an HTML parser). Show that caveat in the table. Add at least one slipping-through string (for dates: `2024-02-30`) to the test list and run it. Put it in the Results table as a row with Expected "invalid (regex can't tell)" and Matched? "yes". Any string you name in Issues or Limits as slipping through or matching must be a row in the table, from the run.
 
 Prefer the simplest readable pattern. Use non-capturing groups where the capture is not needed, and anchor validation patterns.
 
 ## Step 6: Reply in this shape
 
-Put the whole answer in the reply. Skip a section that does not apply (for example, no "Issues found" for a pure explain job).
+Put the whole answer in the reply. Skip a section that does not apply (for example, no "Issues found" for a pure explain job). For a write job where the user gave no pattern, "Issues found" lists only the limits of your own pattern, with no critique of a naive pattern the user never wrote. In "Results (run in ...)", name only the engines you actually ran in this turn. Write "Node" only if you ran `node` through `terminal`.
 
 ```
 # Regex: `<pattern>` (<flavor>, flags: <flags or none>)
@@ -98,6 +98,8 @@ Put the whole answer in the reply. Skip a section that does not apply (for examp
 
 - Every match result in the reply comes from code you ran in this turn. If you could not run something, say so.
 - Do the counting (match counts, lengths, timings) in code, not in your head.
+- Claim JavaScript/Node results only if you ran `node` via `terminal` this turn. Otherwise say the JS behavior is unverified.
+- Every string the reply says matches or slips through (in Issues, Limits or notes) appears as a row in a Results table.
 - Show patterns in code form for the language: in Python use a raw string `r"..."`; in JavaScript use a literal `/.../flags` or `new RegExp("...")` with doubled backslashes; say which.
 - Do not invent sample data that looks real (real people, companies, accounts). Use obviously fake values.
 - Do not claim a pattern is "safe" or "complete" for email, URL, phone or date validation; state what it accepts and what it lets through.

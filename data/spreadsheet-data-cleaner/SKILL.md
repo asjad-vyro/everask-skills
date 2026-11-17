@@ -34,7 +34,7 @@ Check each column for these, and count the cells or rows affected. Do the counti
 
 ## Step 3: Apply the fixes
 
-Apply in this order, so later steps see clean values. Write the cleaned copy to a new frame; never edit `raw`.
+Apply in this order, so later steps see clean values. Write the cleaned copy to a new frame; never edit `raw`. Record every change in one per-cell change log (row, column, before, after, fix) as you go. Each changed cell gets exactly one entry under the first fix that changed it. A cell like `London ` that only needed trimming counts as Whitespace, not Casing.
 
 1. **Whitespace**: strip, collapse runs of spaces to one, replace non-breaking spaces. Remove non-printing characters. Repair mojibake only when the fix is unambiguous.
 2. **Casing**: in category columns (country, status, state, department), map variants to one form. Use the most common spelling in the column; for acronyms such as USA keep upper case. For name columns use title case, but leave names like `McDonald` or `van der Berg` alone if unsure, and list them as "left as is". Never recase free text, emails (lower-case them), IDs or codes.
@@ -47,15 +47,15 @@ Write the result as a new file named after the original, for example `<original 
 
 ## Step 4: Verify
 
-In `execute_code`, check the cleaned frame against `raw`: the row count equals the original minus the removed duplicates; no column other than the intended ones changed; every converted column now has one type; no leading or trailing spaces remain. Fix anything that fails before replying.
+In `execute_code`, check the cleaned frame against `raw`: the row count equals the original minus the removed duplicates; no column other than the intended ones changed; every converted column now has one type; no leading or trailing spaces remain. Build the issue-table counts by grouping the change log by column and fix. Then check that the table's cell counts sum exactly to the "cells changed" total. Also compute how many of those changed cells sit in rows later dropped as duplicates. Fix anything that fails before replying.
 
 ## Step 5: Deliver
 
-Publish the cleaned file with `publish_artifact` (`kind: "document"` for .xlsx, `kind: "file"` for .csv). For small data (about 25 rows or fewer) also show the cleaned table in the reply. Then reply with:
+Start the reply directly with the deliverable. Do not open with a preamble line such as "I'll load the skill first". Publish the cleaned file with `publish_artifact` (`kind: "document"` for .xlsx, `kind: "file"` for .csv). For small data (about 25 rows or fewer) also show the cleaned table in the reply. Then reply with:
 
 1. **What I did**: one line on the scope (file, sheet, rows by columns) and any assumption (date order, number style, key column).
 2. **Issues found and fixed**: a table with the columns Column, Issue, Count, Fix applied. Every count comes from the code, and a row appears only for an issue that exists.
-3. **Before and after**: rows before and after, duplicates removed, cells changed, and two or three example before-to-after values taken from the real data.
+3. **Before and after**: rows before and after, duplicates removed, cells changed, and two or three example before-to-after values taken from the real data. The cells-changed figure must equal the sum of the issue-table counts. Say whether it includes cells in rows later removed as duplicates, for example "8 cells changed, 2 of them in a row later removed as a duplicate".
 4. **Needs your review**: the values left unchanged or flagged, with cell references, such as unparsable dates, possible duplicates and mixed-type cells. Write "none" if there are none.
 5. The link to the cleaned file.
 
@@ -63,6 +63,6 @@ Publish the cleaned file with `publish_artifact` (`kind: "document"` for .xlsx, 
 
 - The original data is never overwritten; the cleaned output is always a separate copy.
 - No invented values: never fill a blank, guess an unparsable date or number, or merge records that might be different people. Flag them.
-- Every count and total in the reply comes from code, never from memory or mental maths.
+- Every count and total in the reply comes from code, never from memory or mental maths. The issue-table counts come from the change log, each cell is counted under one issue only, and they sum to the stated cells changed.
 - Finish in one reply. State assumptions rather than asking, except when there is no data at all.
 - If the user wants live formulas (`=TRIM(A2)` and similar) instead of cleaned values, load the built-in `xlsx` skill with `skill_view` and write the formulas in helper columns next to the originals.

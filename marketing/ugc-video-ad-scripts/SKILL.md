@@ -22,6 +22,7 @@ Real customer language is the raw material. Sources, in order of effort: public 
 1. Use quotes the user supplied. If they gave none and the product is a real, public one, `web_search` or `web_extract` for recent public reviews and take a few.
 2. Record each quote with: exact words, source, underlying desire or problem, emotional tag. Put this as a short "Evidence" table.
 3. Hard rule: never invent a customer quote, review, testimonial, result, statistic, price or number. If the user gave no figure, do not write one. Where a number would help, write a bracketed slot such as `[your trial length]`, or leave the claim out.
+   The same rule covers founder or employee backstory (origin stories, "I built this after...", "I paid for X for a year"), personal anecdotes, offer terms (free tier, "free to start", trial length, discount) and product features or behaviour the brief does not state. Write these as bracketed slots, e.g. `[founder: the moment you realised the problem]`, `[offer: e.g. free trial of [length]]`, `[feature from brief]`. Do not fill them in.
 4. No evidence at all: say so, write from the brief alone, keep every line to what the brief states, and label every script `UNVALIDATED - voice-of-customer not sourced`. Lines that sound like a customer must be marked as example phrasing for the creator to replace with their own words.
 
 ## Step 3: Define concepts
@@ -46,7 +47,7 @@ Archetype menu rule: default to dialogue-only archetypes (skeptic's turn, proble
 ## Step 6: CTAs and delivery notes
 
 - Two CTA variants, one ask each, no stacking (no "download, follow, use code and click the link"). Fake urgency ("today only") is banned unless the user gave a real deadline.
-- Lock hook and CTA word for word. Brief the middle as beats with example phrasing the creator can say their own way. Fully locked scripts sound stiff; fully vague ones leave the creator to invent the strategy.
+- Lock hook and CTA word for word. Locked lines may hold only facts from the brief plus bracketed slots. They must never hold an invented anecdote or offer term. If the user gave no offer terms, the spoken CTA reuses the same bracketed slot as the on-screen text (spoken "Try it free for [trial length]" with on-screen "[trial length] free"), never a concrete duration or "free". Brief the middle as beats with example phrasing the creator can say their own way. Fully locked scripts sound stiff; fully vague ones leave the creator to invent the strategy.
 - Delivery notes per script: beat timings, what is on screen each beat, tone and read direction, setting, props to hold up, pacing, and a few do's and don'ts.
 - On-screen text carries the message with sound off.
 
@@ -56,7 +57,7 @@ Read `references/compliance-checklist.md` and run its checklist on every script.
 
 ## Step 8: Voice check
 
-Reread every spoken line and on-screen text aloud in your head. Cut anything that sounds machine-written or like ad copy: stacked adjectives, "Discover", "Introducing", em-dash flourishes, tidy triplets. Spoken lines should be short, a little imperfect, and say things a person would actually say. Read `references/script-examples.md` once for the output shape and the failure example.
+Reread every spoken line and on-screen text aloud in your head. Also check each line for a personal story, a feature or an offer term that the brief does not contain. Replace any you find with a bracketed slot. Use only archetype names that appear in `references/hook-archetypes.md`. Cut anything that sounds machine-written or like ad copy: stacked adjectives, "Discover", "Introducing", em-dash flourishes, tidy triplets. Spoken lines should be short, a little imperfect, and say things a person would actually say. Read `references/script-examples.md` once for the output shape and the failure example.
 
 ## Output shape (the reply itself, in full)
 
@@ -67,7 +68,7 @@ Keep the reply tight so it finishes quickly: delivery notes at most 5 lines per 
 3. **Body**: table with time, spoken beat (example phrasing), on-screen text, visual. Note any per-hook transition line.
 4. **CTA variants (2)**: spoken and on-screen wording, locked.
 5. **Delivery notes**: read direction, setting, props, pacing, do's and don'ts.
-6. **Compliance**: disclosure line(s) with the markets they cover, claim notes, usage-rights reminder (creator usage rights must be signed before filming).
+6. **Compliance**: disclosure line(s) in plain words (e.g. "I'm the founder", "Paid partnership") with the markets they cover, claim notes, usage-rights reminder (creator usage rights must be signed before filming).
 7. **Validation status**: grounded (with sources) or UNVALIDATED.
 8. **Measurement plan**: the one variable this package tests (hooks, with body and offer held constant). Compare against the account's own trailing median hook rate and hold rate for the same placement, not a published benchmark. Diagnose in order: low hook rate means rewrite hooks; good hook rate but low hold means fix the body or transition; good hold but low click-through means the CTA; good click-through but low conversion means the offer or landing page.
 
@@ -80,6 +81,7 @@ Same spine and sound-off rules, but: lead with teaching, not pitching; credentia
 ## Hard rules
 
 - No invented quotes, reviews, names, results, statistics, prices or benchmarks. Placeholders in square brackets for anything unknown.
+- No invented founder or employee backstory, anecdotes, product features or offer terms (free tier, trial length). Use bracketed slots, and never put an invented one in a locked hook or CTA.
 - Never write a fabricated testimonial or present an actor as a real customer without a disclosure line.
 - One CTA per script. No fake urgency.
 - Health, efficacy and finance claims only as the user supplied and can substantiate; no second-person "Do you have [condition]?" phrasing.

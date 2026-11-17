@@ -25,7 +25,11 @@ If the notes contain no decision and no ask (a status update, meeting notes, a p
 ## Step 2: Check the facts and the sums
 
 - Use only facts, figures, names and dates the user gave. Never invent a number, quote, customer, benchmark or deadline. Where something is needed and not given, write "not given" or mark it as an assumption.
-- Do every sum (totals, savings, break-even, percentages) in `execute_code` and copy the results. No mental maths.
+- Do every sum (totals, savings, break-even, percentages, ratios like "two-thirds of", multi-year totals) in `execute_code` and copy the results. No mental maths, and no fraction or ratio in words unless `execute_code` printed it (18,000/30,000 is 60%, not two-thirds).
+- Include a derived number only if the decision needs it. Label each one with exactly what it compares, in the form "<option A>'s premium over <option B>", and check the label against the two figures you actually divided or subtracted.
+- Do not add a year, a multi-year horizon or a dated plan ("for 2027", "three-year cost", "first week of January") unless the user gave it.
+- Do not state facts about an option that the user did not give (for example "has no routing or reporting", "grows with volume", "keeps running through our existing channel"). If the argument needs such an inference, put it in the assumptions list, not in the body.
+- Timeline: the decision deadline is the date the reader decides. Setup and migration time run after approval, from that date. Never describe an option as going live "before the deadline" or use the deadline as a margin for implementation unless the user gave a separate go-live date.
 - If the user wants market or pricing facts that they did not supply, use at most two `web_search` calls and cite what you found. Otherwise do no research.
 
 ## Step 3: Write the memo
@@ -82,7 +86,10 @@ Confirm each of these, and fix the memo if one fails:
 4. The memo says what would have to be true for the recommendation to be wrong.
 5. It says whether the decision is reversible.
 6. It has an explicit ask and a deadline (or a flagged proposed one).
-7. Every number appears in the user's input or came from `execute_code`.
+7. Every number appears in the user's input or came from `execute_code`, and each derived number is labeled with exactly what it compares.
+8. No implementation or go-live time is measured against the decision deadline, and no year, horizon or date appears that the user did not give.
+9. Every claim about an option comes from the user's material. Inferences are in the assumptions list, and no assumption contradicts the body.
+10. Every sentence reads clearly. Rewrite any garbled one.
 
 ## Step 5: Reply
 

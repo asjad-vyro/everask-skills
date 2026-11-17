@@ -32,7 +32,9 @@ Never do arithmetic in your head. Run Python with the user's figures and copy th
 - Working capital tied up in the cycle (rough funding need) = `(Revenue / D) x CCC`. This is an approximation: say so.
 - Early-payment discount APR for terms "d% discount if paid in X days, otherwise net N" = `d/(1-d) x 365/(N-X)`. Take the discount only if this APR is higher than the user's cost of funds. Also give the cost of funds at which the decision flips (the APR itself).
 
-Round days to one decimal and money to the nearest whole unit. State which formulas and period you used.
+Round days to one decimal and money to the nearest whole unit (not to thousands). State which formulas and period you used.
+
+Put every figure you will show into the same Python run before writing the reply: each lever's cash released, any total or stacked sum of levers, and any change in days. Print them and copy the printed values exactly. If you did not compute a total or range, leave it out. Give one approximate cash-tied-up figure, not a band.
 
 ## Step 3: Diagnose
 
@@ -40,7 +42,7 @@ Read `references/wc-metrics.md` when the user gives monthly sales or aging data,
 
 Without peer or history data, do not invent benchmarks. Say that no benchmark was given and that the user should compare against their own history, their stated terms, or sector peers (one `web_search` for a sector median is allowed only if the user asks for a benchmark; cite the link and say it is a rough guide).
 
-For each component, state what the number means against the user's stated terms (for example, a DSO well above their stated net-30 terms means customers pay late or billing is slow), and name the most likely causes as hypotheses to check, not facts: terms creep, billing delays, disputes, slack collections, safety stock, slow movers, paying suppliers early with no discount.
+For each component, state what the number means against the user's stated terms (for example, a DSO well above their stated net-30 terms means customers pay late or billing is slow). If no terms were given, do not compare against any terms (no "net-30", no "normal trade terms"): say terms were not given and describe only the number itself. Name the most likely causes as hypotheses to check, not facts: terms creep, billing delays, disputes, slack collections, safety stock, slow movers, paying suppliers early with no discount.
 
 ## Step 4: Rank the levers and size them
 
@@ -57,7 +59,7 @@ Each action needs the operational risk (customer or supplier relationship, stock
 
 ## Step 5: Reply in this shape
 
-The reply itself holds the whole review. Do not build a file unless the user asks for one.
+The reply itself holds the whole review. Do not build a file unless the user asks for one. Start directly with the heading below, with no preamble line about loading the skill or what you will do.
 
 ```
 ## Working capital review
@@ -91,6 +93,7 @@ If the user asked something narrow (one calculation, or a discount decision), an
 ## Hard rules
 
 - Use only figures the user gave or that a tool returned. Never invent balances, terms, benchmarks, peer medians or customer names. Write "not given" where a figure is missing.
-- Every number in the reply comes from `execute_code` output.
+- Every number in the reply comes from `execute_code` output and is copied exactly, including lever sums, stacked totals, ranges and day changes. Do not add totals or ranges you did not compute.
+- With no stated terms or benchmark, never call a figure "normal", "within terms" or compare it to net-30.
 - A simple year-end DSO hides seasonality: when monthly sales are given, also compute the countback DSO (see the reference) and say which one you lead with.
 - Cash released is an estimate of one-off cash, not recurring profit.

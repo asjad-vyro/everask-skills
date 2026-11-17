@@ -59,13 +59,14 @@ Rules for wording:
 
 ## Step 4: Review mode (when the user pasted a draft)
 
-Go through the draft question by question and make a table: `#`, original wording, problem (leading, loaded, double-barrelled, vague, overlapping options, missing options, unbalanced scale, long recall, jargon, wrong order), and the rewrite. Quote the original exactly. If a question is fine, say "No change" rather than inventing a flaw. Then give the full corrected questionnaire in the same shape as Step 5.
+Go through the draft question by question and make a table: `#`, original wording, problem (leading, loaded, double-barrelled, vague, overlapping options, missing options, unbalanced scale, long recall, jargon, wrong order), and the rewrite. Quote the original exactly. If a question is fine, say "No change" rather than inventing a flaw. Any change the user did not ask for, such as a new recall window or an added screening question, must be marked "(assumption)" in the table and also listed in the Assumptions line. Then give the full corrected questionnaire in the same shape as Step 5.
 
 ## Step 5: Sample size and analysis plan
 
 1. **Sample size.** Do the arithmetic in `execute_code`, never by hand. For a proportion, n = z^2 * p * (1 - p) / e^2 with z = 1.96 for 95% confidence, p = 0.5 (most cautious) and margin of error e. Use the user's margin if given, otherwise 5%: that gives about 385 for a large population. If the user gave a population size N, apply the finite-population correction n_adj = n / (1 + (n - 1) / N). Copy the computed numbers into the reply. If the user gave no population size, say that and assume a large population. Note that a convenience sample (people who chose to answer) does not become representative just because it is big; say what groups may be missing.
-2. **Response expectations.** Do not invent a response rate. Say the number of invitations needed equals the target responses divided by the response rate the user expects, and give the formula with their figure if they gave one, otherwise mark it "not given".
-3. **Analysis plan**, one line per question or group of questions: what you will report (full distribution, not just the mean; median for ordinal scales), which segments to cross-tabulate (only segments the user named or that the decision needs), how to code open text (read a sample, group into themes, report the top themes with example quotes), and always report sample size and response rate beside every result.
+2. **Response expectations.** Do not invent a response rate. Say the number of invitations needed equals the target responses divided by the response rate the user expects, and give the formula with their figure if they gave one, otherwise mark it "not given". The target responses is the final adjusted n (after the finite-population correction, if applied), never the unadjusted n. Compute every derived figure in `execute_code` from that final n: each row of an invitations table, the margin of error at any other sample size (e = z * sqrt(p * (1 - p) / n), times sqrt((N - n) / (N - 1)) when N is known), and any quoted range. Before writing the section, check that every figure in it uses the same target n.
+3. **Fielding advice.** Give the send method and timing only. Do not claim effects, such as "a reminder lifts response" or "Tuesdays work best", unless the user supplied them.
+4. **Analysis plan**, one line per question or group of questions: what you will report (full distribution, not just the mean; median for ordinal scales), which segments to cross-tabulate (only segments the user named or that the decision needs), how to code open text (read a sample, group into themes, report the top themes with example quotes), and always report sample size and response rate beside every result.
 
 ## Step 6: The reply
 
@@ -88,6 +89,7 @@ For a review, put the issues table before the corrected questionnaire.
 ## Hard rules
 
 - Never invent numbers, benchmarks, response rates, customer details or findings. Anything not given by the user is an assumption and is labelled as one.
-- Every sum goes through `execute_code`.
+- Every sum goes through `execute_code`, including invitations and margins at other sample sizes, and all of them use the final adjusted n.
+- Never state engagement lifts or timing benchmarks the user did not give.
 - Deliver the full questionnaire in the reply. Build a file only if the user asks for one (a .docx or .csv), and then publish it with `publish_artifact`.
 - A draft survey is a draft until the user sends it. Do not claim to have sent, posted or created it in any tool.

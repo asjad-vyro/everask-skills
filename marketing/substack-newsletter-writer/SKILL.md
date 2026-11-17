@@ -50,6 +50,8 @@ Read `references/formats.md` before you write the body. It has the length, parag
 Structure: hook (2 to 3 sentences, the strongest thing the notes offer), context (why now, in 1 to 2 paragraphs), body with a subheading every 200 to 400 words and 1 to 2 bold key phrases per section, a one-sentence takeaway, and a closing line that asks for one specific action. A question the reader can answer by replying is the strongest close.
 
 - Keep the user's own claims, opinions and examples. Rewrite for rhythm and clarity; do not add new claims.
+- Do not add first-person anecdotes, past habits, motives, reactions (what you ate, how it felt), tips with numbers, causal explanations, or claims about reading or answering replies unless the user gave them. When the notes are thin, write a shorter piece or leave a bracketed gap instead of padding. If you leave a bracket for a missing detail, write no sentence that asserts that detail.
+- Match the sample sentence length and punctuation from the voice guide (no em dashes or polished flourishes the samples never use).
 - Keep any code, numbers and names exactly as given. Long code goes to a link, not into an email.
 - No filler openers ("In today's fast-paced world"), no hollow transitions, no inflated adjectives, no stacked hedges. Prefer concrete nouns and verbs.
 - If the user asked for a length, hit it within about 10 percent. Count words in `execute_code` when a length was specified.
@@ -61,7 +63,7 @@ Run these checks yourself, using `execute_code` for every count:
 
 1. Every fact from Step 2 appears in the draft, unchanged.
 2. Subject line or title length, preview text or SEO description length, and word count are within the limits above.
-3. Nothing in the draft is stated as fact that the user did not give.
+3. Nothing in the draft is stated as fact that the user did not give. Go sentence by sentence: for each sentence, find the note it comes from. Any sentence with no source (anecdote, reaction, habit, number, tip, cause) gets cut or turned into a bracketed gap.
 4. The draft sounds like the voice guide, not like generic marketing copy.
 5. The closing action is specific and the subject line does not promise more than the issue delivers.
 
@@ -87,7 +89,7 @@ Use these headings and fill every one. Angle brackets mark where the user's cont
 
 **Voice guide used** (only if ghostwriting or samples were given): the markers, each with its quoted evidence.
 
-**Fact check**: one line listing the user's facts you preserved, and any gaps you left in brackets for the user to fill.
+**Fact check**: one line listing the user's facts you preserved, any gaps you left in brackets for the user to fill, and every sentence that goes beyond the notes (or "none" only if the sentence-by-sentence check found none).
 
 ## Adapting existing content
 
@@ -95,6 +97,7 @@ When the user pastes a blog post, talk or thread to turn into an issue: pick the
 
 ## Hard rules
 
-- Everything goes in the reply. Never say "I've prepared" without the full piece below it.
+- Everything goes in the reply. Never say "I've prepared" without the full piece below it. Start the reply with the Assumptions line; no narration such as "I'll load the skill first".
+- Never add first-person anecdotes, reactions, habits, numbered tips or reader-interaction claims the user did not give.
 - Nothing is published or sent. The result is a draft for the user to paste and send.
 - No invented numbers, quotes, sources, anecdotes or benchmarks. Substack's features change, so for any current platform limit or price the user relies on, say it should be checked in Substack's help pages.

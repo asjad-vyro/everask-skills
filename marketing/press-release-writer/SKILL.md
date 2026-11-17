@@ -26,6 +26,8 @@ Read the user's message and any attached or pasted material. List, for yourself,
 
 Do not invent anything that is missing. Where a fact is missing, write a bracketed placeholder in the release, such as `[amount]`, `[Lead investor]`, `[Spokesperson name, title]`, `[date]`, and list every placeholder in the "Assumptions and gaps" part of the reply. Never write a made-up number, customer, investor, quote attribution, date or statistic, and never reuse example values from the reference files.
 
+This rule covers every sentence, including context, background, boilerplate, subheadline and headlines. Describe the company's business, product, how it works, market, customers, hiring and use of funds only in the user's own words. Do not add descriptors or details the user did not give, such as "vetted", "one-on-one", "booking and payment", a hiring city, "new markets", "first product" or "only". Do not add unsourced industry claims ("leaks often run for days") or attributions like "<Company> said..." / "the company argues..." that the user did not supply. If such a detail is needed, bracket it instead, for example `[how it works]`, `[use of funds]` or `[hiring locations]`.
+
 If the one thing the release cannot exist without is absent (for example the user gave no news at all), use `clarify` once, with a single short question. Otherwise decide, say what you assumed, and deliver. Defaults when not stated: US market and AP style, English, general business and tech press, for immediate release, markdown output.
 
 ## Step 2: Find the angle
@@ -45,7 +47,7 @@ If you have already read two files and need a third, rely on what you know and k
 
 ## Step 4: Write five headline options
 
-Give five headlines, each labelled with its hook type, mixing types: data-driven, bold claim, contrast, human interest, urgency, problem-solution. Sentence case, under 100 characters, core news first, no banned words (list below). Only use data the user gave. Pick the strongest one yourself and say it is the one used in the draft. Do not wait for approval.
+Give five headlines, each labelled with its hook type, mixing types. Use only these labels: data-driven, bold claim, contrast, human interest, urgency, problem-solution. Each label must truly fit its headline (urgency needs a deadline or time pressure; contrast needs two things set against each other). Use sentence case: capitalise only the first word and proper nouns, never Title Case. Keep each under 100 characters, with the core news first and no banned words (list below). Only use data and claims the user gave, with no added comparisons like "not weeks" or overstated scope. Pick the strongest one yourself and say it is the one used in the draft. Do not wait for approval.
 
 ## Step 5: Write the release
 
@@ -65,7 +67,7 @@ FOR IMMEDIATE RELEASE   (or: EMBARGOED UNTIL <date, time, timezone>)
 
 <Body paragraph 2: context, market need, how it works, or use of funds>
 
-"<Optional second quote from a customer, partner or investor the user named>," said <Full name>, <title>.
+"<Optional second quote, only from a customer, partner or investor the user named; omit this line entirely if none was named>," said <Full name>, <title>.
 
 <Availability, next steps, link or call to action, only if the user gave them>
 
@@ -86,7 +88,7 @@ Writing rules:
 - Data beats adjectives: every claim rests on a number, a source or a quote. No unsupported superlatives.
 - Banned words and phrases: thrilled, excited to announce, proud to, innovative, cutting-edge, world-class, best-in-class, synergy, leverage, disruptive, game-changing, revolutionary, paradigm shift, next-generation, "leading" (unless a market-share figure backs it), "competitive pricing" (give the price or a placeholder).
 - Plain language: a general-assignment reporter must follow paragraph one. Trade jargon only for trade press, after the news is stated.
-- One story per release. Total length 300 to 500 words (trade or technical announcements may reach 700).
+- One story per release. Total length 300 to 500 words (trade or technical announcements may reach 700). When the facts are thin, a release of 200 to 300 words is fine. Never pad to reach a length with background, market context or mechanism sentences the user did not supply; use a placeholder such as `[context: market need]` instead.
 - Use the date format and style of the target region (`references/regional-conventions.md`). If the date is not given, use `[date]`.
 - Do not claim endorsements, legal approvals or regulatory filings the user did not state. For listed companies, M&A and earnings, add a line telling the user to have legal and investor-relations review the release and its regulatory legends before distribution.
 
@@ -98,6 +100,8 @@ Run `execute_code` (Python) on the final text to count, and copy the results; ne
 2. The total word count of the release.
 3. The words in the boilerplate (under 100).
 4. A search for every banned word and phrase above, in the whole release including quotes. Fix any hit.
+5. Report the total word count both with and without bracketed placeholder text.
+6. List every factual claim in the release, including headlines, subheadline, body, boilerplate and the distribution tip. Mark each one as user-given or bracketed. Rewrite or bracket any claim that is neither, and do this before replying. Do not leave it to the Assumptions section.
 
 Then confirm by reading: third person, "said" only, one concrete number or an explicit placeholder for it, end mark present, no invented facts.
 
@@ -110,7 +114,7 @@ Everything below goes in the reply itself, in full:
 3. **Angle note**: the one-sentence angle, and whether it is strong or weak with the reason.
 4. **Checks**: lead word count, total word count, boilerplate word count, banned words found (none), from the code run.
 5. **Assumptions and gaps**: each placeholder the user must fill, and each assumption you made (region, style, date, etc.).
-6. **Distribution tip**: best day and time window for the target market (from the regional file, or Tuesday to Thursday mid-morning local time when none applies), whether an embargo suits, and a type-specific tip such as coordinating with investors for funding news.
+6. **Distribution tip**: do not refer to facts the user did not give (for example, no "for a round this size" when the amount is unknown). Give the best day and time window for the target market (from the regional file, or Tuesday to Thursday mid-morning local time when none applies), whether an embargo suits, and a type-specific tip such as coordinating with investors for funding news.
 7. If the user asked for a pitch email, social teaser or press kit: add it after the release, following the file for it. Otherwise end with one line offering a journalist pitch email and social posts. Do not write them unrequested.
 
 ## Improving an existing draft

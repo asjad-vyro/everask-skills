@@ -35,7 +35,7 @@ For a review request (user pasted a schema), list findings ranked by severity, e
 
 ## Step 3: Check the SQL actually runs
 
-Use `execute_code` with Python's `sqlite3` (the sandbox has it). Translate the DDL to SQLite in the test only (BIGSERIAL or identity to INTEGER PRIMARY KEY, TIMESTAMPTZ to TEXT, DECIMAL stays, drop PostgreSQL-only features), run `PRAGMA foreign_keys = ON`, create all tables and indexes, insert a few made-up rows, and confirm a foreign key violation is rejected. If it fails, fix the schema and rerun. Report in one line what was tested ("created N tables, M indexes; FK violation rejected") and which parts could not be tested in SQLite (for example partial indexes or PostgreSQL-specific types). Skip this step for NoSQL.
+Use `execute_code` with Python's `sqlite3` (the sandbox has it). Translate the DDL to SQLite in the test only (BIGSERIAL or identity to INTEGER PRIMARY KEY, TIMESTAMPTZ to TEXT, DECIMAL stays, drop PostgreSQL-only features), run `PRAGMA foreign_keys = ON`, create all tables and indexes, insert a few made-up rows, and confirm a foreign key violation is rejected. If it fails, fix the schema and rerun. Report in one line what was tested ("created N tables, M indexes; FK violation rejected") and which parts could not be tested in SQLite (for example partial indexes or PostgreSQL-specific types). List only features that actually appear in your schema. Skip this step for NoSQL.
 
 ## Step 4: Deliver
 
@@ -45,7 +45,7 @@ Put the whole deliverable in the reply, in this order:
 2. **ER diagram**: a Mermaid `erDiagram` code block with entities, key columns and relationship cardinality.
 3. **Schema**: one fenced `sql` block with all CREATE TABLE and CREATE INDEX statements (or the collections and example documents for NoSQL).
 4. **Design notes**: a table with columns Table or index, Decision, Reason. Cover keys, ON DELETE choices, denormalisation and every index.
-5. **Migration**: an UP script and a DOWN script that reverses it exactly. For changes to an existing table, add nullable first, backfill, then add the constraint.
+5. **Migration**: an UP script and a DOWN script that reverses it exactly. For changes to an existing table, add nullable first, backfill, then add the constraint. The UP block in the reply must contain every CREATE TABLE and CREATE INDEX statement written out in full, even if that repeats item 3. The DOWN block must contain every DROP statement written out in full. Never use placeholders, "see above" or "<statements from §3>" in UP or DOWN. Name the migration file without a date prefix (for example `001_initial_schema.sql`) unless the user gave a date.
 6. **Next steps**: two or three scaling or risk notes (partitioning, soft delete, audit trail, PII handling), clearly marked as suggestions.
 
 If the user wants a file, also write `schema.sql` and publish it with `publish_artifact` (`kind: "file"`), but still show the schema in the reply.
@@ -54,6 +54,7 @@ If the user wants a file, also write `schema.sql` and publish it with `publish_a
 
 - Never use FLOAT or DOUBLE for money. Never store dates as strings in the real schema.
 - Every foreign key is declared and indexed.
-- Every migration has a working DOWN.
+- Every migration has a full, runnable UP and a working DOWN in the reply itself, with no placeholders.
+- Start the reply directly with the deliverable. Never open with narration about loading or reading the skill or its files.
 - Do not invent business facts, volumes or benchmarks; write "not given" or mark an assumption.
 - Before sending, run the checklist in `references/checklist.md` against your schema and fix any miss. Read that file only if the schema has more than five tables or the user asked for a review; otherwise rely on the rules above.

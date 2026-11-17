@@ -34,6 +34,7 @@ Choose the trigger by what the script must do:
 - Read and write in bulk with `getValues()` / `setValues()`. Never read cell by cell in a loop.
 - Call `SpreadsheetApp.flush()` before returning from functions that change the sheet, especially ones called from dialogs.
 - Edit triggers: check `e.range`, the sheet name and the column first and return early. Use `e.range.getRow()` and `e.value` rather than the active cell.
+- The column check must test both ends of the edited range, so it passes only when the range actually includes the target column: `if (e.range.getColumn() > CONFIG.STATUS_COL || e.range.getLastColumn() < CONFIG.STATUS_COL) return;`. For single-cell handling, use `if (e.range.getColumn() !== CONFIG.STATUS_COL) return;`. Checking only `getLastColumn()` is not enough. Edits to any other column, including the script's own marker column (for example Sent or Notified), must never trigger a send. Make code comments match what the check really does.
 - V8 is the only runtime. There is no `fetch` (use `UrlFetchApp.fetch`), no `setTimeout` (use `Utilities.sleep`), no `URL` or `FormData`.
 - Custom cell functions (`=MY_FUNCTION()`) need the `@customfunction` JSDoc tag, run at most 30 seconds, and cannot use `MailApp`, `UrlFetchApp` or `getUi()`.
 - Wrap `MailApp`, `UrlFetchApp` and other external calls in try/catch. Use `muteHttpExceptions: true` and check the response code.
@@ -48,7 +49,7 @@ Quote these as commonly documented limits and tell the user to check Google's cu
 - Email recipients per day: about 100 on a free Google account and about 1,500 on Google Workspace. Check `MailApp.getRemainingDailyQuota()` before a batch.
 - One execution runs up to about 6 minutes; time-driven triggers can run longer on some plans. For big jobs, process in chunks and continue from a stored position with a time-driven trigger.
 - Custom functions: 30 seconds.
-- Use `LockService.getScriptLock()` with `tryLock` when a trigger could fire twice at once and both runs write to the sheet or send mail, so a row is not processed twice. Mark each row (for example a Status or Sent column) so a re-run skips finished rows.
+- Use `LockService.getScriptLock()` with `tryLock` when a trigger could fire twice at once and both runs write to the sheet or send mail, so a row is not processed twice. Mark each row (for example a Status or Sent column) so a re-run skips finished rows. If `tryLock` fails, do not return silently: log it with `console.warn` including the row number, and say in Assumptions that a skipped edit is not retried automatically.
 
 ## Step 3: Check the syntax
 
@@ -70,7 +71,7 @@ The reply itself contains the whole deliverable, in this order:
    2. Delete the code in the editor, paste the script, click Save.
    3. If the script has a menu: close the tab and reload the spreadsheet. If it has triggers: pick `createTriggers` in the function dropdown and click Run once.
    4. On first run Google asks for permission. For a script that is not verified, click Advanced > Go to `<project name>` (unsafe) > Allow. Each user does this once.
-4. **How to test it**: on a copy of the sheet, with the exact action to try and what should happen. Say where to look if it fails: View > Executions in the Apps Script editor.
+4. **How to test it**: on a copy of the sheet, with the exact action to try and what should happen. Say where to look if it fails: View > Executions in the Apps Script editor. If you tell the user how to re-send or retry a row, state exactly which edit causes the send. For example: "clear F, then re-enter 'Shipped' in E". Do not suggest an action that silently re-sends.
 5. **Assumptions and things to change**: the sheet and column layout you assumed, placeholders to replace, and any limit from the list above that applies.
 
 ## Hard rules
@@ -78,4 +79,5 @@ The reply itself contains the whole deliverable, in this order:
 - Deliver the full code in the reply. Never say "here is the script" and leave it out.
 - No invented data, addresses, keys or numbers. Placeholders are marked as placeholders.
 - Do not claim the script was run against their sheet.
+- Edit-trigger sends fire only when the edited range includes the target column. Check both `getColumn()` and `getLastColumn()`.
 - If the request is not about Google Sheets or Workspace (Docs, Gmail, Drive, Forms, Calendar), the same method applies: choose the right service, keep the same structure and the same reply format.

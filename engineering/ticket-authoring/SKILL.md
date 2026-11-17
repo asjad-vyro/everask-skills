@@ -24,7 +24,10 @@ If the user asked for a type, use it. If they pasted a spec or idea and said "br
 ## Step 2: Fill the template
 
 - Bug and story templates are below. For task, spike and epic, read `references/templates.md` first (also holds the severity and priority scales).
-- Fill every field. Where the user did not give a fact, write `not given` or mark it `(assumed)`. Never invent build numbers, versions, error text, users, dates, metrics, file paths, ticket ids or names. If the notes lack repro steps, write the steps the notes support, mark gaps, and put "confirm exact steps" in QA notes.
+- Fill every field. Where the user did not give a fact, write `not given` or mark it `(assumed)`. Never invent build numbers, versions, error text, users, dates, metrics, file paths, ticket ids or names. If the notes lack repro steps, write the steps the notes support, mark gaps, and put "confirm exact steps" in QA notes. Do not put it on the Reproduces line.
+- Name only the versions, builds and releases the user gave. Do not add another version, a neighbouring version or a range such as `3.8.x`, even in QA notes, Expected or as a question. Write "before <given version>" instead.
+- The severity/priority Reason, EXPECTED and REGRESSION RISK use only facts from the notes. Anything else is marked `(assumed)`. Do not describe customers as paying or high-value unless the notes say so. Do not write "no workaround" unless the notes say so. Do not name code fields, components or code paths the notes do not mention.
+- When a limit is a number, state which side the boundary falls on (for example "50 or more items fails, 49 or fewer works"). If the notes do not say, mark the boundary `(assumed, confirm)`.
 - Quote error text exactly as given.
 - Link a spec; do not paste it. Write `none` for a field that is truly empty so the reader knows it was considered.
 - Estimates, owners and parent links the user did not give stay `unassigned` or `not given`.
@@ -114,11 +117,11 @@ Set both on bugs. Severity is how bad the defect is; priority is when to fix it.
 
 ## Step 4: Check readiness
 
-For each ticket check: title searchable; no field left blank; criteria or verification steps checkable; nothing pasted from a spec; a spike has a timebox in days and ends in a decision memo; an epic has a metric with baseline and target and kill criteria (use `not given` and flag it if the user gave none). Mark each ticket Ready or Not ready, and for Not ready list the exact missing facts.
+For each ticket check: title searchable; no field left blank; criteria or verification steps checkable; nothing pasted from a spec; a spike has a timebox in days and ends in a decision memo; an epic has a metric with baseline and target and kill criteria (use `not given` and flag it if the user gave none). End each ticket with exactly one line: `READY: Ready` or `READY: Not ready (missing: <fact 1>, <fact 2>)`. Do not write "Ready, but...". Any missing fact makes the ticket Not ready, and you list that fact.
 
 ## Step 5: Output
 
-Put all of this in the reply:
+Put all of this in the reply. Start directly with the table or the first ticket, with no preamble such as "I'll load the skill":
 
 1. For more than one ticket, a summary table first: `| # | Type | Title | Parent | Estimate | Ready |`.
 2. Each ticket in full in its own Markdown block, order: epic, stories, tasks and spikes under each story, then bugs.
@@ -132,6 +135,8 @@ If the team capitalizes software development costs and the user asks for a capit
 
 - Everything is in the reply itself, in full.
 - Only facts from the user's material; the rest is `not given` or marked assumed.
+- Never mention a version, build or release that is not in the user's material, anywhere in the ticket.
+- Each ticket ends with a `READY:` line, and Not ready lists the missing facts.
 - Each bug has numbered repro steps, observed and expected on separate lines, and a named verification.
 - Each story has Given/When/Then criteria and a non-goal.
 - Each spike has a timebox in days and a decision memo as its output.

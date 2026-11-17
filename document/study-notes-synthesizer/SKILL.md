@@ -57,6 +57,11 @@ Every question must be answerable from the guide. Write the answers in an "Answe
 
 If the notes contain worked calculations, or you write an apply question with numbers, compute every result with `execute_code` and copy the output. Never do sums or conversions in your head. Use numbers from the notes where possible; any number you make up for a practice question is labelled "practice figure".
 
+Then check every Apply and Why-X-not-Y question before assembling:
+1. The question states every number and starting condition the answer depends on (e.g. "practice figure: 2n = 6"). Nothing the solver must guess.
+2. Re-derive the answer from the guide's own content, step by step. It must match the written answer and must answer exactly what was asked. If the question asks to tell two cases apart, the answer must name which one and why.
+3. If a question is ambiguous, has more than one defensible answer, or cannot be answered from the guide, rewrite it or drop it.
+
 ## Step 6: Assemble the reply
 
 Output in this order:
@@ -67,7 +72,7 @@ Output in this order:
 
 **Start here (your shakiest topics):** <the user's declared weak spots with where each is covered, or "none declared, so the order below follows dependency">
 
-**Contradictions in your notes:** <each one: what the two places say, where they sit, which looks more likely right and why, and what to check in the textbook or with the lecturer. If none found, say "None found.">
+**Contradictions in your notes:** <only places where two parts of the user's notes disagree with each other; a difference between the notes and the textbook, or a topic the notes leave out, goes under Gaps instead. Each one: what the two places say, where they sit, which looks more likely right and why, and what to check in the textbook or with the lecturer. If none found, say "None found.">
 
 **Gaps in your materials:** <topics the syllabus or the subject implies that the notes barely touch or never define, each with one line on what is missing. If a syllabus was given, check each topic against it. An empty list must be earned: say what you checked.>
 
@@ -77,8 +82,10 @@ Output in this order:
 <numbered by cluster and question>
 
 ## One-page cram sheet
-<at most 20 telegraphic items: the highest-yield facts, formulas and distinctions>
+<at most 20 telegraphic items: the highest-yield facts, formulas and distinctions; any item not in the notes ends with "(added, not from your notes)">
 ```
+
+The reply begins directly with the "# Study Guide:" line. No preamble about loading skills or what you are about to do.
 
 If the exam format was given, shape the emphasis: more calculation questions for a problem-based exam, more why-X-not-Y questions for essays, sharper definitions and distinctions for multiple choice.
 
@@ -86,7 +93,10 @@ If the exam format was given, shape the emphasis: more calculation questions for
 
 - Synthesize, never sequence: no lecture-by-lecture summary.
 - Plain explanation first, formal definition second, for every concept.
-- Do not fill a gap with invented material. Flag it. Where you add background knowledge to explain a concept the notes only name, mark it "added, not from your notes" so the student can check it.
+- Do not fill a gap with invented material. Flag it. Where you add background knowledge to explain a concept the notes only name, mark it "added, not from your notes" so the student can check it. This applies everywhere: cluster text, table rows, worked examples and cram-sheet lines.
+- Contradictions section lists only disagreements inside the notes themselves.
+- Every numbered question states all its numbers and has an answer re-derived from the guide.
+- Start the reply with the guide title; no preamble.
 - Flag every contradiction in the notes. Do not quietly resolve it.
 - Do not write questions the guide cannot answer.
 - Cram sheet: 20 items at most.

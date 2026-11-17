@@ -23,6 +23,8 @@ For anything missing, decide and record it as an assumption (for example "Start 
 
 Map the user's day-90 expectation onto these. The day-90 scope must match the independent ownership the user described, and nothing larger. Deliverables grow from small to large, and there is no independent external delivery in the first 30 days.
 
+If the user gave no day-90 expectation, set a conservative scope that fits the level and record it in Assumptions. Junior or entry level: one small recurring task or one internal-facing project, with the mentor reviewing drafts through day 90. Mid or senior: one owned workstream with manager sign-off. External-facing work, stakeholder-negotiated ownership and running kickoffs appear only when the user asks for them. In weeks 1-4, deliverables are practice or internal drafts reviewed by the mentor, never production or external assets.
+
 ## Step 3: Design the rows
 
 Plan 3 to 6 items per week for 13 weeks (weeks 1-4 phase 1, 5-8 phase 2, 9-13 phase 3). Rules:
@@ -49,7 +51,7 @@ After saving, recalculate or check the formulas with a quick `execute_code` read
 
 The reply must contain, in this order:
 
-1. A line stating the file was published, and a short **Assumptions** list.
+1. A line stating the file was published, and a short **Assumptions** list (including the day-90 scope default if you set it). Do not open with filler about loading skills or what you are about to do.
 2. The three phase goals, one sentence each, tied to the user's day-90 expectation.
 3. **Guidance** in three groups, 5 points or fewer each:
    - Mentor: weekly one-on-one cadence and length, feedback style, what to do each phase.

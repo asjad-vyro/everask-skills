@@ -15,6 +15,7 @@ From the user's message (and a page, if they gave a URL), list:
 - The locales in scope, as BCP 47 codes (`de-DE`, `fr-CA`, `ar`). If the user names only languages ("German and French"), keep language-only codes and say that region variants are a later option.
 - The default (source) language and the site's platform, if stated (Shopify, WordPress, custom, and so on). If not stated, write "platform not given" and stay stack-agnostic.
 - Business reason per locale, translation resources, and content volume. Anything not given is marked "assumed" or "not given". Do not invent traffic, revenue or word counts.
+- The question type. If the user asked a narrow "X or Y?" question (for example "subfolders or ccTLDs?"), answer it first and concisely: the Summary plus the URL structure section with the comparison table. After that, give the rest of the plan as a short outline of one to three lines per section. Do not write full legal or market deep-dives for it.
 
 If the user gave a URL and the job is a plan or audit of that site, call `web_extract` on it once (at most two pages in total) to see the current structure, existing `hreflang` and `<html lang>`, and the language switcher. Report only what the page showed.
 
@@ -30,6 +31,8 @@ Compare the patterns against the user's situation:
 | Subdomain | de.example.com | Separate infrastructure or team per market, large sites. | Treated more like a separate site; more setup. |
 | ccTLD | example.de | Strong country focus, a local legal entity, local trust matters. | Separate domains to buy and maintain; authority is split per domain. |
 | URL parameter | example.com?lang=de | Avoid. | Weak signal, easily dropped. |
+
+In the reply, always reproduce this comparison as a visible table covering all four patterns (subfolder, subdomain, ccTLD, URL parameter). Give each row a one-line verdict against the user's situation, for example "Subdomain: not needed, one team and one CMS". Never drop subdomain, even if the user asked only about two options.
 
 Then decide and state:
 1. The pattern, with two or three reasons tied to what the user told you. If the user asked "subfolder vs ccTLD", say which criteria would flip the answer (for example: separate legal entity, local payment or hosting rules, a marketing budget per country).
@@ -47,7 +50,7 @@ Read the rules in `references/locale-checklist.md` section "Search engine signal
 
 1. A table with one row per locale: locale code, URL pattern for the homepage, and the `hreflang` value. Include a row for `x-default` (the fallback, normally the default-language version or a language chooser). Build the URLs from the user's real domain; if they gave none, use `https://www.example.com` and say it is a placeholder.
 2. A ready-to-paste `<link rel="alternate" hreflang="..." href="...">` block for one sample page, covering every locale plus `x-default` and the page's own entry.
-3. The rules, in brief: every page lists every equivalent including itself; links must be reciprocal; each page has a self-referencing canonical (never canonical a translation to the default language); use region codes (`es-ES` and `es-MX`) when more than one regional version of a language exists; for large sites put hreflang in the XML sitemap rather than the head.
+3. The rules, in brief: every page lists every equivalent including itself; links must be reciprocal; each page has a self-referencing canonical (never canonical a translation to the default language); use region codes (`es-ES` and `es-MX`) when more than one regional version of a language exists; for large sites put hreflang in the XML sitemap rather than the head. Do not state a URL-count threshold for this.
 
 ## Step 5: Translation workflow
 
@@ -59,7 +62,18 @@ Describe, for the user's stated resources (or an assumed "AI draft plus human re
 
 ## Step 6: Localisation beyond translation
 
-Read `references/locale-checklist.md` once, and select only the items that apply to the user's locales. Write a per-locale list covering: currency and number formats, dates and times, units, name and address forms, phone format, legal pages and consent (for example GDPR for EU audiences), payment methods, support hours, imagery, and text expansion (German is often longer than English). Give concrete examples for the user's actual locales (for instance `1,000.50` in en-US is `1.000,50` in de-DE). For RTL locales (Arabic, Hebrew, Persian, Urdu) add: mirrored layout, CSS logical properties such as `margin-inline-start`, flipped directional icons, and `dir="rtl"` on `<html>`.
+Read `references/locale-checklist.md` once, and select only the items that apply to the user's locales. Write a per-locale list covering: currency and number formats, dates and times, units, name and address forms, phone format, legal pages and consent (for example GDPR for EU audiences), payment methods, support hours, imagery, and text expansion (German is often longer than English). Give concrete examples for the user's actual locales. Copy number and date examples from this table, and do not group locales that differ:
+
+| Locale | Number | Date | Currency |
+|---|---|---|---|
+| en-US | 1,000.50 | 12/31/2025 | $1,000.50 |
+| en-GB | 1,000.50 | 31/12/2025 | £1,000.50 |
+| de-DE | 1.000,50 | 31.12.2025 | 1.000,50 € |
+| fr-FR | 1 000,50 (narrow no-break space) | 31/12/2025 | 1 000,50 € |
+| es-ES | 1.000,50 | 31/12/2025 | 1.000,50 € |
+| es-MX | 1,000.50 | 31/12/2025 | $1,000.50 MXN |
+
+For a locale not in the table, recommend locale-aware formatting (for example `Intl.NumberFormat`) and do not guess separators. Label any price as "example price". Do not claim what a currency conversion produces. Label every text-expansion or other percentage, for every language, as "a common rule of thumb". Present payment methods as "commonly used; verify with local data", not as mandatory or expected. For RTL locales (Arabic, Hebrew, Persian, Urdu) add: mirrored layout, CSS logical properties such as `margin-inline-start`, flipped directional icons, and `dir="rtl"` on `<html>`.
 
 When the user's request involves laws, tax or regulation, note that these change and tell the user to confirm the current rules for each market with a local specialist. This plan is not legal advice.
 
@@ -72,10 +86,12 @@ When the user's request involves laws, tax or regulation, note that these change
 
 ## Output shape (reply in this order)
 
+Start the reply directly with the content. Do not add a preamble such as "I'll load the skill", and never mention this skill's step numbers.
+
 1. **Summary**: two or three sentences with the recommendation.
 2. **Assumptions**: each input that was not given, marked as assumed.
 3. **Locales**: table of locale, priority, reason (reasons come from the user; otherwise "not given").
-4. **URL structure**: the pick, the criteria, and what would change the decision.
+4. **URL structure**: the comparison table of all four patterns with a one-line verdict each, the pick, the criteria, and what would change the decision.
 5. **Content structure**
 6. **hreflang plan**: the table and the markup block.
 7. **Translation workflow**
@@ -93,3 +109,6 @@ For an audit of supplied markup or URLs, put a **Findings** section before the s
 - Do not copy the sample domain or locales from this skill: use the user's own.
 - Do every count or sum in `execute_code`, never in your head.
 - Keep to at most two `web_extract` or `web_search` calls.
+- Always show subfolder, subdomain, ccTLD and parameter in the URL structure table.
+- Do not state unsourced percentages or thresholds as fact. Label them as rules of thumb, and label example prices as examples.
+- Do not open with filler and do not refer to skill step numbers in the reply.

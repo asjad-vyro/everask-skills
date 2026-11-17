@@ -76,6 +76,9 @@ Store caps: count characters with `execute_code` and report the count. Do not ey
 
 For consumer-facing text (what's new, email) write three to five benefit-led items with no version numbers, and a link line back to the full notes.
 
+- Benefit-led means the benefit the user's material states. Describe each feature and fix using only the user's own claims. Do not add how a feature works, what it lets people do, or what a bug looked like unless the material says so. For example, do not write "syncs when you're back online", "edit with no connection" or "sent people back to the sign-in screen" from a bare "add offline mode" or "fix login bug". If an item is thin, keep it thin. Any detail you inferred goes under open items.
+- Platform-specific changes go only in that platform's listing. For example, an Android-only fix stays out of Apple App Store text. If you cannot tell which platform a change applies to, flag it under open items.
+
 ## Step 8: Verification gate
 
 Before the reply, check each of the four points against the input, and fix before sending:
@@ -103,6 +106,7 @@ Add, once, only if the user's setup suggests it: recommend writing each entry as
 
 - Finish in one reply. Never end with a promise or a question; put doubts under open items.
 - Facts only from the material the user gave. Do not invent versions, dates, PR numbers, authors, benchmarks, URLs or quotes. Mark every assumption.
+- In consumer copy, never elaborate a feature's behaviour or a bug's symptoms beyond the user's wording. Never put one platform's fix in another store's text.
 - Never rewrite old releases when switching format: start the new format at the next release.
 - Do not write the full upgrade guide with code and codemods. Write the notes and link to the guide, or list its absence as an open item.
 - Notes are drafts for the user to publish. Do not push, tag, or publish anything.

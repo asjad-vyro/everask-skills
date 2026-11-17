@@ -15,6 +15,7 @@ For each debt take: name, current balance, APR (annual rate, percent), minimum m
 
 - Minimum payment missing: assume interest for one month plus 1% of the balance, rounded up to the next whole currency unit, and say so as an assumption. Do not ask.
 - Extra payment missing: run with 0 extra and also with a few sample extras (for example 100 and 200 per month), labelled as examples, not as the user's budget.
+- User states one total monthly payment (for example "I can pay $250 a month"): treat that as the base. For a single debt, set its `min` to that total and use EXTRA=0. For several debts, set EXTRA = total minus the sum of minimums. Run what-ifs as EXTRA=50 and EXTRA=100 on top of that base. Never feed a total payment in as EXTRA.
 - Currency: use the user's. Default to the symbol they wrote.
 - If the user wants bank transactions or budget data pulled from an app, work only from what they pasted or uploaded. Never invent balances or rates.
 
@@ -26,14 +27,16 @@ Call `skill_view` on this skill. Its result has `skill_dir`, the skill's folder 
 2. Run `python3 SKILL_DIR/scripts/payoff.py /tmp/.scratch/debt-payoff-plan/debts.json EXTRA --csv-dir /tmp/.scratch/debt-payoff-plan/out`.
 3. It prints JSON for both strategies: months, total interest, total paid, target order, order debts clear, balances at each year end, and writes the month-by-month schedules as CSV.
 4. If the script is unavailable, do the same in `execute_code` with this logic. Each month: add interest (balance x APR / 12) to every open debt, pay every minimum, put all remaining budget (minimums plus extra) on the first open debt in the target order, and when a debt clears, its payment rolls to the next. Avalanche order is highest APR first; snowball order is smallest balance first.
-5. For extra comparisons (for example "what if I add 200 more"), rerun the script with the other EXTRA values. Do not estimate.
+5. For extra comparisons (for example "what if I add 200 more"), rerun the script once per EXTRA value. Do not estimate. Label each what-if row with both the total monthly payment and the extra, for example "$300 total (+$50)". Copy months and interest from that exact run. Compute each saving as base-run interest minus that run's interest, and each months saved as base months minus that run's months.
 6. If `paid_off` is false (minimums do not cover interest), say the debt never clears at that payment and give the monthly interest on the worst debt.
 
 ## Step 3: Check before writing
 
 - Avalanche total interest must be less than or equal to snowball. If not, something is wrong: recheck inputs and rerun.
 - Total paid should equal starting balances plus total interest (within rounding).
-- Months to payoff: also give the debt-free month as "month N" and, only if the user gave a start date, the calendar month.
+- Single-debt case: check the months for every run against n = -ln(1 - B*r/P) / ln(1+r) in `execute_code`. Here B is the balance, r is APR/100/12 and P is the total monthly payment. If it differs from the script by more than 1 month, the inputs or labels are wrong. Fix them and rerun.
+- What-ifs: a larger payment must give fewer or equal months and less or equal interest than the base. Each row's label must match the EXTRA used for that run.
+- Months to payoff: give the debt-free month as "month N". Give a calendar month only if the user gave a start date. Never assume today's date or a first-payment date.
 
 ## Step 4: Write the reply
 
@@ -56,3 +59,6 @@ If the user asks for a spreadsheet or the full schedule, load the built-in `xlsx
 - Every number in the reply is copied from script or `execute_code` output.
 - Do not open with questions. Decide, state the assumption, and deliver the full plan in the same reply.
 - Do not recommend specific lenders, balance-transfer products or calculators.
+- No calendar dates (such as "November 2030") unless the user gave a start date. Use "month N".
+- Do not refer to calculators, widgets or files that are not in the reply. Only refer to the tables in the reply or an artifact you actually published.
+- What-if labels must show the total monthly payment and the extra, and each label must come from the run that produced its figures.

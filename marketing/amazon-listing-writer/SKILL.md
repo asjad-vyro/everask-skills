@@ -35,8 +35,10 @@ Sort the keywords into tiers:
 
 Use only facts the user gave. If an attribute is missing (material, size, what is in the box, warranty), leave it out of the copy or write `<not given: add yours>` as a visible placeholder. Never invent specs, certifications, review counts, awards, guarantees or "tested by" claims.
 
+**Fact audit (do this after drafting, before Step 3):** go through the title, bullets, description and backend terms line by line. Every adjective (e.g. "lightweight", "breathable", "durable"), care instruction (e.g. "air dry", "wash with similar colours"), sizing tip (e.g. "size up"), measurement, reference to images or a size chart, use scenario (e.g. "survives muddy paws") and product scope (e.g. pajamas, for cats) must trace to a fact the user stated. Delete anything that does not, or replace it with `<not given: add yours>`. "Machine washable" stays exactly that and is not expanded into further care steps.
+
 **Title**
-- Shape: Brand + primary keyword + key attributes (size, quantity, colour, material) + secondary keyword + one differentiator.
+- Shape: Brand + primary keyword + key attributes (size, quantity, colour, material) + secondary keyword + one differentiator. If no brand was given, start the title with the placeholder `<Brand: add yours>`.
 - Hard limit 200 characters. Aim for 150 or fewer, with the most important words in the first 80 so mobile does not cut them. Some categories allow less, so tell the seller to check theirs.
 - Capitalise the first letter of each word. No ALL CAPS words except the brand. No "best", "#1", "top rated", prices, or promotional phrases. No repeating a word more than twice.
 
@@ -50,7 +52,7 @@ Use only facts the user gave. If an attribute is missing (material, size, what i
 - Place the tertiary keywords here. Short paragraphs.
 
 **Backend search terms**
-- A single comma-free line of words, under 250 bytes in total, for keywords that did not fit. Do not repeat words already in the title or bullets, and leave out brand names of other companies, punctuation and filler.
+- A single comma-free line of words, under 250 bytes in total, for keywords that did not fit. Do not repeat words already in the title or bullets, and leave out brand names of other companies, punctuation and filler. Do not add product types, animals, users or uses the user did not mention (e.g. no "pajamas" or "cat" for a dog shirt); synonyms and spelling variants of the given product only.
 
 **Compliance**
 - No medical or health claims, no "FDA approved", "eco" or "organic" claims, and no competitor brand names unless the user supplied the proof or said it is theirs. Add a note listing any claim in the copy the seller must be able to prove.
@@ -60,9 +62,10 @@ Use only facts the user gave. If an attribute is missing (material, size, what i
 Put the finished title, bullets, description and backend terms, plus the keyword list, into one `execute_code` call that prints:
 - the character count of the title, each bullet and the description, and the byte count of the backend terms;
 - for every keyword, whether it appears (case-insensitive, whole phrase) in the title, in any bullet, and in the description;
-- the coverage figure: keywords found in title, bullets or description, divided by total keywords, as a percentage.
+- the coverage figure: keywords found in title, bullets or description, divided by total keywords, as a percentage;
+- for every keyword, the number of times it occurs across the title and all five bullets combined, flagging any count above 2.
 
-Copy the printed numbers into the reply. If a limit is broken or a primary keyword is missing from the title, fix the copy and run the check again. Do the same for before-and-after counts in Mode B. All arithmetic comes from code.
+Copy the printed numbers into the reply. If a limit is broken, a keyword occurs more than twice across title and bullets, or a primary keyword is missing from the title, fix the copy (use a synonym or drop the phrase from a bullet) and run the check again. Do the same for before-and-after counts in Mode B. All arithmetic comes from code.
 
 Coverage bands: 90% or more is excellent, 70 to 89% is good with minor gaps, under 70% needs work. A keyword that sits only in the backend terms counts as "backend only", not as covered in the visible copy.
 
@@ -94,12 +97,13 @@ The reply holds the full listing in the reply itself, never "I've prepared your 
 5. `## Backend Search Terms`.
 6. `## Keyword Coverage`: a table with Keyword, In Title, In Bullets, In Description, Status (use Yes and No), then the coverage percentage and the character counts from Step 3. Mode B shows Before and After columns.
 7. Mode B only: `## Audit` (the score table from Step 4, with the key change per row) and `## What Changed` (original and optimized title, then each bullet that changed, naming the keywords added).
-8. `## Seller To-Do`: things the copy cannot fix (images, A+ content, price, claims to verify, placeholders to fill, category title limits). Short.
+8. `## Seller To-Do`: things the copy cannot fix (images, A+ content, price, claims to verify, placeholders to fill, category title limits). The claims-to-verify list names every factual claim that is in the copy. Short.
 
 ## Hard rules
 
 - No invented numbers, volumes, ratings, review counts, specs or claims. Missing facts are marked as assumptions or `<not given: add yours>` placeholders.
 - Every coverage and length figure comes from the `execute_code` run.
-- Do not stuff keywords: a phrase repeats at most twice across the title and bullets, and the copy has to read like a person wrote it.
+- Do not stuff keywords: a phrase repeats at most twice across the title and bullets (counted in the `execute_code` run), and the copy has to read like a person wrote it.
+- Every adjective, care step, sizing tip, image reference and backend scope word traces to a user-given fact, or it is removed or made a `<not given: add yours>` placeholder.
 - The listing is a draft for the seller to review. Nothing is posted to Amazon.
 - Amazon's limits and category rules change. If the user asks about a specific policy, check it with `web_search` and link what you found.

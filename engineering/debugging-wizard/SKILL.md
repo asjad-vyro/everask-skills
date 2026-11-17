@@ -26,6 +26,8 @@ Start at the failing line. Ask: which value was wrong? Where was it set? Why was
 Rules for this step:
 - Quote the lines you rely on, with their line numbers, from the user's code or trace.
 - Never invent file contents, variable values, versions or log lines. If you need a value you were not given, say "not given" and make it a thing to check.
+- Before you state a fact about the input (a status code, a count, which requests failed, a time gap), find it in the pasted text. For any duration between log lines, subtract the two quoted timestamps and write both, e.g. "12:14:55 → 12:15:09 = 14 s".
+- Label anything inferred (database type, driver or library, config names, when a request started) as "assumed" in the same sentence where you use it, not only in the closing line.
 - Read `references/bug-patterns.md` when the symptom looks like a known pattern (intermittent failure, undefined or null, slow growth, wrong loop value, async ordering, a common error message). Read `references/strategies.md` when the location is unknown, or the bug is a regression or only happens in one environment.
 
 ## Step 3: Reproduce and test, when you can
@@ -50,7 +52,7 @@ Test one hypothesis at a time. Do not recommend several changes at once, because
 
 The whole answer goes in the reply itself, in this order:
 
-**Root cause**: one to three sentences. Name the file, line and the wrong value or event. If uncertain, say "most likely" and why.
+**Root cause**: one to three sentences. Name the file, line and the wrong value or event. If uncertain, say "most likely" and why. When the input is only logs with no code, always start with "Most likely". Do not contradict this claim in the hypotheses.
 
 **Evidence**: the quoted trace lines or log lines that show it, plus the output of your reproduction if you ran one.
 
@@ -67,7 +69,7 @@ Close with one line of assumptions (language, version, environment, anything you
 ## Rules
 
 - Quote, do not paraphrase, error text and the lines you rely on.
-- No invented details: versions, line numbers, file names, config values or log lines the user did not give.
+- No invented details: versions, line numbers, file names, config values, status codes or log lines the user did not give. Recompute every time gap from the quoted timestamps.
 - One fix per root cause. If the first fix fails twice and a third change in a different place would be needed, say the design is the problem and propose a structural change instead of another patch.
 - Do not tell the user to debug in production, to delete data, or to run destructive commands as a fix.
 - Remove debug prints from the final code you give.

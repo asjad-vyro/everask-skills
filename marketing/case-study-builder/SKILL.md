@@ -34,7 +34,8 @@ Read the user's message and any attached or pasted material. Extract these eight
 
 Then do these checks:
 
-- **Numbers.** List every figure the user gave, verbatim, with its unit and what it measures. If the user gave arithmetic to do (a percentage change, a total, a per-week rate), compute it in `execute_code` and use that output. Never do sums in your head. Show the formula in the fact sheet only if you derived a figure; label derived figures "calculated from your numbers".
+- **Numbers.** List every figure the user gave, verbatim, with its unit and what it measures. Do not compute or show derived figures (differences, multiples, percentage changes) unless the user asked for that arithmetic. If they did, compute it in `execute_code` and use that output. Never do sums in your head. Show the formula in the fact sheet only if you derived a figure; label derived figures "calculated from your numbers".
+- **Inconsistencies.** If the user's facts look inconsistent (for example "phone-only" before, yet a before figure for online bookings), record both facts exactly as given. Do not explain or resolve the conflict with a baseline or reason the user did not state. Flag it neutrally in "What is missing" as a question for the user.
 - **Missing metric.** If the After field has no number, do not stop and do not invent one. Write the copy with the placeholder `[METRIC NEEDED: <what to measure, e.g. time saved, revenue change, lead volume>]` wherever a number would go, and use no stronger language than the result supports (see the tiers below). A rough estimate from the user is fine to use, marked as an estimate.
 - **Quote.** Use the quote only if the user supplied it, word for word. If none was given, put `[QUOTE NEEDED: ask <client contact> for one sentence on <the change they noticed>]` in the quote spot. Never write a quote, and never put quote marks around a paraphrase.
 
@@ -56,6 +57,7 @@ Hard rules for every format:
 - Use only facts from the fact sheet. No invented customers, names, dates, places, tool names, headcounts, prices, percentages or timelines.
 - Each given figure appears exactly as the user wrote it. Rounding, "about" and "nearly" are not allowed unless the user said them.
 - Do not add benchmarks, industry statistics or "typical" results.
+- Do not invent feature descriptions, user-experience claims ("in a minute, on a phone"), customer behaviour, or site-, team- or location-level specifics the user did not state.
 - Do not put a client name in the copy if the user wants it anonymous.
 - Where a fact is not given, write around it or use a placeholder, never a guess.
 
@@ -65,8 +67,8 @@ Hard rules for every format:
 
 **Format 3: Sales story (150 to 250 words, four short paragraphs).**
 - Set the scene: the client's situation and the stakes.
-- Show the complexity: what made it hard.
-- What happened: the specific moves the user made, no feature lists.
+- Show the complexity: what made it hard, using only obstacles the user stated. If none were given, write one short plain sentence about the starting situation.
+- What happened: only the actions the user stated, in their words (e.g. "rebuilt the online booking flow"), no feature lists. If the user gave no further detail, write one short generic sentence and add `[SCOPE DETAIL NEEDED: <what was changed>]`.
 - What changed: the figure(s) and the shift for the client.
 
 **Format 4 (deep only): Full case study.**
@@ -93,7 +95,8 @@ Before replying, check each format against this list, fix anything that fails, a
 - Every figure matches the user's figure exactly, and none was added.
 - The quote, if present, is word for word.
 - The client is the hero.
-- The blurb is two sentences or fewer.
+- The blurb is two sentences or fewer and under 45 words; count the words one by one and report the true count.
+- Read every sentence of every format and the fact sheet: each fact in it must appear in the user's message. Remove any that does not, and never write "nothing invented" until this check is done.
 - The story's last paragraph contains the key figure or its placeholder.
 
 ## Step 5: Reply shape
