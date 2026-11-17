@@ -1,1 +1,13 @@
-{"type": "marketing", "example_prompts": ["Write a creator brief for a 1 Reel + 3 Stories campaign for our protein bar launch, 2 review rounds", "Campaign brief for a YouTuber integration of our project-management tool, 60-second mention, B2B", "Make an influencer brief with FTC disclosure for a skincare brand, 1 TikTok video, code GLOW20", "Brief for a TikTok UGC creator, paid $800, usage rights 90 days, 1 revision round"]}
+{
+  "type": "marketing",
+  "tags": [
+    "marketing",
+    "document"
+  ],
+  "example_prompts": [
+    "Write a creator brief for a 1 Reel + 3 Stories campaign for our protein bar launch, 2 review rounds",
+    "Campaign brief for a YouTuber integration of our project-management tool, 60-second mention, B2B",
+    "Make an influencer brief with FTC disclosure for a skincare brand, 1 TikTok video, code GLOW20",
+    "Brief for a TikTok UGC creator, paid $800, usage rights 90 days, 1 revision round"
+  ]
+}

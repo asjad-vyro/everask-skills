@@ -1,1 +1,12 @@
-{"type": "marketing", "example_prompts": ["Repurpose this blog post into a LinkedIn post, an X thread and 3 Instagram captions: https://example.com/post", "Turn my podcast transcript into 5 short-form video scripts and a newsletter blurb", "Adapt this newsletter into a week of posts for X and Threads", "Convert this YouTube transcript into a carousel and Reel ideas"]}
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Repurpose this blog post into a LinkedIn post, an X thread and 3 Instagram captions: https://example.com/post",
+    "Turn my podcast transcript into 5 short-form video scripts and a newsletter blurb",
+    "Adapt this newsletter into a week of posts for X and Threads",
+    "Convert this YouTube transcript into a carousel and Reel ideas"
+  ]
+}

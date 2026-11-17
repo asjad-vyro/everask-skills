@@ -1,1 +1,13 @@
-{"type": "document", "example_prompts": ["Run a pre-mortem on our plan to launch new pricing next month.", "Pre-mortem for hiring a head of sales at a 15-person startup.", "Stress-test my decision to move the whole team to a new CRM in Q1.", "Assume our website migration over the holidays failed. Why, and what should we watch?"]}
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "research"
+  ],
+  "example_prompts": [
+    "Run a pre-mortem on our plan to launch new pricing next month.",
+    "Pre-mortem for hiring a head of sales at a 15-person startup.",
+    "Stress-test my decision to move the whole team to a new CRM in Q1.",
+    "Assume our website migration over the holidays failed. Why, and what should we watch?"
+  ]
+}

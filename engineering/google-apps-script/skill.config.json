@@ -1,1 +1,13 @@
-{"type": "engineering", "example_prompts": ["Write an Apps Script that emails the contact in column B when column E changes to Approved", "Add a custom menu to my Google Sheet that exports the active sheet to PDF and emails it to me", "Script to pull data from a JSON API into my sheet every morning at 8am", "Write a script that sends a personalised email to every row in my Recipients tab and marks each one Sent"]}
+{
+  "type": "engineering",
+  "tags": [
+    "engineering",
+    "data"
+  ],
+  "example_prompts": [
+    "Write an Apps Script that emails the contact in column B when column E changes to Approved",
+    "Add a custom menu to my Google Sheet that exports the active sheet to PDF and emails it to me",
+    "Script to pull data from a JSON API into my sheet every morning at 8am",
+    "Write a script that sends a personalised email to every row in my Recipients tab and marks each one Sent"
+  ]
+}

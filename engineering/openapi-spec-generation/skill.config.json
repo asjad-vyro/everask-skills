@@ -1,1 +1,12 @@
-{"type": "engineering", "example_prompts": ["Write an OpenAPI 3.1 YAML for a todo API with users, lists and tasks, bearer auth and pagination", "Convert these Flask routes into an OpenAPI spec: GET /books, POST /books, GET /books/<int:id>, DELETE /books/<int:id>", "Here is a JSON sample of an order: {\"id\": 7, \"status\": \"paid\", \"items\": [{\"sku\": \"A1\", \"qty\": 2}]}. Turn it into OpenAPI schemas with a CRUD API around it", "Add error responses and API-key auth to my API spec design for a weather lookup service"]}
+{
+  "type": "engineering",
+  "tags": [
+    "engineering"
+  ],
+  "example_prompts": [
+    "Write an OpenAPI 3.1 YAML for a todo API with users, lists and tasks, bearer auth and pagination",
+    "Convert these Flask routes into an OpenAPI spec: GET /books, POST /books, GET /books/<int:id>, DELETE /books/<int:id>",
+    "Here is a JSON sample of an order: {\"id\": 7, \"status\": \"paid\", \"items\": [{\"sku\": \"A1\", \"qty\": 2}]}. Turn it into OpenAPI schemas with a CRUD API around it",
+    "Add error responses and API-key auth to my API spec design for a weather lookup service"
+  ]
+}

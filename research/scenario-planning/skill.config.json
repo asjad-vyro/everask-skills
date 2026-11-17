@@ -1,1 +1,13 @@
-{"type": "research", "example_prompts": ["Scenario plan for my coffee chain over the next 5 years under changing rent and remote work.", "Build scenarios for our SaaS if AI regulation tightens or loosens.", "Test our 3-year strategy of moving from wholesale to direct-to-consumer across four different futures.", "I run a small online language school. Build future scenarios for the next 4 years and tell me which moves are safe."]}
+{
+  "type": "research",
+  "tags": [
+    "research",
+    "document"
+  ],
+  "example_prompts": [
+    "Scenario plan for my coffee chain over the next 5 years under changing rent and remote work.",
+    "Build scenarios for our SaaS if AI regulation tightens or loosens.",
+    "Test our 3-year strategy of moving from wholesale to direct-to-consumer across four different futures.",
+    "I run a small online language school. Build future scenarios for the next 4 years and tell me which moves are safe."
+  ]
+}

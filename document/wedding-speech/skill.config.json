@@ -1,1 +1,12 @@
-{"type": "document", "example_prompts": ["Write a best man speech for my brother's wedding, about 3 minutes. He once missed his own flight to a stag weekend and still arrived first.", "Mother of the bride toast, 2 minutes, warm and a little funny", "Retirement party toast for my manager, 90 seconds, light and not cheesy", "Fix my maid of honour speech, it runs long and has a joke about her ex"]}
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Write a best man speech for my brother's wedding, about 3 minutes. He once missed his own flight to a stag weekend and still arrived first.",
+    "Mother of the bride toast, 2 minutes, warm and a little funny",
+    "Retirement party toast for my manager, 90 seconds, light and not cheesy",
+    "Fix my maid of honour speech, it runs long and has a joke about her ex"
+  ]
+}

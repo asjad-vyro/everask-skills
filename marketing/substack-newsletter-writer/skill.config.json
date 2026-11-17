@@ -1,1 +1,13 @@
-{"type": "marketing", "example_prompts": ["Turn these notes into this week's newsletter issue, with 3 subject line options: we moved our team to a four-day week in March, support tickets dropped, and two people left.", "Write a Substack essay about why small teams should write down decisions, in a plain, warm voice.", "Draft 5 Substack Notes to promote my issue on why I stopped checking email before 10am.", "Ghostwrite a newsletter issue for our founder from this interview transcript. I'll paste it next."]}
+{
+  "type": "marketing",
+  "tags": [
+    "marketing",
+    "email"
+  ],
+  "example_prompts": [
+    "Turn these notes into this week's newsletter issue, with 3 subject line options: we moved our team to a four-day week in March, support tickets dropped, and two people left.",
+    "Write a Substack essay about why small teams should write down decisions, in a plain, warm voice.",
+    "Draft 5 Substack Notes to promote my issue on why I stopped checking email before 10am.",
+    "Ghostwrite a newsletter issue for our founder from this interview transcript. I'll paste it next."
+  ]
+}

@@ -1,1 +1,13 @@
-{"type": "research", "example_prompts": ["Review this paper like a conference reviewer: https://arxiv.org/abs/1706.03762", "Is the methodology of 'Deep Residual Learning for Image Recognition' sound? Give me a critique with weaknesses and fixes.", "I'm pasting the abstract and results of a study below. Write a peer review of it and list the biggest weaknesses.", "Summarise this paper and tell me what I should challenge if I'm the second reviewer (PDF attached)."]}
+{
+  "type": "research",
+  "tags": [
+    "research",
+    "document"
+  ],
+  "example_prompts": [
+    "Review this paper like a conference reviewer: https://arxiv.org/abs/1706.03762",
+    "Is the methodology of 'Deep Residual Learning for Image Recognition' sound? Give me a critique with weaknesses and fixes.",
+    "I'm pasting the abstract and results of a study below. Write a peer review of it and list the biggest weaknesses.",
+    "Summarise this paper and tell me what I should challenge if I'm the second reviewer (PDF attached)."
+  ]
+}

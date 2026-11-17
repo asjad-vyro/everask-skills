@@ -1,1 +1,13 @@
-{"type": "email", "example_prompts": ["Give me 10 subject lines for a product launch email, score them and plan an A/B test", "Nobody opens my cold emails to operations managers. Write 5 better subject lines and tell me how to test them", "Subject lines and preview text for a Black Friday promo to past customers of my candle shop", "Design a subject line A/B test for my 4,000-person monthly newsletter"]}
+{
+  "type": "email",
+  "tags": [
+    "email",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Give me 10 subject lines for a product launch email, score them and plan an A/B test",
+    "Nobody opens my cold emails to operations managers. Write 5 better subject lines and tell me how to test them",
+    "Subject lines and preview text for a Black Friday promo to past customers of my candle shop",
+    "Design a subject line A/B test for my 4,000-person monthly newsletter"
+  ]
+}

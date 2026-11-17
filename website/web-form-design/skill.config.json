@@ -1,1 +1,12 @@
-{"type": "website", "example_prompts": ["Audit my contact form: it has name, email, phone, company, job title, company size, budget, timeline, how you heard about us, and a message. Which fields should go?", "Design a signup form for a SaaS free trial with the fewest fields possible", "Plan spam protection for my quote request form without hurting conversion", "My checkout form has a high abandonment rate. What should I check first?"]}
+{
+  "type": "website",
+  "tags": [
+    "website"
+  ],
+  "example_prompts": [
+    "Audit my contact form: it has name, email, phone, company, job title, company size, budget, timeline, how you heard about us, and a message. Which fields should go?",
+    "Design a signup form for a SaaS free trial with the fewest fields possible",
+    "Plan spam protection for my quote request form without hurting conversion",
+    "My checkout form has a high abandonment rate. What should I check first?"
+  ]
+}

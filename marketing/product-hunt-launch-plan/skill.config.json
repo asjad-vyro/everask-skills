@@ -1,1 +1,12 @@
-{"type": "marketing", "example_prompts": ["Make a Product Hunt launch plan for our AI note-taking app launching next month", "Build a launch-day checklist and timeline for our Chrome extension", "Draft my Product Hunt tagline, description and first comment for a habit tracker app", "Where else should I launch besides Product Hunt for a developer tool?"]}
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make a Product Hunt launch plan for our AI note-taking app launching next month",
+    "Build a launch-day checklist and timeline for our Chrome extension",
+    "Draft my Product Hunt tagline, description and first comment for a habit tracker app",
+    "Where else should I launch besides Product Hunt for a developer tool?"
+  ]
+}

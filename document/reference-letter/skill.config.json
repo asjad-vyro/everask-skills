@@ -1,1 +1,12 @@
-{"type": "document", "example_prompts": ["Write a recommendation letter for my intern Maya applying to a master's in data science. She built our dashboard and cut weekly reporting from 6 hours to 1.", "I need a reference letter for a former employee who was my operations lead for two years. I'll give you the achievements if you tell me what to include.", "Write a character reference for my neighbour of five years who is applying to rent a flat", "Draft a letter of support for a colleague applying for a community arts grant"]}
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Write a recommendation letter for my intern Maya applying to a master's in data science. She built our dashboard and cut weekly reporting from 6 hours to 1.",
+    "I need a reference letter for a former employee who was my operations lead for two years. I'll give you the achievements if you tell me what to include.",
+    "Write a character reference for my neighbour of five years who is applying to rent a flat",
+    "Draft a letter of support for a colleague applying for a community arts grant"
+  ]
+}

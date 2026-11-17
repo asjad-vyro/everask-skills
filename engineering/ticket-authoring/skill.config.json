@@ -1,1 +1,18 @@
-{"type": "engineering", "example_prompts": ["Turn these rough notes into a bug report: users say the export button does nothing sometimes, mostly on Safari, started after last week's release", "Write a user story with acceptance criteria for letting users export their data as CSV", "Split this idea into an epic with stories and tasks: add dark mode to our web app", "Scope a spike to decide between building our own search and using a hosted search service"], "connectors": ["jira", "linear", "github"]}
+{
+  "type": "engineering",
+  "tags": [
+    "engineering",
+    "document"
+  ],
+  "example_prompts": [
+    "Turn these rough notes into a bug report: users say the export button does nothing sometimes, mostly on Safari, started after last week's release",
+    "Write a user story with acceptance criteria for letting users export their data as CSV",
+    "Split this idea into an epic with stories and tasks: add dark mode to our web app",
+    "Scope a spike to decide between building our own search and using a hosted search service"
+  ],
+  "connectors": [
+    "jira",
+    "linear",
+    "github"
+  ]
+}

@@ -1,1 +1,13 @@
-{"type": "marketing", "example_prompts": ["Write a press release for our Series A: $6M led by Northwind, launching in the US", "Our bakery is opening a second location next month. Write the news release and give me headline options", "Draft a press release announcing our new partnership with a logistics company, plus a pitch email to tech reporters", "Our app now has dark mode. Write a press release for it and tell me honestly if there is any news in it"]}
+{
+  "type": "marketing",
+  "tags": [
+    "marketing",
+    "document"
+  ],
+  "example_prompts": [
+    "Write a press release for our Series A: $6M led by Northwind, launching in the US",
+    "Our bakery is opening a second location next month. Write the news release and give me headline options",
+    "Draft a press release announcing our new partnership with a logistics company, plus a pitch email to tech reporters",
+    "Our app now has dark mode. Write a press release for it and tell me honestly if there is any news in it"
+  ]
+}

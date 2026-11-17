@@ -1,1 +1,13 @@
-{"type": "document", "example_prompts": ["Turn my lecture notes into a study guide for my midterm. I'll paste them in my next message.", "Make me a study guide for introductory macroeconomics: GDP, inflation, unemployment and monetary policy, with practice questions.", "Combine these readings into one revision sheet with key terms, confusable pairs and a cram sheet.", "Organize my biology notes on mitosis and meiosis into an exam-prep guide and tell me what my notes are missing."]}
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "research"
+  ],
+  "example_prompts": [
+    "Turn my lecture notes into a study guide for my midterm. I'll paste them in my next message.",
+    "Make me a study guide for introductory macroeconomics: GDP, inflation, unemployment and monetary policy, with practice questions.",
+    "Combine these readings into one revision sheet with key terms, confusable pairs and a cram sheet.",
+    "Organize my biology notes on mitosis and meiosis into an exam-prep guide and tell me what my notes are missing."
+  ]
+}

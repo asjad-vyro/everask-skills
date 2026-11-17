@@ -1,1 +1,13 @@
-{"type": "research", "example_prompts": ["SWOT for my bakery before I open a second location.", "Do a SWOT for launching a podcast network, and turn it into options.", "TOWS matrix for a two-person design studio thinking about hiring its first employee.", "SWOT for a small SaaS company moving from monthly to annual pricing, with the weak spots flagged as assumptions."]}
+{
+  "type": "research",
+  "tags": [
+    "research",
+    "document"
+  ],
+  "example_prompts": [
+    "SWOT for my bakery before I open a second location.",
+    "Do a SWOT for launching a podcast network, and turn it into options.",
+    "TOWS matrix for a two-person design studio thinking about hiring its first employee.",
+    "SWOT for a small SaaS company moving from monthly to annual pricing, with the weak spots flagged as assumptions."
+  ]
+}

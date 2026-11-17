@@ -1,1 +1,12 @@
-{"type": "marketing", "example_prompts": ["Build discovery questions for a 30-minute first call with a VP Marketing at a 200-person SaaS company", "What should I ask a prospect who wants a kitchen remodel? It is a 45-minute in-home consult", "Make a one-page call sheet for a 15-minute SDR qualification call on a payroll tool", "Give me a pain, root cause, impact and urgency question ladder for HR software"]}
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Build discovery questions for a 30-minute first call with a VP Marketing at a 200-person SaaS company",
+    "What should I ask a prospect who wants a kitchen remodel? It is a 45-minute in-home consult",
+    "Make a one-page call sheet for a 15-minute SDR qualification call on a payroll tool",
+    "Give me a pain, root cause, impact and urgency question ladder for HR software"
+  ]
+}

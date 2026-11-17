@@ -1,1 +1,13 @@
-{"type": "website", "example_prompts": ["Plan how to add German and French to my English Shopify store, with hreflang and a translation workflow", "Should I use subfolders or ccTLDs for my 5 markets: UK, Germany, France, Spain and Mexico?", "Audit my hreflang setup: en-US and de-DE pages that only point to each other one way, with no x-default", "Make a localisation plan to add Arabic to my site, including RTL layout and date formats"]}
+{
+  "type": "website",
+  "tags": [
+    "website",
+    "engineering"
+  ],
+  "example_prompts": [
+    "Plan how to add German and French to my English Shopify store, with hreflang and a translation workflow",
+    "Should I use subfolders or ccTLDs for my 5 markets: UK, Germany, France, Spain and Mexico?",
+    "Audit my hreflang setup: en-US and de-DE pages that only point to each other one way, with no x-default",
+    "Make a localisation plan to add Arabic to my site, including RTL layout and date formats"
+  ]
+}

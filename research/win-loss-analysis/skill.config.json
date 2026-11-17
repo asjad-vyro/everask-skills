@@ -1,1 +1,17 @@
-{"type": "research", "example_prompts": ["Why did we lose three deals to the same competitor last quarter? I'll paste the call notes.", "Run a win-loss review on my closed deals and tell me the real reasons, not the polite ones.", "Why do customers churn in their first 90 days? Here are my exit notes.", "Write a win-loss interview guide and a summary template for our sales team."], "connectors": ["hubspot", "salesforce"]}
+{
+  "type": "research",
+  "tags": [
+    "research",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Why did we lose three deals to the same competitor last quarter? I'll paste the call notes.",
+    "Run a win-loss review on my closed deals and tell me the real reasons, not the polite ones.",
+    "Why do customers churn in their first 90 days? Here are my exit notes.",
+    "Write a win-loss interview guide and a summary template for our sales team."
+  ],
+  "connectors": [
+    "hubspot",
+    "salesforce"
+  ]
+}

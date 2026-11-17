@@ -1,1 +1,13 @@
-{"type": "research", "example_prompts": ["Is my n correct? I measured 40 cells from 3 mice per group and ran t-tests between groups.", "Audit the statistics section of my manuscript and fix the wording so reviewers will not object.", "Rewrite my figure legend statistics: bars are SEM, stars mean p<0.05, no n given.", "A reviewer says my multiple comparisons are not handled. Help me write the response and the revised Methods text."]}
+{
+  "type": "research",
+  "tags": [
+    "research",
+    "data"
+  ],
+  "example_prompts": [
+    "Is my n correct? I measured 40 cells from 3 mice per group and ran t-tests between groups.",
+    "Audit the statistics section of my manuscript and fix the wording so reviewers will not object.",
+    "Rewrite my figure legend statistics: bars are SEM, stars mean p<0.05, no n given.",
+    "A reviewer says my multiple comparisons are not handled. Help me write the response and the revised Methods text."
+  ]
+}
