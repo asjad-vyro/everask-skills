@@ -1,9 +1,0 @@
-{
- "type": "data",
- "example_prompts": [
-  "Jan signups: 200 users, 120 active in Feb, 80 in Mar. Feb signups: 250 users, 140 active in Mar. Build the retention table and tell me which cohort retains better.",
-  "How do I build a monthly retention cohort analysis from a users table and an events table, and what should I look for in the result?",
-  "Build a monthly retention cohort table from the attached users and activity CSV",
-  "Compare retention by acquisition channel using the attached signup and activity export"
- ]
-}

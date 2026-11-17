@@ -1,8 +1,0 @@
-{
-  "type": "marketing",
-  "example_prompts": [
-    "Write Seedance prompts for a 20-second ad: a barista pours latte art at sunrise, ending on our cup.",
-    "Turn this script into shot-by-shot Kling prompts, keeping the two characters consistent.",
-    "Make this prompt cinematic: a fox running through snow at dusk."
-  ]
-}
