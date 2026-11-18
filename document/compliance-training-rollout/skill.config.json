@@ -1,0 +1,15 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Roll out training on our new lockout/tagout SOP to all three shifts",
+    "Turn this forklift procedure into training in English, Arabic and Urdu",
+    "Update the training tracker and tell me who still hasn't passed"
+  ],
+  "connectors": [
+    "share_point",
+    "microsoft_teams",
+    "typeform",
+    "excel",
+    "outlook"
+  ]
+}

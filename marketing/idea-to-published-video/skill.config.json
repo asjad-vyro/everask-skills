@@ -1,0 +1,15 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Plan my next YouTube video",
+    "Write a script about budget camera gear in my voice",
+    "Here's my recording, cut the ums and schedule it for Friday 5pm"
+  ],
+  "connectors": [
+    "youtube",
+    "googlesheets",
+    "googledocs",
+    "reddit",
+    "instagram"
+  ]
+}

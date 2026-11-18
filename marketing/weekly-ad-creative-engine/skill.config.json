@@ -1,0 +1,20 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Run this week's ads for Glow Serum",
+    "Which of our Meta and TikTok ads are tired? Make 20 new ones to test",
+    "The brief looks good. Make the ads and upload them as paused tests"
+  ],
+  "connectors": [
+    "googlesheets",
+    "reddit",
+    "canva",
+    "googledrive",
+    "tiktok_ads",
+    "googleads",
+    "instagram",
+    "slack",
+    "googledocs",
+    "youtube"
+  ]
+}

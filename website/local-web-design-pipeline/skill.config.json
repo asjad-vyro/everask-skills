@@ -1,0 +1,15 @@
+{
+  "type": "website",
+  "example_prompts": [
+    "Find dentists in Leeds with weak websites and pitch them",
+    "Build demo sites for plumbers in Manchester I can sell to",
+    "Bright Smile Dental said yes. Send the proposal and set up their retainer"
+  ],
+  "connectors": [
+    "googlesheets",
+    "gmail",
+    "stripe",
+    "google_search_console",
+    "googledocs"
+  ]
+}

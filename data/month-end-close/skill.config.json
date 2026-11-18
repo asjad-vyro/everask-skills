@@ -1,0 +1,17 @@
+{
+  "type": "data",
+  "example_prompts": [
+    "Close October",
+    "Match last month's receipts to QuickBooks and reconcile our Stripe payouts",
+    "I've reviewed the exceptions. Push the approved ones and chase missing receipts"
+  ],
+  "connectors": [
+    "quickbooks",
+    "stripe",
+    "mercury_mcp",
+    "excel",
+    "slack",
+    "outlook",
+    "googledocs"
+  ]
+}

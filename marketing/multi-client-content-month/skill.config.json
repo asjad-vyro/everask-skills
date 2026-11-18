@@ -1,0 +1,18 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "Plan Bloom Bakery's December content",
+    "Do next month for Harbour Physio: 12 Instagram, 8 LinkedIn, 4 reels",
+    "Check approvals for Bloom Bakery and schedule what they approved"
+  ],
+  "connectors": [
+    "googlesheets",
+    "canva",
+    "gmail",
+    "instagram",
+    "facebook",
+    "linkedin",
+    "googleslides",
+    "googledrive"
+  ]
+}

@@ -1,11 +1,12 @@
 # EverAsk Skills
 
-The 72 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
+The 82 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
 
 - 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
 - The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
 - The 10 video, voice, music and image skills in Marketing are our own too. They run on EverAsk's own tools (`media_analyze`, `audio_transcribe`, `audio_generate`, `music_generate`, `image_generate`, `video_generate`, and ffmpeg in the sandbox) and use ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b)'s video production notes and provider guides; none of its text is copied.
 - Swarm Rebuild Video in Website is our own `SKILL.md` and recorder around the page script of [Swarm Rebuild](https://github.com/DhvanilPatel/swarm-cursors/tree/3d49e0ac96172eb6af7ae8229b2152121bed2092), a tribute to Joel Califa's [Swarm](https://califa.github.io/swarm-site/). Its `scripts/swarm.js` is copied unchanged. That project has no licence yet and asks that its code not be reused without checking with its author and Joel Califa.
+- The 10 Academy workflow skills (Compliance Training Rollout, Founder-Led Outbound, Idea to Published Video, Listing Launch Kit, Local Web Design Pipeline, Month-End Close, Multi-Client Content Month, Quarterly Ops Review, Solar Quote to Booked Job, Weekly Ad Creative Engine) are our own. Each runs a whole job from a short request, stopping for the user's approval before anything is sent, posted, charged or published, and does its calculations and checks with stdlib Python scripts in its `scripts/` folder.
 
 Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
@@ -15,14 +16,14 @@ One import gives every skill the same type, so import each type folder with its 
 
 | Type | Link | Skills |
 |---|---|---|
-| Document | https://github.com/asjad-vyro/everask-skills/tree/main/document | 15 |
-| Slides | https://github.com/asjad-vyro/everask-skills/tree/main/slides | 3 |
-| Email | https://github.com/asjad-vyro/everask-skills/tree/main/email | 7 |
-| Data | https://github.com/asjad-vyro/everask-skills/tree/main/data | 9 |
+| Document | https://github.com/asjad-vyro/everask-skills/tree/main/document | 17 |
+| Slides | https://github.com/asjad-vyro/everask-skills/tree/main/slides | 4 |
+| Email | https://github.com/asjad-vyro/everask-skills/tree/main/email | 8 |
+| Data | https://github.com/asjad-vyro/everask-skills/tree/main/data | 10 |
 | Engineering | https://github.com/asjad-vyro/everask-skills/tree/main/engineering | 3 |
-| Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 24 |
+| Marketing | https://github.com/asjad-vyro/everask-skills/tree/main/marketing | 28 |
 | Research | https://github.com/asjad-vyro/everask-skills/tree/main/research | 7 |
-| Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 4 |
+| Website | https://github.com/asjad-vyro/everask-skills/tree/main/website | 5 |
 
 Each skill folder looks like this:
 
@@ -55,11 +56,12 @@ email/
 
 ## Skills
 
-### Document (15)
+### Document (17)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
 | Business Model Canvas | [document/business-model](document/business-model) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills/tree/2a12295a7717569baa7be181b4cfebe3ca38a6bb/pm-product-strategy/skills/business-model) | MIT |
+| Compliance Training Rollout | [document/compliance-training-rollout](document/compliance-training-rollout) | Written for EverAsk | — |
 | Cover Letter Writer | [document/cover-letter-generator](document/cover-letter-generator) | [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills/tree/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/cover-letter-generator) | MIT |
 | Document Comparison | [document/compare-documents](document/compare-documents) | [open-legal-products/mike-workflows](https://github.com/open-legal-products/mike-workflows/tree/20bed204ce9ef07e1bc2df0b16b35ee8ad997fb1/assistant-workflows/compare-documents) | MIT |
 | Grammar and Flow Check | [document/grammar-check](document/grammar-check) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills/tree/2a12295a7717569baa7be181b4cfebe3ca38a6bb/pm-toolkit/skills/grammar-check) | MIT |
@@ -73,29 +75,32 @@ email/
 | Pricing Strategy | [document/pricing](document/pricing) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/pricing) | MIT |
 | Proposal and Quote Builder | [document/proposal-builder](document/proposal-builder) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/proposal-builder) | Apache-2.0 |
 | RFP Responder | [document/rfp-responder](document/rfp-responder) | [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills/tree/e4a1dc3695908dd5a6c811cc76ab7aa4cf95f2f0/commercial/skills/rfp-responder) | MIT |
+| Solar Quote to Booked Job | [document/solar-quote-to-booked-job](document/solar-quote-to-booked-job) | Written for EverAsk | — |
 | SOP and Process Writer | [document/process-doc](document/process-doc) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/operations/skills/process-doc) | Apache-2.0 |
 
-### Slides (3)
+### Slides (4)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
 | Lecture and Lesson Slides | [slides/lecture-slides](slides/lecture-slides) | Written for EverAsk | — |
 | Pitch Deck Builder | [slides/pitch-deck](slides/pitch-deck) | Written for EverAsk | — |
 | Quarterly Business Review Deck | [slides/quarterly-business-review](slides/quarterly-business-review) | Written for EverAsk | — |
+| Quarterly Ops Review | [slides/quarterly-ops-review](slides/quarterly-ops-review) | Written for EverAsk | — |
 
-### Email (7)
+### Email (8)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
 | Cold Email Writer | [email/cold-email](email/cold-email) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/cold-email) | MIT |
 | Customer Reply Writer | [email/draft-response](email/draft-response) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/customer-support/skills/draft-response) | Apache-2.0 |
 | Email Sequence Builder | [email/email-sequence](email/email-sequence) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/marketing/skills/email-sequence) | Apache-2.0 |
+| Founder-Led Outbound | [email/founder-led-outbound](email/founder-led-outbound) | Written for EverAsk | — |
 | Inbox Triage and Replies | [email/inbox-manager](email/inbox-manager) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/inbox-manager) | Apache-2.0 |
 | Meeting Follow-Ups | [email/meeting-follow-up-pipeline](email/meeting-follow-up-pipeline) | [zapier/wade-skills](https://github.com/zapier/wade-skills/tree/b7b86e78ae2e1235bebac8668edd834b34176c19/skills/meeting-follow-up-pipeline) | MIT |
 | Overdue Invoice Chaser | [email/invoice-chase](email/invoice-chase) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/invoice-chase) | Apache-2.0 |
 | Suspicious Email Analyzer | [email/suspicious-email](email/suspicious-email) | [claude-office-skills/skills](https://github.com/claude-office-skills/skills/tree/9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11/suspicious-email) | MIT |
 
-### Data (9)
+### Data (10)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -107,6 +112,7 @@ email/
 | Contract Terms Table | [data/commercial-agreement-tabular-review](data/commercial-agreement-tabular-review) | [open-legal-products/mike-workflows](https://github.com/open-legal-products/mike-workflows/tree/20bed204ce9ef07e1bc2df0b16b35ee8ad997fb1/tabular-review-workflows/commercial-agreement-tabular-review) | MIT |
 | Dataset Profiler | [data/explore-data](data/explore-data) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/data/skills/explore-data) | Apache-2.0 |
 | Journal Entry Prep | [data/journal-entry](data/journal-entry) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/finance/skills/journal-entry) | Apache-2.0 |
+| Month-End Close | [data/month-end-close](data/month-end-close) | Written for EverAsk | — |
 | SQL Query Writer | [data/sql-queries](data/sql-queries) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/data/skills/sql-queries) | Apache-2.0 |
 
 ### Engineering (3)
@@ -117,7 +123,7 @@ email/
 | Prompt Engineer | [engineering/prompt-engineer](engineering/prompt-engineer) | [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills/tree/078a25cc5bfd8011459be7b91d004e900c1d02d3/skills/prompt-engineer) | MIT |
 | README Writer | [engineering/crafting-effective-readmes](engineering/crafting-effective-readmes) | [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit/tree/3027f20f3181758385a1bb8c022d4041dfb4de84/skills/crafting-effective-readmes) | MIT |
 
-### Marketing (24)
+### Marketing (28)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -129,9 +135,12 @@ email/
 | Churn Prevention | [marketing/churn-prevention](marketing/churn-prevention) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/churn-prevention) | MIT |
 | Comparison & Alternative Pages | [marketing/competitors](marketing/competitors) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/competitors) | MIT |
 | Content Strategy Planner | [marketing/content-strategy](marketing/content-strategy) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/content-strategy) | MIT |
+| Idea to Published Video | [marketing/idea-to-published-video](marketing/idea-to-published-video) | Written for EverAsk | — |
+| Listing Launch Kit | [marketing/listing-launch-kit](marketing/listing-launch-kit) | Written for EverAsk | — |
 | Long Video to Social Clips | [marketing/long-video-to-clips](marketing/long-video-to-clips) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 | Marketing Copywriter | [marketing/copywriting](marketing/copywriting) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/copywriting) | MIT |
 | Marketing Plan Builder | [marketing/marketing-plan](marketing/marketing-plan) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/marketing-plan) | MIT |
+| Multi-Client Content Month | [marketing/multi-client-content-month](marketing/multi-client-content-month) | Written for EverAsk | — |
 | Multichannel Content Writer | [marketing/content-creation](marketing/content-creation) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/marketing/skills/content-creation) | Apache-2.0 |
 | Music and Soundtrack Maker | [marketing/soundtrack](marketing/soundtrack) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/.agents/skills) | — |
 | Positioning & Messaging Doc | [marketing/product-marketing](marketing/product-marketing) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/product-marketing) | MIT |
@@ -144,6 +153,7 @@ email/
 | Video Script and Shot List | [marketing/video-script](marketing/video-script) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 | Video Subtitles and Translations | [marketing/video-subtitles](marketing/video-subtitles) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 | Voiceover Producer | [marketing/voiceover](marketing/voiceover) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/.agents/skills) | — |
+| Weekly Ad Creative Engine | [marketing/weekly-ad-creative-engine](marketing/weekly-ad-creative-engine) | Written for EverAsk | — |
 | YouTube Publish Pack | [marketing/youtube-publish-pack](marketing/youtube-publish-pack) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 
 ### Research (7)
@@ -158,11 +168,12 @@ email/
 | Search Across Your Apps | [research/enterprise-search](research/enterprise-search) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/enterprise-search/skills/search) | Apache-2.0 |
 | User Research Synthesizer | [research/synthesize-research](research/synthesize-research) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/product-management/skills/synthesize-research) | Apache-2.0 |
 
-### Website (4)
+### Website (5)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
 | Landing Page CRO Review | [website/cro](website/cro) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/cro) | MIT |
+| Local Web Design Pipeline | [website/local-web-design-pipeline](website/local-web-design-pipeline) | Written for EverAsk | — |
 | Swarm Rebuild Video | [website/swarm-rebuild](website/swarm-rebuild) | Written for EverAsk; `scripts/swarm.js` is from [DhvanilPatel/swarm-cursors](https://github.com/DhvanilPatel/swarm-cursors/tree/3d49e0ac96172eb6af7ae8229b2152121bed2092/swarm-rebuild) | None yet |
 | UX Microcopy Writer | [website/ux-copy](website/ux-copy) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/design/skills/ux-copy) | Apache-2.0 |
 | Website Structure Planner | [website/site-architecture](website/site-architecture) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/88c79f6528a9347420e57ceb1fff9a60de651768/skills/site-architecture) | MIT |

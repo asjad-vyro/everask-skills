@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "example_prompts": [
+    "New listing, photos attached: 3-bed semi, 12 Park Road, Leeds, \u00a3425,000",
+    "Edit these photos and stage the empty living room in a warm modern style",
+    "Answer the new inquiries on Park Road and draft this week's seller report"
+  ],
+  "connectors": [
+    "gmail",
+    "googlecalendar",
+    "youtube",
+    "instagram",
+    "facebook",
+    "hubspot"
+  ]
+}

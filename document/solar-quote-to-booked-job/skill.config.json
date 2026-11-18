@@ -1,0 +1,21 @@
+{
+  "type": "document",
+  "example_prompts": [
+    "Quote Jane Lee at 4 Elm Road, her intake form just came in",
+    "Reply to my new solar inquiries on Instagram and Facebook",
+    "Size a system from these bills and roof photos, price list attached",
+    "Jane approved the sizing. Send her the proposal and deposit link",
+    "Jane paid the deposit. Book the site visit and make the crew's job card"
+  ],
+  "connectors": [
+    "typeform",
+    "excel",
+    "quickbooks",
+    "stripe",
+    "gmail",
+    "facebook",
+    "instagram",
+    "googledocs",
+    "googlecalendar"
+  ]
+}

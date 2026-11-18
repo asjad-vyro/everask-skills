@@ -1,0 +1,14 @@
+{
+  "type": "slides",
+  "example_prompts": [
+    "Do our Q3 ops review: on-time %, cost per shipment, incidents and claims",
+    "Build the quarterly review deck on our template from the ops tracker and carrier report",
+    "The leadership review is done. Put the new action items on monday.com"
+  ],
+  "connectors": [
+    "share_point",
+    "excel",
+    "microsoft_teams",
+    "outlook"
+  ]
+}

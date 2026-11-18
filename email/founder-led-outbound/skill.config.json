@@ -1,0 +1,17 @@
+{
+  "type": "email",
+  "example_prompts": [
+    "Find UK fintechs with 50 to 200 staff that just raised and email their CTOs",
+    "Fill my pipeline: B2B SaaS in the Netherlands hiring sales leaders, we sell sales training",
+    "Check my outbound replies and draft answers",
+    "I've got a call with Northwind tomorrow. Prep the brief and tailor my deck",
+    "Just finished the Northwind call. Send the recap and update HubSpot"
+  ],
+  "connectors": [
+    "gmail",
+    "googlesheets",
+    "linkedin",
+    "googlecalendar",
+    "hubspot"
+  ]
+}
