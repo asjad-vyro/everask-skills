@@ -1,1 +1,19 @@
-{"type": "data", "example_prompts": ["Here are my weekly numbers: week 1 120 tickets, week 2 135, week 3 128, week 4 160. Write the weekly report for my manager.", "Sign-ups by channel. March: web 210, app 145, referral 40. April: web 188, app 172, referral 51. Write the April report: what changed, by how much, and what to ask the team.", "Turn this CSV of project hours into a short project status report with a table and open questions.", "Summarize my spreadsheet as a one-page report with the headline, key findings and numbers."], "connectors": ["googlesheets", "googledrive", "airtable", "notion"]}
+{
+  "type": "data",
+  "tags": [
+    "data",
+    "document"
+  ],
+  "example_prompts": [
+    "Here are my weekly numbers: week 1 120 tickets, week 2 135, week 3 128, week 4 160. Write the weekly report for my manager.",
+    "Sign-ups by channel. March: web 210, app 145, referral 40. April: web 188, app 172, referral 51. Write the April report: what changed, by how much, and what to ask the team.",
+    "Turn this CSV of project hours into a short project status report with a table and open questions.",
+    "Summarize my spreadsheet as a one-page report with the headline, key findings and numbers."
+  ],
+  "connectors": [
+    "googlesheets",
+    "googledrive",
+    "airtable",
+    "notion"
+  ]
+}

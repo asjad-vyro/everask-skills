@@ -1,1 +1,18 @@
-{"type": "document", "example_prompts": ["Write chapter 1 of my thesis on remote work and employee wellbeing", "Draft the introduction chapter of my master's thesis on microplastics in rivers and mark every claim that still needs a source", "Restructure my methodology chapter to follow my faculty's required headings and APA 7 citations", "Draft the results chapter from my survey notes, one section per research question"], "connectors": ["googledocs", "googledrive", "notion"]}
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "research"
+  ],
+  "example_prompts": [
+    "Write chapter 1 of my thesis on remote work and employee wellbeing",
+    "Draft the introduction chapter of my master's thesis on microplastics in rivers and mark every claim that still needs a source",
+    "Restructure my methodology chapter to follow my faculty's required headings and APA 7 citations",
+    "Draft the results chapter from my survey notes, one section per research question"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "notion"
+  ]
+}

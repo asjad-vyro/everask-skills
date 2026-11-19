@@ -1,1 +1,18 @@
-{"type": "slides", "example_prompts": ["Turn this report into a 10-slide deck for our leadership team.", "Make this into 5 slides: our library lent laptops to 60 students for one term. 48 returned them on time and said it helped with coursework. We propose running the scheme for the whole year.", "Turn this into a short deck for the board: we plan to move the help desk to a shared inbox. Replies should get faster, but staff need two days of training. We ask the board to approve the training budget.", "Summarise this proposal as a presentation that ends on the decision we need."], "connectors": ["googledrive", "googledocs", "notion"]}
+{
+  "type": "slides",
+  "tags": [
+    "slides",
+    "document"
+  ],
+  "example_prompts": [
+    "Turn this report into a 10-slide deck for our leadership team.",
+    "Make this into 5 slides: our library lent laptops to 60 students for one term. 48 returned them on time and said it helped with coursework. We propose running the scheme for the whole year.",
+    "Turn this into a short deck for the board: we plan to move the help desk to a shared inbox. Replies should get faster, but staff need two days of training. We ask the board to approve the training budget.",
+    "Summarise this proposal as a presentation that ends on the decision we need."
+  ],
+  "connectors": [
+    "googledrive",
+    "googledocs",
+    "notion"
+  ]
+}

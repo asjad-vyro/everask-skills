@@ -1,1 +1,18 @@
-{"type": "document", "example_prompts": ["Plan a 45-minute lesson on adding fractions with unlike denominators for 10-year-olds", "I need a 50-minute lesson on the water cycle for 12-year-olds, with a handout and an exit ticket", "Make a 60-minute lesson plan on persuasive writing for 14-year-olds, with support for two students new to the language", "Plan a 40-minute lesson introducing the causes of the French Revolution for 15-year-olds"], "connectors": ["googledocs", "googledrive", "google_classroom", "notion"]}
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Plan a 45-minute lesson on adding fractions with unlike denominators for 10-year-olds",
+    "I need a 50-minute lesson on the water cycle for 12-year-olds, with a handout and an exit ticket",
+    "Make a 60-minute lesson plan on persuasive writing for 14-year-olds, with support for two students new to the language",
+    "Plan a 40-minute lesson introducing the causes of the French Revolution for 15-year-olds"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "google_classroom",
+    "notion"
+  ]
+}

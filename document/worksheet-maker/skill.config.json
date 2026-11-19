@@ -1,1 +1,17 @@
-{"type": "document", "example_prompts": ["Make a worksheet with 12 exercises on adding fractions with unlike denominators for 11-year-olds, with an answer key", "Create a practice sheet on the simple past tense for beginners, with a worked example and answers", "I need a homework sheet on solving one-step equations for a mixed-ability class, easier and harder versions", "Make a worksheet in French on the passé composé with être for 13-year-olds, with an answer key"], "connectors": ["googledocs", "googledrive", "google_classroom"]}
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Make a worksheet with 12 exercises on adding fractions with unlike denominators for 11-year-olds, with an answer key",
+    "Create a practice sheet on the simple past tense for beginners, with a worked example and answers",
+    "I need a homework sheet on solving one-step equations for a mixed-ability class, easier and harder versions",
+    "Make a worksheet in French on the passé composé with être for 13-year-olds, with an answer key"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "google_classroom"
+  ]
+}

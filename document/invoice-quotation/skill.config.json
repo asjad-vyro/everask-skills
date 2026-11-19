@@ -1,1 +1,18 @@
-{"type": "document", "example_prompts": ["Make an invoice for 20 hours of web design at 60 an hour plus a 150 hosting setup fee, 10% discount on the hours, 20% VAT, net 30.", "Create a price quotation for a client: 3 product photos at 45 each and one retouching package at 120, valid for 14 days.", "Write a pro forma invoice in euros for 40 units at 12.50, no tax.", "Invoice a client in Spanish for 5 consulting sessions at 80 euros each with 21% VAT."], "connectors": ["quickbooks", "stripe", "googlesheets"]}
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "data"
+  ],
+  "example_prompts": [
+    "Make an invoice for 20 hours of web design at 60 an hour plus a 150 hosting setup fee, 10% discount on the hours, 20% VAT, net 30.",
+    "Create a price quotation for a client: 3 product photos at 45 each and one retouching package at 120, valid for 14 days.",
+    "Write a pro forma invoice in euros for 40 units at 12.50, no tax.",
+    "Invoice a client in Spanish for 5 consulting sessions at 80 euros each with 21% VAT."
+  ],
+  "connectors": [
+    "quickbooks",
+    "stripe",
+    "googlesheets"
+  ]
+}

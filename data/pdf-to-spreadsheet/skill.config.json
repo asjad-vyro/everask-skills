@@ -1,1 +1,18 @@
-{"type": "data", "example_prompts": ["Turn this PDF price list into an Excel sheet and check that the rows add up to the printed total.", "I scanned a supplier statement. Pull the table out into a spreadsheet and flag any figure you can't read.", "Rebuild this table I copied from a PDF into a clean spreadsheet:\nItem    Qty    Unit price\nPaper A4    10    4.50\nStapler    2    12.00", "Make this table from a PDF into Excel and check the total:\nCode Item Qty Price Amount\nK-01 Mug 6 4.20 25.20\nK-02 Plate 4 5.10 20.40\nK-03 Bowl 5 3.80 19.00\nTotal 64.60"], "connectors": ["googledrive", "googlesheets", "dropbox"]}
+{
+  "type": "data",
+  "tags": [
+    "data",
+    "document"
+  ],
+  "example_prompts": [
+    "Turn this PDF price list into an Excel sheet and check that the rows add up to the printed total.",
+    "I scanned a supplier statement. Pull the table out into a spreadsheet and flag any figure you can't read.",
+    "Rebuild this table I copied from a PDF into a clean spreadsheet:\nItem    Qty    Unit price\nPaper A4    10    4.50\nStapler    2    12.00",
+    "Make this table from a PDF into Excel and check the total:\nCode Item Qty Price Amount\nK-01 Mug 6 4.20 25.20\nK-02 Plate 4 5.10 20.40\nK-03 Bowl 5 3.80 19.00\nTotal 64.60"
+  ],
+  "connectors": [
+    "googledrive",
+    "googlesheets",
+    "dropbox"
+  ]
+}
