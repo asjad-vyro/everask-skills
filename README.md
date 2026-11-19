@@ -1,6 +1,6 @@
 # EverAsk Skills
 
-The 176 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
+The 189 skills for the EverAsk Skills Library. Each skill is a folder with a `SKILL.md` at its top.
 
 - 58 are copied unchanged from open-source repos at pinned commits, except for the `name` in `SKILL.md`, which is set to the Library card title. The tables below link each one's source and give its licence.
 - The 3 slides skills are our own. They plan the deck, then build it with EverAsk's built-in slide maker.
@@ -8,6 +8,7 @@ The 176 skills for the EverAsk Skills Library. Each skill is a folder with a `SK
 - Swarm Rebuild Video in Website is our own `SKILL.md` and recorder around the page script of [Swarm Rebuild](https://github.com/DhvanilPatel/swarm-cursors/tree/3d49e0ac96172eb6af7ae8229b2152121bed2092), a tribute to Joel Califa's [Swarm](https://califa.github.io/swarm-site/). Its `scripts/swarm.js` is copied unchanged. That project has no licence yet and asks that its code not be reused without checking with its author and Joel Califa.
 - 27 more (added November 2026) are adapted for EverAsk rather than copied: rewritten as numbered steps for its agent, with other products' machinery and promotion removed, connectors made optional, and each one tested end to end. 24 come from the open-source repos linked in the tables; Job Search, arXiv Paper Finder and Songwriter are our own, rebuilt from skills bundled with the agent.
 - 77 more (added mid-November 2026) were found on [skills.sh](https://skills.sh) and in the repos behind it, and are adapted the same way: numbered steps for the EverAsk agent, other products' machinery and promotion removed, connectors optional, a rule against invented details, and sums done in code. Each has a config, a cover and two end-to-end test cases; the tables below link each one's source and give its licence.
+- 13 more (added late November 2026) are for documents people print, submit or send, and for everyday spreadsheet jobs: formal letters, thesis chapters, lesson plans, exam papers, worksheets, one-page handouts, invoices and quotes, reference checks, documents turned into slides, reports from data, merging and comparing sheets, tables out of PDFs, and small-business trackers. 10 are written for EverAsk; Lesson Plan Builder, Invoice and Quote Maker and Citation and Reference Checker are adapted from the open-source repos linked in the tables. They follow the same rules as the adapted skills above, write in the user's language, and build the file in the same turn when a file is what the user needs. Each was written by one agent and corrected by a second reviewer, and has a config and two test cases. They have no covers yet, and their end-to-end runs are still to do.
 
 Each folder also has two files of our own: a `skill.config.json`, with the skill's Library type, example prompts and connector badges, and a `cover.webp` for its Library card.
 
@@ -57,7 +58,7 @@ email/
 
 ## Skills
 
-### Document (38)
+### Document (45)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -71,16 +72,21 @@ email/
 | Difficult Conversation Planner | [document/difficult-workplace-conversations](document/difficult-workplace-conversations) | [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit/tree/3027f20f3181758385a1bb8c022d4041dfb4de84/skills/difficult-workplace-conversations) | MIT |
 | Document Comparison | [document/compare-documents](document/compare-documents) | [open-legal-products/mike-workflows](https://github.com/open-legal-products/mike-workflows/tree/20bed204ce9ef07e1bc2df0b16b35ee8ad997fb1/assistant-workflows/compare-documents) | MIT |
 | Document Proofreader | [document/proofread](document/proofread) | [open-legal-products/mike-workflows](https://github.com/open-legal-products/mike-workflows/tree/20bed204ce9ef07e1bc2df0b16b35ee8ad997fb1/assistant-workflows/proofread) | MIT |
+| Exam and Quiz Paper Builder | [document/exam-builder](document/exam-builder) | Written for EverAsk | — |
 | FAQ Builder | [document/faq-builder](document/faq-builder) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-cowork/skills/faq-builder) | MIT |
+| Formal Letter Writer | [document/formal-letter](document/formal-letter) | Written for EverAsk | — |
 | Grammar and Flow Check | [document/grammar-check](document/grammar-check) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills/tree/2a12295a7717569baa7be181b4cfebe3ca38a6bb/pm-toolkit/skills/grammar-check) | MIT |
 | Grant Proposal Writer | [document/grant-proposal](document/grant-proposal) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-cross/skills/grant-proposal) | MIT |
 | Hiring Packet Builder | [document/job-post-builder](document/job-post-builder) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/job-post-builder) | Apache-2.0 |
 | Interview Prep | [document/interview-prep-generator](document/interview-prep-generator) | [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills/tree/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/interview-prep-generator) | MIT |
+| Invoice and Quote Maker | [document/invoice-quotation](document/invoice-quotation) | [claude-office-skills/skills](https://github.com/claude-office-skills/skills/tree/9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11/invoice-generator) | MIT |
+| Lesson Plan Builder | [document/lesson-plan](document/lesson-plan) | [anthropics/k12-teacher-skills](https://github.com/anthropics/k12-teacher-skills/tree/31fd6dbb0c07cb50bb3ce7f62a4135a393bd0e8c/plugin/skills/k12-lesson-plan-creation) | Apache-2.0 |
 | LinkedIn Profile Writer | [document/linkedin-profile](document/linkedin-profile) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-personal/skills/linkedin-profile) | MIT |
 | Meeting Brief | [document/meeting-briefing](document/meeting-briefing) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/legal/skills/meeting-briefing) | Apache-2.0 |
 | Meeting Minutes | [document/meeting-minutes](document/meeting-minutes) | [github/awesome-copilot](https://github.com/github/awesome-copilot/tree/61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb/skills/meeting-minutes) | MIT |
 | Notion Knowledge Capture | [document/notion-knowledge-capture](document/notion-knowledge-capture) | [openai/skills](https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-knowledge-capture) | MIT |
 | OKR Writer and Reviewer | [document/okr-writer](document/okr-writer) | [product-on-purpose/pm-skills](https://github.com/product-on-purpose/pm-skills/tree/3456e5e309f38ac2a66943f20d4aaf8031268dfb/skills/foundation-okr-writer) | Apache-2.0 |
+| One-Page Handout Maker | [document/one-page-handout](document/one-page-handout) | Written for EverAsk | — |
 | Performance Review Writer | [document/performance-review](document/performance-review) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/human-resources/skills/performance-review) | Apache-2.0 |
 | Personal Statement Writer | [document/personal-statement](document/personal-statement) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-students/skills/personal-statement) | MIT |
 | Plain Language Rewrite | [document/plain-language-rewrite](document/plain-language-rewrite) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-cowork/skills/plain-language-rewrite) | MIT |
@@ -98,12 +104,15 @@ email/
 | Startup Team Planner | [document/team-composition-analysis](document/team-composition-analysis) | [wshobson/agents](https://github.com/wshobson/agents/tree/7e2fb559cf4b824b27f1fec49fe88f7511066d26/plugins/startup-business-analyst/skills/team-composition-analysis) | MIT |
 | Study Guide from Notes | [document/study-notes-synthesizer](document/study-notes-synthesizer) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-students/skills/study-notes-synthesizer) | MIT |
 | Terms of Service and Privacy Notice Drafter | [document/terms-of-service-and-privacy-notice](document/terms-of-service-and-privacy-notice) | [genspark-ai/genoffice](https://github.com/genspark-ai/genoffice/tree/f6c2358c133d294f02827f9a57a5394c6ecdb941/skills/recommended/terms-of-service) | Apache-2.0 |
+| Thesis Chapter Builder | [document/thesis-chapter](document/thesis-chapter) | Written for EverAsk | — |
 | Wedding Speech and Toast Writer | [document/wedding-speech](document/wedding-speech) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/plugins/pm-lifeadmin/skills/wedding-speech) | MIT |
+| Worksheet and Answer Key Maker | [document/worksheet-maker](document/worksheet-maker) | Written for EverAsk | — |
 
-### Slides (3)
+### Slides (4)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
+| Document to Slides | [slides/document-to-slides](slides/document-to-slides) | Written for EverAsk | — |
 | Lecture and Lesson Slides | [slides/lecture-slides](slides/lecture-slides) | Written for EverAsk | — |
 | Pitch Deck Builder | [slides/pitch-deck](slides/pitch-deck) | Written for EverAsk | — |
 | Quarterly Business Review Deck | [slides/quarterly-business-review](slides/quarterly-business-review) | Written for EverAsk | — |
@@ -124,7 +133,7 @@ email/
 | Support Ticket Triage | [email/ticket-triage](email/ticket-triage) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/customer-support/skills/ticket-triage) | Apache-2.0 |
 | Suspicious Email Analyzer | [email/suspicious-email](email/suspicious-email) | [claude-office-skills/skills](https://github.com/claude-office-skills/skills/tree/9c4c7d5cd2813a8936bf2c9fdb174ea883b85a11/suspicious-email) | MIT |
 
-### Data (30)
+### Data (34)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -146,13 +155,17 @@ email/
 | Journal Entry Prep | [data/journal-entry](data/journal-entry) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/finance/skills/journal-entry) | Apache-2.0 |
 | Metric Drop Root-Cause Finder | [data/metric-drop-root-cause](data/metric-drop-root-cause) | [nimrodfisher/data-analytics-skills](https://github.com/nimrodfisher/data-analytics-skills/tree/9449d363e1ae43cf1706c73bebc16774e339c427/03-data-analysis-investigation/root-cause-investigation) | MIT |
 | P&L and Financial Statements | [data/financial-statements](data/financial-statements) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/finance/skills/financial-statements) | Apache-2.0 |
+| PDF to Spreadsheet | [data/pdf-to-spreadsheet](data/pdf-to-spreadsheet) | Written for EverAsk | — |
 | Personal Budget Planner | [data/personal-budget-planner](data/personal-budget-planner) | [gajetoso/financeskills](https://github.com/gajetoso/financeskills/tree/8f8582432b3a9759e7100ce15533d2367c5566a4/skills/personal-budgeting) | MIT |
 | Receivables Aging Report | [data/accounts-receivable-aging](data/accounts-receivable-aging) | [openaccountant/skills](https://github.com/openaccountant/skills/tree/f5abe381f24b5b7d59f1d0b4a825b14494ff2034/business/invoice-aging) | MIT |
 | Rent vs Buy Calculator | [data/rent-vs-buy-calculator](data/rent-vs-buy-calculator) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/skills/rent-vs-buy) | MIT |
 | Reorder Planner | [data/inventory-planner](data/inventory-planner) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/small-business/skills/inventory-planner) | Apache-2.0 |
+| Report from Data | [data/report-from-data](data/report-from-data) | Written for EverAsk | — |
 | Risk Register Builder | [data/risk-register-builder](data/risk-register-builder) | [mohitagw15856/pm-claude-skills](https://github.com/mohitagw15856/pm-claude-skills/tree/c4679f94f2566c675e63b1ecece104190943d842/skills/risk-register) | MIT |
+| Small Business Tracker Workbook | [data/business-tracker](data/business-tracker) | Written for EverAsk | — |
 | Spreadsheet Data Cleaner | [data/spreadsheet-data-cleaner](data/spreadsheet-data-cleaner) | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/3e32c2287dcb637c184c01cc0ad82d6af7e9bb0f/plugins/vertical-plugins/financial-analysis/skills/clean-data-xls) | Apache-2.0 |
 | Spreadsheet Formula Auditor | [data/spreadsheet-formula-auditor](data/spreadsheet-formula-auditor) | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/3e32c2287dcb637c184c01cc0ad82d6af7e9bb0f/plugins/agent-plugins/earnings-reviewer/skills/audit-xls) | Apache-2.0 |
+| Spreadsheet Merge and Compare | [data/spreadsheet-merge-compare](data/spreadsheet-merge-compare) | Written for EverAsk | — |
 | SQL Query Writer | [data/sql-queries](data/sql-queries) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/data/skills/sql-queries) | Apache-2.0 |
 | Startup Financial Model | [data/startup-financial-model](data/startup-financial-model) | [wshobson/agents](https://github.com/wshobson/agents/tree/9c61ab243def98f72da12abd41cfcf5bcd91af9d/plugins/startup-business-analyst/skills/startup-financial-modeling) | MIT |
 | Survey Results Analysis | [data/survey-results-analysis](data/survey-results-analysis) | [product-on-purpose/pm-skills](https://github.com/product-on-purpose/pm-skills/tree/3456e5e309f38ac2a66943f20d4aaf8031268dfb/skills/measure-survey-analysis) | Apache-2.0 |
@@ -228,7 +241,7 @@ email/
 | Voiceover Producer | [marketing/voiceover](marketing/voiceover) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/.agents/skills) | — |
 | YouTube Publish Pack | [marketing/youtube-publish-pack](marketing/youtube-publish-pack) | Written for EverAsk, using ideas from [OpenMontage](https://github.com/calesthio/OpenMontage/tree/d21f5d4eaa08422b09c7091757a05affcbabb35b/skills) | — |
 
-### Research (23)
+### Research (24)
 
 | Skill | Folder | Source | Licence |
 |---|---|---|---|
@@ -237,6 +250,7 @@ email/
 | Article Quality Audit (E-E-A-T) | [research/seo-content-audit](research/seo-content-audit) | [seranking/seo-skills](https://github.com/seranking/seo-skills/tree/fd6d1408f2e6a06454d81c07c29e0f04342eb9ba/skills/seo-content-audit) | MIT |
 | arXiv Paper Finder | [research/paper-finder](research/paper-finder) | Written for EverAsk, from a skill bundled with the agent | — |
 | Catch-Up Digest | [research/activity-digest](research/activity-digest) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/enterprise-search/skills/digest) | Apache-2.0 |
+| Citation and Reference Checker | [research/citation-checker](research/citation-checker) | [K-Dense-AI/claude-scientific-writer](https://github.com/K-Dense-AI/claude-scientific-writer/tree/9820740d252800ecf0b8fc066ffb5bf9659f4a51/skills/citation-management) | MIT |
 | Competitor Brief and Battlecard | [research/competitive-brief](research/competitive-brief) | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins/tree/2574e29377c7173d0cecffef29a6ecbd7f8ccb5d/marketing/skills/competitive-brief) | Apache-2.0 |
 | Critical Appraisal of Research Evidence | [research/critical-appraisal-evidence-review](research/critical-appraisal-evidence-review) | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills/tree/ec59a29a03d5c40f73ab40878df04860bc00e876/skills/scientific-critical-thinking) | MIT |
 | Due Diligence Checklist Builder | [research/due-diligence-checklist](research/due-diligence-checklist) | [anthropics/financial-services](https://github.com/anthropics/financial-services/tree/3e32c2287dcb637c184c01cc0ad82d6af7e9bb0f/plugins/vertical-plugins/private-equity/skills/dd-checklist) | Apache-2.0 |
