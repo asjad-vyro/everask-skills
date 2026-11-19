@@ -1,1 +1,0 @@
-{"type": "engineering", "example_prompts": ["Explain this regex in plain English: ^(?:\\+?44|0)7\\d{9}$", "Write a regex that matches ISO dates like 2024-05-17 and give me test cases", "Why does <b>.*</b> match too much in my HTML snippet? Fix it for Python and JS", "Convert this Python regex to JavaScript: (?P<year>\\d{4})-(?P<month>\\d{2})"]}
