@@ -1,0 +1,17 @@
+{
+  "type": "slides",
+  "tags": [
+    "slides",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make a company profile presentation for my cleaning company: office cleaning, deep cleaning and window cleaning. Founded in 2015, call 555-0100.",
+    "Create a sales deck for our scheduling app aimed at small clinics.",
+    "Build a capabilities presentation for our 10-person web design studio to send to prospective clients.",
+    "Haz una presentación de empresa para mi agencia de transporte de carga."
+  ],
+  "connectors": [
+    "googledrive",
+    "hubspot"
+  ]
+}

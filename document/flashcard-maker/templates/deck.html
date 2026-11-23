@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcards</title>
+<style>
+:root{--bg:#f4f6fb;--ink:#1c2233;--muted:#5b6478;--brand:#3b5bdb;--front:#ffffff;--back:#eef3ff;--ok:#2b8a3e;--bad:#c92a2a;--line:#d5dbe8}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans CJK SC","Noto Naskh Arabic",sans-serif;font-size:clamp(17px,2.2vw,24px);display:flex;justify-content:center;padding:16px}
+#app{width:100%;max-width:820px}
+h1{margin:.2em 0;font-size:1.5em}
+.bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-weight:600;margin:.4em 0 .8em}
+.scene{perspective:1200px}
+.card{position:relative;width:100%;height:clamp(260px,50vh,420px);cursor:pointer;transform-style:preserve-3d;transition:transform .45s;border:0;background:none;padding:0;font:inherit;color:inherit}
+.card.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;box-shadow:0 8px 28px rgba(20,30,70,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;overflow:auto;border:2px solid var(--line)}
+.f{background:var(--front)}
+.b{background:var(--back);transform:rotateY(180deg)}
+.tag{position:absolute;top:12px;inset-inline-start:16px;font-size:.6em;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.txt{font-size:1.5em;font-weight:700;line-height:1.3}
+.txt.long{font-size:1.1em;font-weight:600}
+.extra{margin-top:.8em;color:var(--muted);font-style:italic}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:1em 0}
+button.btn{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:.6em 1.1em;background:#e9edf8;color:var(--ink);font-weight:700}
+button.btn.go{background:var(--ok);color:#fff}
+button.btn.no{background:var(--bad);color:#fff}
+button.btn.main{background:var(--brand);color:#fff}
+button:focus-visible{outline:4px solid #ffc078;outline-offset:2px}
+.piles{display:flex;gap:16px;justify-content:center;font-weight:700}
+.hint{text-align:center;color:var(--muted);font-size:.7em}
+.done{text-align:center;padding:2em 1em;background:#fff;border-radius:20px;box-shadow:0 8px 28px rgba(20,30,70,.14)}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+/*CONFIG_START*/
+const CONFIG = {
+  "title": "Flashcards",
+  "lang": "en",
+  "dir": "ltr",
+  "frontLabel": "Question",
+  "backLabel": "Answer",
+  "ui": {
+    "card": "Card", "of": "of", "flip": "Flip", "prev": "Previous", "next": "Next", "shuffle": "Shuffle",
+    "know": "I know it", "dontKnow": "Still learning", "known": "Known", "learning": "Still learning",
+    "hint": "Click the card or press Space to flip. Arrow keys move between cards.",
+    "doneTitle": "Round complete", "reviewLearning": "Review the cards still learning", "restart": "Start again", "allKnown": "You know every card."
+  }
+};
+/*CONFIG_END*/
+/*CARDS_START*/
+const CARDS = [
+  {"front": "Example question?", "back": "Example answer", "extra": ""}
+];
+/*CARDS_END*/
+
+/* ---------- pure logic (tested with node) ---------- */
+function validateCards(cs){
+  const errs = [];
+  if(!Array.isArray(cs) || cs.length === 0) errs.push("no cards");
+  (cs || []).forEach((c, i) => {
+    if(!c || typeof c.front !== "string" || !c.front.trim()) errs.push("card " + (i+1) + ": empty front");
+    if(!c || typeof c.back !== "string" || !c.back.trim()) errs.push("card " + (i+1) + ": empty back");
+  });
+  return errs;
+}
+function shuffled(arr, rnd){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+  return a;
+}
+function newDeck(n){ return {order: Array.from({length: n}, (_, i) => i), pos: 0, flipped: false, known: [], learning: []}; }
+function current(d){ return d.order[d.pos]; }
+function flip(d){ d.flipped = !d.flipped; return d.flipped; }
+function go(d, step){
+  const p = d.pos + step;
+  if(p < 0 || p >= d.order.length) return false;
+  d.pos = p; d.flipped = false; return true;
+}
+function mark(d, isKnown){
+  const id = current(d);
+  d.known = d.known.filter(x => x !== id); d.learning = d.learning.filter(x => x !== id);
+  (isKnown ? d.known : d.learning).push(id);
+  if(d.pos < d.order.length - 1){ d.pos++; d.flipped = false; return false; }
+  return true; /* round finished */
+}
+function reshuffle(d, rnd){ d.order = shuffled(d.order, rnd); d.pos = 0; d.flipped = false; }
+function reviewLearning(d){ d.order = d.learning.slice(); d.learning = []; d.pos = 0; d.flipped = false; d.known = d.known.slice(); }
+
+/* ---------- page ---------- */
+const U = CONFIG.ui;
+const app = document.getElementById("app");
+let D = newDeck(CARDS.length), finished = false;
+
+function h(tag, attrs, kids){
+  const e = document.createElement(tag);
+  Object.keys(attrs || {}).forEach(k => {
+    if(k === "text") e.textContent = attrs[k];
+    else if(k === "class") e.className = attrs[k];
+    else if(k.slice(0, 2) === "on") e.addEventListener(k.slice(2), attrs[k]);
+    else e.setAttribute(k, attrs[k]);
+  });
+  (kids || []).forEach(c => { if(c) e.appendChild(c); });
+  return e;
+}
+function clear(){ while(app.firstChild) app.removeChild(app.firstChild); }
+function btn(id, text, cls, fn){ return h("button", {id: id, class: "btn " + (cls || ""), text: text, onclick: fn}); }
+
+function render(){
+  clear();
+  if(finished){ renderDone(); return; }
+  const c = CARDS[current(D)];
+  const longF = c.front.length > 90 ? " long" : "", longB = c.back.length > 90 ? " long" : "";
+  const front = h("div", {class: "face f"}, [h("span", {class: "tag", text: CONFIG.frontLabel}), h("div", {class: "txt" + longF, text: c.front})]);
+  const backKids = [h("span", {class: "tag", text: CONFIG.backLabel}), h("div", {class: "txt" + longB, text: c.back})];
+  if(c.extra) backKids.push(h("div", {class: "extra", text: c.extra}));
+  const back = h("div", {class: "face b"}, backKids);
+  const card = h("button", {class: "card" + (D.flipped ? " flipped" : ""), id: "card", "aria-label": U.flip, onclick: doFlip}, [front, back]);
+  app.appendChild(h("div", {}, [
+    h("h1", {text: CONFIG.title}),
+    h("div", {class: "bar"}, [
+      h("span", {id: "count", text: U.card + " " + (D.pos + 1) + " " + U.of + " " + D.order.length}),
+      h("span", {id: "piles", text: U.known + ": " + D.known.length + "  |  " + U.learning + ": " + D.learning.length})
+    ]),
+    h("div", {class: "scene"}, [card]),
+    h("div", {class: "row"}, [btn("btnNo", U.dontKnow, "no", () => doMark(false)), btn("btnYes", U.know, "go", () => doMark(true))]),
+    h("div", {class: "row"}, [btn("btnPrev", U.prev, "", () => doGo(-1)), btn("btnFlip", U.flip, "main", doFlip), btn("btnNext", U.next, "", () => doGo(1)), btn("btnShuffle", U.shuffle, "", doShuffle)]),
+    h("p", {class: "hint", text: U.hint})
+  ]));
+}
+function renderDone(){
+  const learnN = D.learning.length;
+  const kids = [h("h1", {text: U.doneTitle}),
+    h("p", {id: "summary", text: U.known + ": " + D.known.length + "  |  " + U.learning + ": " + learnN})];
+  if(learnN === 0) kids.push(h("p", {text: U.allKnown}));
+  const row = [];
+  if(learnN > 0) row.push(btn("btnReview", U.reviewLearning, "main", () => { reviewLearning(D); finished = false; render(); }));
+  row.push(btn("btnRestart", U.restart, "", () => { D = newDeck(CARDS.length); finished = false; render(); }));
+  kids.push(h("div", {class: "row"}, row));
+  app.appendChild(h("div", {class: "done"}, kids));
+}
+function doFlip(){
+  flip(D);
+  const c = document.getElementById("card");
+  if(c) c.className = "card" + (D.flipped ? " flipped" : ""); else render();
+}
+function doGo(s){ if(go(D, s)) render(); }
+function doShuffle(){ reshuffle(D, Math.random); render(); }
+function doMark(k){ finished = mark(D, k); render(); }
+
+document.addEventListener("keydown", e => {
+  if(finished) return;
+  if(e.key === " " || e.key === "Enter"){ if(e.target && e.target.tagName === "BUTTON") return; e.preventDefault(); doFlip(); }
+  else if(e.key === "ArrowRight") doGo(CONFIG.dir === "rtl" ? -1 : 1);
+  else if(e.key === "ArrowLeft") doGo(CONFIG.dir === "rtl" ? 1 : -1);
+});
+(function init(){
+  document.documentElement.setAttribute("lang", CONFIG.lang);
+  document.documentElement.setAttribute("dir", CONFIG.dir);
+  document.title = CONFIG.title;
+  const errs = validateCards(CARDS);
+  if(errs.length){ app.textContent = "Card data error: " + errs.join("; "); return; }
+  render();
+})();
+if(typeof module !== "undefined") module.exports = {validateCards, shuffled, newDeck, current, flip, go, mark, reshuffle, reviewLearning};
+</script>
+</body>
+</html>

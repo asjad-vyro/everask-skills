@@ -1,0 +1,13 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "website"
+  ],
+  "example_prompts": [
+    "Make flashcards for the main causes of World War I, 15 cards",
+    "Turn these into flashcards: mitochondria = makes energy for the cell; ribosome = builds proteins; nucleus = holds the DNA",
+    "Vocabulary flashcards for 20 basic Spanish food words, with an example sentence each",
+    "Haz tarjetas de estudio sobre las capitales de Europa para imprimir"
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>INFOGRAPHIC TITLE</title>
+<style>
+/* Change only the 4 colours here. */
+:root{--main:#0f766e;--accent:#f59e0b;--ink:#17202a;--soft:#e8f5f3}
+@page{size:1080px 1920px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{font-family:"Noto Sans","Noto Sans CJK SC","Noto Sans Arabic","Noto Naskh Arabic",-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:1080px;height:1920px;display:flex;flex-direction:column}
+header{background:var(--main);color:#fff;padding:90px 80px 70px}
+header h1{font-size:76px;line-height:1.12;font-weight:800}
+header p{font-size:34px;margin-top:22px;opacity:.9}
+main{flex:1;padding:50px 80px 20px;display:flex;flex-direction:column;justify-content:space-around;gap:30px}
+h2{font-size:38px;font-weight:800;color:var(--main);margin-bottom:22px}
+.tiles{display:flex;gap:24px}
+.tile{flex:1;min-width:0;background:var(--soft);border-radius:28px;padding:36px 20px;text-align:center}
+.tile .icon{width:84px;height:84px;margin:0 auto 14px;display:block}
+.tile .num{font-size:68px;white-space:nowrap;font-weight:800;line-height:1;color:var(--main)}
+.tile .label{font-size:30px;margin-top:12px;line-height:1.25}
+.steps{display:flex;flex-direction:column;gap:18px}
+.step{display:flex;align-items:center;gap:26px;font-size:34px;line-height:1.25}
+.step .n{flex:none;width:76px;height:76px;border-radius:50%;background:var(--accent);color:#fff;font-size:42px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.bars{display:flex;flex-direction:column;gap:20px}
+.bar{display:flex;align-items:center;gap:20px;font-size:30px}
+.bar .name{flex:none;width:250px}
+.bar .track{flex:1;height:50px;background:var(--soft);border-radius:25px;overflow:hidden}
+.bar .fill{height:100%;background:var(--main);border-radius:25px}
+.bar .val{flex:none;width:130px;font-weight:800;text-align:end}
+footer{padding:26px 80px 40px;font-size:24px;color:#5b6770;border-top:3px solid var(--soft)}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <h1>INFOGRAPHIC TITLE (max 8 words)</h1>
+  <p>One-line subtitle (max 14 words)</p>
+</header>
+<main>
+
+<!-- BLOCK A: big numbers. Keep 2 to 4 tiles. Copy a .tile to add one, delete one to remove. -->
+<section>
+  <div class="tiles">
+    <div class="tile">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <div class="num">NUM</div><div class="label">short label</div>
+    </div>
+    <div class="tile">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+      <div class="num">NUM</div><div class="label">short label</div>
+    </div>
+    <div class="tile">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+      <div class="num">NUM</div><div class="label">short label</div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCK B: steps or timeline. Keep 3 to 5 steps. Use dates or "1, 2, 3" in .n. -->
+<section>
+  <h2>SECTION HEADING</h2>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div>Step text, 8 words at most</div></div>
+    <div class="step"><div class="n">2</div><div>Step text, 8 words at most</div></div>
+    <div class="step"><div class="n">3</div><div>Step text, 8 words at most</div></div>
+  </div>
+</section>
+
+<!-- BLOCK C: bar chart. Set each width as value / largest value * 100, computed in code. -->
+<section>
+  <h2>CHART HEADING</h2>
+  <div class="bars">
+    <div class="bar"><div class="name">Name</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">VALUE</div></div>
+    <div class="bar"><div class="name">Name</div><div class="track"><div class="fill" style="width:60%"></div></div><div class="val">VALUE</div></div>
+    <div class="bar"><div class="name">Name</div><div class="track"><div class="fill" style="width:30%"></div></div><div class="val">VALUE</div></div>
+  </div>
+</section>
+
+</main>
+<footer>Source: SOURCE LINE (or: Figures as given by the user)</footer>
+</div>
+</body>
+</html>

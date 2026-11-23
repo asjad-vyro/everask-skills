@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>LOGO CONCEPTS</title>
+<style>
+/* Each concept has its own colours on its own <section>: change --c1 (main), --c2 (accent), --bg. */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;background:#ccc}
+body{font-family:"Noto Sans","Noto Sans CJK SC","Noto Naskh Arabic",-apple-system,"Segoe UI",Arial,sans-serif;-webkit-print-color-adjust:exact}
+.lockup{width:1200px;height:900px;overflow:hidden;background:var(--bg,#fff);color:var(--c1);display:flex;flex-direction:column;position:relative}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;gap:48px;padding:60px}
+.stage img{width:340px;height:340px;object-fit:contain;flex:none}
+.words{display:flex;flex-direction:column;gap:14px;max-width:660px}
+.name{font-size:96px;line-height:1.05;font-weight:800;color:var(--c1)}
+.tag{font-size:34px;color:var(--c2);letter-spacing:.06em}
+/* stacked variant: add class "stacked" to .stage for symbol above the name */
+.stacked{flex-direction:column;gap:22px;text-align:center}
+.stacked .words{align-items:center}
+.stacked img{width:300px;height:300px}
+.strip{height:150px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(0,0,0,.04)}
+.sw{display:flex;gap:26px}
+.sw div{display:flex;align-items:center;gap:12px;font-size:26px;color:#333}
+.sw i{display:block;width:56px;height:56px;border-radius:50%;border:2px solid rgba(0,0,0,.15)}
+.label{font-size:26px;color:#555;text-align:end}
+</style>
+</head>
+<body>
+
+<!-- Concept 1. Keep id="l1". Copy the whole section for l2 and l3. -->
+<section class="lockup" id="l1" style="--c1:#5a3921;--c2:#c8863f;--bg:#fff">
+  <div class="stage">
+    <img src="symbol-1.png" alt="">
+    <div class="words"><div class="name">NAME EXACTLY AS GIVEN</div><div class="tag">TAGLINE IF GIVEN</div></div>
+  </div>
+  <div class="strip">
+    <div class="sw"><div><i style="background:#5a3921"></i>#HEX1</div><div><i style="background:#c8863f"></i>#HEX2</div><div><i style="background:#f6ead7"></i>#HEX3</div></div>
+    <div class="label">Concept 1: DIRECTION NAME</div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "type": "slides",
+  "tags": [
+    "slides",
+    "document"
+  ],
+  "example_prompts": [
+    "Make a 10-minute toolbox talk on ladder safety from these rules: check the ladder before use, keep three points of contact, never overreach, set it on firm level ground, face the ladder when climbing, do not use it alone for heavy tasks.",
+    "Build a fire safety training deck for office staff with a short quiz and a one-page poster of the key points",
+    "Create a data protection refresher for customer service staff, 12 slides with a quiz",
+    "Make a new-starter onboarding session deck for a small cafe: hygiene basics, till use, opening and closing routine"
+  ],
+  "connectors": [
+    "googleslides",
+    "googledrive"
+  ]
+}

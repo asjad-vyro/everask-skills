@@ -1,0 +1,12 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Write an internal memo to all staff announcing that office hours change to 8:30 to 16:30 starting 1 February, issued by the HR director",
+    "Draft a circular telling residents that water supply will be cut on Saturday morning for pipe repairs",
+    "Draft an official decision appointing a three-person committee for the school sports day, with the members I will list, in the format a school office would use",
+    "Write an internal regulation on laptop use for a 20-person company"
+  ]
+}

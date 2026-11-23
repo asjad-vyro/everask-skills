@@ -1,0 +1,18 @@
+{
+  "type": "data",
+  "tags": [
+    "data",
+    "research"
+  ],
+  "example_prompts": [
+    "Compare PostgreSQL, MySQL and SQLite in a spreadsheet: licence, first release year and main implementation language, with a source for each.",
+    "Research 5 note-taking apps and make a comparison spreadsheet with price, platforms and offline support, with links to where you found each.",
+    "Compara 4 universidades publicas de Madrid en una hoja de calculo, con fuentes",
+    "Make me a table comparing the top 6 project management tools, with a source link in every cell"
+  ],
+  "connectors": [
+    "googlesheets",
+    "airtable",
+    "notion"
+  ]
+}

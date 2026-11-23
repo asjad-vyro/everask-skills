@@ -1,0 +1,12 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make an Instagram carousel with 5 tips for better sleep, in calm blue colours",
+    "Turn this into a LinkedIn carousel: 1) set one goal per week 2) review on Fridays 3) block focus time 4) say no to extra meetings",
+    "Create a 7-slide carousel explaining what a budget is, for beginners, with a caption",
+    "Hazme un carrusel de Instagram sobre tres beneficios de leer cada dia"
+  ]
+}

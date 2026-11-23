@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<title>{{DOC_TITLE}}</title>
+<style>
+@page { size: {{PAGE}}; margin: 14mm 14mm 16mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; color: #26211c; font-size: {{FS}}pt; line-height: 1.35;
+  font-family: Georgia, "Times New Roman", "Noto Serif", "Noto Sans", "Noto Sans CJK SC", "Noto Naskh Arabic", serif; }
+:root { --accent: {{ACCENT}}; }
+header { text-align: center; padding-bottom: 6mm; margin-bottom: 7mm; border-bottom: 2px solid var(--accent); }
+h1 { font-size: 30pt; letter-spacing: .04em; line-height: 1.1; color: var(--accent); }
+.tag { margin-top: 2mm; font-size: 11pt; font-style: italic; }
+.cols { column-count: {{COLS}}; column-gap: 12mm; column-rule: 1px solid #e3d9cc; }
+section { break-inside: avoid; margin-bottom: 8mm; }
+h2 { font-size: 15pt; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); border-bottom: 1px solid var(--accent);
+  padding-bottom: 1mm; margin-bottom: 3mm; break-after: avoid; }
+.sdesc { font-size: .9em; font-style: italic; margin: -1mm 0 3mm; }
+.item { break-inside: avoid; margin-bottom: 3.4mm; }
+.line { display: flex; align-items: baseline; gap: 2mm; }
+.name { font-weight: 700; }
+.dots { flex: 1; border-bottom: 1px dotted #9a8f82; transform: translateY(-2px); min-width: 4mm; }
+.price { font-weight: 700; white-space: nowrap; }
+.name2 { font-size: .92em; font-style: italic; color: #5b5147; }
+.desc { font-size: .9em; color: #4a4239; margin-top: .5mm; }
+.marks { font-size: .8em; font-weight: 700; color: var(--accent); margin-inline-start: 1.5mm; }
+footer { margin-top: 4mm; padding-top: 3mm; border-top: 1px solid #cfc3b3; font-size: 8.5pt; color: #4a4239; break-inside: avoid; }
+footer p { margin-bottom: 1.5mm; }
+{{FOOTER_CSS}}
+</style>
+</head>
+<body>
+<header><h1>{{TITLE}}</h1>{{TAGLINE}}</header>
+<div class="cols">
+{{SECTIONS}}
+</div>
+<footer>{{LEGEND}}{{NOTE}}</footer>
+</body>
+</html>

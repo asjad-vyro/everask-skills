@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#1c2233;--muted:#5b6478;--brand:#3b5bdb;--ok:#2b8a3e;--okbg:#e6f6ea;--bad:#c92a2a;--badbg:#fdeaea;--line:#d5dbe8}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans CJK SC","Noto Naskh Arabic",sans-serif;font-size:clamp(18px,2.4vw,26px);line-height:1.4;display:flex;align-items:center;justify-content:center;padding:16px}
+#app{width:100%;max-width:900px;background:var(--card);border-radius:20px;box-shadow:0 8px 30px rgba(20,30,70,.12);padding:clamp(18px,4vw,40px)}
+h1{margin:0 0 .4em;font-size:1.6em;line-height:1.2}
+.sub{color:var(--muted);margin:0 0 1.2em}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:.8em 0}
+label{font-weight:600}
+select,input[type=text]{font:inherit;padding:.4em .6em;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:.7em 1.2em;background:var(--brand);color:#fff;font-weight:700}
+button:focus-visible,.opt:focus-visible{outline:4px solid #ffc078;outline-offset:2px}
+button.ghost{background:#e9edf8;color:var(--ink)}
+.bar{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-weight:600;margin-bottom:.6em;flex-wrap:wrap}
+.prog{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin-bottom:1em}
+.prog>i{display:block;height:100%;background:var(--brand);width:0}
+.q{font-size:1.35em;font-weight:700;margin:.2em 0 .9em}
+.opts{display:grid;gap:12px}
+.opt{display:flex;gap:12px;align-items:center;text-align:start;width:100%;background:#fff;color:var(--ink);border:3px solid var(--line);font-weight:600;min-height:3.2em}
+.opt b{flex:none;width:1.9em;height:1.9em;border-radius:50%;background:#e9edf8;display:inline-flex;align-items:center;justify-content:center}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}
+.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.opt[disabled]{cursor:default}
+.fb{margin:1em 0;padding:.8em 1em;border-radius:12px;font-weight:600}
+.fb.ok{background:var(--okbg);color:var(--ok)}
+.fb.bad{background:var(--badbg);color:var(--bad)}
+.fb small{display:block;color:var(--ink);font-weight:400;margin-top:.3em}
+.timer{font-variant-numeric:tabular-nums}
+.timer.low{color:var(--bad)}
+.teams{display:flex;gap:10px;flex-wrap:wrap;margin:.6em 0}
+.team{padding:.3em .8em;border-radius:999px;background:#e9edf8;font-weight:700}
+.team.on{background:var(--brand);color:#fff}
+table{width:100%;border-collapse:collapse;margin:1em 0}
+td,th{padding:.5em;border-bottom:1px solid var(--line);text-align:start}
+.big{font-size:2.4em;font-weight:800;margin:.2em 0}
+.hide{display:none}
+@media (min-width:700px){.opts.two{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+/*CONFIG_START*/
+const CONFIG = {
+  "title": "Quiz title",
+  "subtitle": "",
+  "lang": "en",
+  "dir": "ltr",
+  "timerSeconds": 0,
+  "teams": 1,
+  "shuffleQuestions": false,
+  "shuffleOptions": false,
+  "ui": {
+    "start": "Start", "next": "Next", "finish": "See results", "correct": "Correct!", "wrong": "Not quite.",
+    "timeUp": "Time is up.", "answerWas": "Answer:", "score": "Score", "question": "Question", "of": "of",
+    "teams": "Teams", "team": "Team", "timer": "Timer (seconds per question, 0 = off)", "replay": "Play again",
+    "results": "Results", "count": "{n} questions", "outOf": "out of", "turn": "Turn", "winner": "Winner", "tie": "It is a tie", "seconds": "s"
+  }
+};
+/*CONFIG_END*/
+/*QUESTIONS_START*/
+const QUESTIONS = [
+  {"q": "Example question?", "options": ["Right answer", "Wrong answer"], "answer": 0, "explain": ""}
+];
+/*QUESTIONS_END*/
+
+/* ---------- pure logic (tested with node) ---------- */
+function validateQuestions(qs){
+  const errs = [];
+  if(!Array.isArray(qs) || qs.length === 0) errs.push("no questions");
+  (qs || []).forEach((x, i) => {
+    if(!x || typeof x.q !== "string" || !x.q) errs.push("q" + (i+1) + ": missing text");
+    else if(!Array.isArray(x.options) || x.options.length < 2 || x.options.length > 6) errs.push("q" + (i+1) + ": needs 2 to 6 options");
+    else if(!Number.isInteger(x.answer) || x.answer < 0 || x.answer >= x.options.length) errs.push("q" + (i+1) + ": answer index out of range");
+  });
+  return errs;
+}
+function shuffled(arr, rnd){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; }
+  return a;
+}
+function prepare(qs, cfg, rnd){
+  let list = qs.map(x => ({q: x.q, options: x.options.slice(), answer: x.answer, explain: x.explain || ""}));
+  if(cfg.shuffleOptions){
+    list = list.map(x => {
+      if(x.options.length <= 2) return x;
+      const order = shuffled(x.options.map((_, i) => i), rnd);
+      return {q: x.q, options: order.map(i => x.options[i]), answer: order.indexOf(x.answer), explain: x.explain};
+    });
+  }
+  if(cfg.shuffleQuestions) list = shuffled(list, rnd);
+  return list;
+}
+function newState(list, teamCount){
+  const n = Math.max(1, Math.min(4, teamCount | 0 || 1));
+  return {list: list, idx: 0, scores: Array(n).fill(0), team: 0, answered: false, picked: -1, correctCount: 0};
+}
+function answerQuestion(st, choice){
+  if(st.answered) return null;
+  st.answered = true; st.picked = choice;
+  const q = st.list[st.idx];
+  const ok = choice === q.answer;
+  if(ok){ st.scores[st.team]++; st.correctCount++; }
+  return ok;
+}
+function advance(st){
+  if(st.idx >= st.list.length - 1) return false;
+  st.idx++; st.answered = false; st.picked = -1;
+  st.team = (st.team + 1) % st.scores.length;
+  return true;
+}
+function winners(scores){
+  const m = Math.max.apply(null, scores);
+  return scores.map((s, i) => s === m ? i : -1).filter(i => i >= 0);
+}
+
+/* ---------- page ---------- */
+const U = CONFIG.ui;
+const app = document.getElementById("app");
+let ST = null, timerId = null, left = 0, setup = {teams: CONFIG.teams, timer: CONFIG.timerSeconds};
+
+function h(tag, attrs, kids){
+  const e = document.createElement(tag);
+  Object.keys(attrs || {}).forEach(k => {
+    if(k === "text") e.textContent = attrs[k];
+    else if(k === "class") e.className = attrs[k];
+    else if(k.slice(0, 2) === "on") e.addEventListener(k.slice(2), attrs[k]);
+    else e.setAttribute(k, attrs[k]);
+  });
+  (kids || []).forEach(c => { if(c) e.appendChild(c); });
+  return e;
+}
+function clear(){ stopTimer(); while(app.firstChild) app.removeChild(app.firstChild); }
+function stopTimer(){ if(timerId){ clearInterval(timerId); timerId = null; } }
+function teamName(i){ return U.team + " " + (i + 1); }
+
+function showStart(){
+  clear();
+  const kids = [h("h1", {text: CONFIG.title})];
+  if(CONFIG.subtitle) kids.push(h("p", {class: "sub", text: CONFIG.subtitle}));
+  kids.push(h("p", {class: "sub", text: U.count.replace("{n}", String(QUESTIONS.length))}));
+  const selT = h("select", {id: "selTeams"}, [1, 2, 3, 4].map(n => { const o = h("option", {value: String(n), text: String(n)}); if(n === setup.teams) o.setAttribute("selected", "selected"); return o; }));
+  selT.addEventListener("change", () => { setup.teams = parseInt(selT.value, 10); });
+  const selS = h("select", {id: "selTimer"}, [0, 10, 15, 20, 30, 60].map(n => { const o = h("option", {value: String(n), text: String(n)}); if(n === setup.timer) o.setAttribute("selected", "selected"); return o; }));
+  selS.addEventListener("change", () => { setup.timer = parseInt(selS.value, 10); });
+  kids.push(h("div", {class: "row"}, [h("label", {text: U.teams}), selT]));
+  kids.push(h("div", {class: "row"}, [h("label", {text: U.timer}), selS]));
+  kids.push(h("div", {class: "row"}, [h("button", {id: "btnStart", text: U.start, onclick: startGame})]));
+  app.appendChild(h("div", {}, kids));
+}
+
+function startGame(){
+  const list = prepare(QUESTIONS, CONFIG, Math.random);
+  ST = newState(list, setup.teams);
+  showQuestion();
+}
+
+function showQuestion(){
+  clear();
+  const q = ST.list[ST.idx];
+  const pct = Math.round(ST.idx / ST.list.length * 100);
+  const bar = h("div", {class: "bar"}, [
+    h("span", {text: U.question + " " + (ST.idx + 1) + " " + U.of + " " + ST.list.length}),
+    h("span", {class: "timer", id: "timer", text: ""}),
+    h("span", {text: ST.scores.length === 1 ? U.score + ": " + ST.scores[0] : ""})
+  ]);
+  const prog = h("div", {class: "prog"}, [h("i", {style: "width:" + pct + "%"})]);
+  const kids = [bar, prog];
+  if(ST.scores.length > 1){
+    kids.push(h("div", {class: "teams"}, ST.scores.map((s, i) => h("span", {class: "team" + (i === ST.team ? " on" : ""), text: teamName(i) + ": " + s}))));
+    kids.push(h("p", {class: "sub", text: U.turn + ": " + teamName(ST.team)}));
+  }
+  kids.push(h("div", {class: "q", text: q.q}));
+  const opts = h("div", {class: "opts" + (q.options.length <= 2 ? " two" : ""), id: "opts"}, q.options.map((t, i) =>
+    h("button", {class: "opt", "data-i": String(i), onclick: () => choose(i)}, [h("b", {text: String(i + 1)}), h("span", {text: t})])));
+  kids.push(opts);
+  kids.push(h("div", {id: "fb"}));
+  kids.push(h("div", {class: "row", id: "nextRow"}));
+  app.appendChild(h("div", {}, kids));
+  if(setup.timer > 0){
+    left = setup.timer; renderTimer();
+    timerId = setInterval(() => { left--; renderTimer(); if(left <= 0){ stopTimer(); choose(-1); } }, 1000);
+  }
+}
+function renderTimer(){
+  const t = document.getElementById("timer");
+  if(!t) return;
+  t.textContent = left + U.seconds;
+  t.className = "timer" + (left <= 5 ? " low" : "");
+}
+
+function choose(i){
+  if(!ST || ST.answered) return;
+  stopTimer();
+  const q = ST.list[ST.idx];
+  const ok = answerQuestion(ST, i);
+  const buttons = document.getElementById("opts").children;
+  for(let k = 0; k < buttons.length; k++){
+    const b = buttons[k];
+    b.setAttribute("disabled", "disabled");
+    if(k === q.answer) b.className = "opt ok";
+    else if(k === i) b.className = "opt bad";
+  }
+  const head = i === -1 ? U.timeUp + " " + U.answerWas + " " + q.options[q.answer] : (ok ? U.correct : U.wrong + " " + U.answerWas + " " + q.options[q.answer]);
+  const fb = h("div", {class: "fb " + (ok ? "ok" : "bad"), text: head});
+  if(q.explain) fb.appendChild(h("small", {text: q.explain}));
+  const box = document.getElementById("fb");
+  box.appendChild(fb);
+  const last = ST.idx >= ST.list.length - 1;
+  document.getElementById("nextRow").appendChild(h("button", {id: "btnNext", text: last ? U.finish : U.next, onclick: next}));
+}
+function next(){
+  if(!ST || !ST.answered) return;
+  if(advance(ST)) showQuestion(); else showEnd();
+}
+
+function showEnd(){
+  clear();
+  const total = ST.list.length;
+  const kids = [h("h1", {text: U.results})];
+  if(ST.scores.length === 1){
+    kids.push(h("div", {class: "big", text: ST.scores[0] + " / " + total}));
+  } else {
+    const w = winners(ST.scores);
+    kids.push(h("div", {class: "big", text: w.length > 1 ? U.tie : U.winner + ": " + teamName(w[0])}));
+    const rows = ST.scores.map((s, i) => h("tr", {}, [h("td", {text: teamName(i)}), h("td", {text: s + " " + U.outOf + " " + total})]));
+    kids.push(h("table", {}, rows));
+  }
+  kids.push(h("div", {class: "row"}, [h("button", {id: "btnReplay", text: U.replay, onclick: showStart})]));
+  app.appendChild(h("div", {}, kids));
+}
+
+document.addEventListener("keydown", e => {
+  if(!ST || !document.getElementById("opts")) return;
+  const q = ST.list[ST.idx];
+  if(!ST.answered && /^[1-6]$/.test(e.key) && parseInt(e.key, 10) <= q.options.length){ choose(parseInt(e.key, 10) - 1); }
+  else if(ST.answered && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); next(); }
+});
+
+(function init(){
+  document.documentElement.setAttribute("lang", CONFIG.lang);
+  document.documentElement.setAttribute("dir", CONFIG.dir);
+  document.title = CONFIG.title;
+  const errs = validateQuestions(QUESTIONS);
+  if(errs.length){ app.textContent = "Quiz data error: " + errs.join("; "); return; }
+  showStart();
+})();
+if(typeof module !== "undefined") module.exports = {validateQuestions, prepare, newState, answerQuestion, advance, winners, shuffled};
+</script>
+</body>
+</html>

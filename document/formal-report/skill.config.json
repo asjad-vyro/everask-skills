@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Write my internship report from these notes: four weeks at a logistics company, three tasks, two things I learned",
+    "Make an incident report from what I describe: a spill in the school lab",
+    "Write a lab report for my pendulum experiment, I will paste the measurements",
+    "Buatkan laporan kegiatan untuk kerja bakti membersihkan sekolah"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive"
+  ]
+}

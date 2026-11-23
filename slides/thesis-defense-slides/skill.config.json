@@ -1,0 +1,16 @@
+{
+  "type": "slides",
+  "tags": [
+    "slides",
+    "research"
+  ],
+  "example_prompts": [
+    "Make 12-minute defense slides from this abstract, and tell me what the committee will ask.",
+    "I have a 20-minute proposal defense on urban heat islands. Plan the slides and list likely questions.",
+    "Turn my master's thesis results into a 15-minute viva presentation.",
+    "Prepara las diapositivas de mi defensa de tesis de 10 minutos sobre el uso de redes sociales y el estrés."
+  ],
+  "connectors": [
+    "googledrive"
+  ]
+}

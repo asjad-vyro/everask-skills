@@ -1,0 +1,12 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "In this text, change the price from 480 to 520 and delete the sentence about parking: The studio rents for 480 per month. Parking is available at 40 per month. Utilities are included.",
+    "Change the client name in my Word contract everywhere and delete the second paragraph",
+    "Remove slide 4 from my presentation and make the title on slide 1 bigger",
+    "Fix the date in my invoice PDF without changing anything else"
+  ]
+}

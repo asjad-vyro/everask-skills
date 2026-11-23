@@ -1,0 +1,14 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing",
+    "data",
+    "document"
+  ],
+  "example_prompts": [
+    "Make a PDF price list for my hair salon: cut 25, colour 60, blow dry 20, treatment 35, beard trim 12",
+    "Turn this product spreadsheet into a catalogue grouped by category",
+    "Build a product catalogue with codes, descriptions and prices from this list, then raise every price by 5 percent",
+    "Create a services price list for my cleaning company in green"
+  ]
+}

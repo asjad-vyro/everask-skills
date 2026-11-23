@@ -1,0 +1,15 @@
+{
+  "type": "slides",
+  "tags": [
+    "slides"
+  ],
+  "example_prompts": [
+    "My slides have way too much text. Make the deck cleaner and more visual without losing any content.",
+    "Redesign this presentation: fewer words per slide, one idea per slide, and show me a before and after.",
+    "Hazla mas visual y con menos texto: pega aquí tus diapositivas.",
+    "Rebuild my attached .pptx so the structure is clearer and every number stays."
+  ],
+  "connectors": [
+    "googledrive"
+  ]
+}

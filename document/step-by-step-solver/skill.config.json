@@ -1,0 +1,17 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "data"
+  ],
+  "example_prompts": [
+    "Solve 3x + 7 = 2x - 5 step by step",
+    "A ball is thrown straight up at 14 m/s. How high does it go and how long until it lands? Show every step.",
+    "Solve x^2 - 5x + 6 = 0 and explain the method",
+    "How many grams of NaCl are in 250 mL of a 0.50 mol/L solution? Explain each step."
+  ],
+  "connectors": [
+    "google_classroom",
+    "googledrive"
+  ]
+}

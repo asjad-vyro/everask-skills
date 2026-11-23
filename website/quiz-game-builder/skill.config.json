@@ -1,0 +1,12 @@
+{
+  "type": "website",
+  "tags": [
+    "website"
+  ],
+  "example_prompts": [
+    "Make a quiz game for my class on the water cycle, 10 questions, with a 20 second timer",
+    "Build a team trivia game about world capitals for a party, 3 teams",
+    "Turn these questions into a playable quiz: 1) 7 x 8? 56 or 54. 2) Capital of Peru? Lima or Quito",
+    "Faça um jogo de perguntas sobre o corpo humano para o 6º ano"
+  ]
+}

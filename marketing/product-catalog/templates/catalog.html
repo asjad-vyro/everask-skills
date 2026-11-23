@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<title>{{DOC_TITLE}}</title>
+<style>
+@page { size: {{PAGE}}; margin: 16mm 14mm 18mm;
+  @bottom-center { content: counter(page); font-size: 9pt; color: #777; font-family: Arial, "Noto Sans", sans-serif; } }
+{{FIRST_PAGE_CSS}}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --accent: {{ACCENT}}; --tint: {{TINT}}; }
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; color: #222; font-size: 10pt; line-height: 1.35;
+  font-family: "Helvetica Neue", Arial, "Noto Sans", "Noto Sans CJK SC", "Noto Naskh Arabic", sans-serif; }
+.cover { height: {{COVER_H}}; padding: 28mm 20mm 20mm; background: var(--accent); color: #fff; page-break-after: always;
+  display: flex; flex-direction: column; justify-content: space-between; }
+.cover h1 { font-size: 38pt; line-height: 1.1; font-weight: 800; overflow-wrap: anywhere; }
+.cover .sub { margin-top: 6mm; font-size: 14pt; opacity: .95; }
+.cover .co { font-size: 12pt; font-weight: 700; letter-spacing: .06em; }
+.toc { background: rgba(255,255,255,.14); padding: 8mm 10mm; border-radius: 3mm; }
+.toc h3 { font-size: 11pt; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 3mm; }
+.toc li { list-style: none; display: flex; justify-content: space-between; gap: 6mm; padding: 1.2mm 0; font-size: 11.5pt;
+  border-bottom: 1px solid rgba(255,255,255,.25); }
+.plainhead { margin-bottom: 8mm; padding-bottom: 4mm; border-bottom: 3px solid var(--accent); }
+.plainhead h1 { font-size: 26pt; line-height: 1.1; color: var(--accent); overflow-wrap: anywhere; }
+.plainhead .co { font-size: 10pt; font-weight: 700; letter-spacing: .06em; margin-bottom: 2mm; }
+.plainhead .sub { margin-top: 2mm; font-size: 12pt; color: #444; }
+.cat { margin-bottom: 9mm; }
+.cat.newpage { break-before: page; }
+h2 { font-size: 17pt; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 1.5mm; margin-bottom: 3mm; break-after: avoid; }
+.catdesc { margin-bottom: 3mm; font-style: italic; }
+table { width: 100%; border-collapse: collapse; }
+thead { display: table-header-group; }
+th { text-align: start; font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding: 1.5mm 2mm;
+  border-bottom: 1px solid var(--accent); }
+td { padding: 2.2mm 2mm; vertical-align: top; border-bottom: 1px solid #e3e3e3; }
+tr { break-inside: avoid; }
+tbody tr:nth-child(even) td { background: var(--tint); }
+td.code { white-space: nowrap; color: #555; font-size: 9pt; width: 22mm; }
+td.name { font-weight: 700; }
+td.desc { color: #444; }
+td.unit { white-space: nowrap; color: #555; }
+td.price, th.price { text-align: end; white-space: nowrap; font-weight: 700; }
+td.img, th.img { width: 20mm; }
+td.img img { width: 18mm; height: 18mm; object-fit: cover; border-radius: 1mm; display: block; }
+.note { margin-top: 6mm; font-size: 8.5pt; color: #555; }
+</style>
+</head>
+<body>
+{{HEAD}}
+{{CATEGORIES}}
+{{NOTE}}
+</body>
+</html>

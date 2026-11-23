@@ -1,0 +1,15 @@
+{
+  "type": "slides",
+  "tags": [
+    "slides"
+  ],
+  "example_prompts": [
+    "Make an 8-minute presentation on the water cycle for my grade 7 science class.",
+    "I have to present on the French Revolution for 10 minutes. Make the slides with pictures and very little text.",
+    "Create slides for my university seminar on renewable energy, 15 minutes, with sources on the last slide.",
+    "Haz una presentación de 6 minutos sobre el sistema solar para mi clase."
+  ],
+  "connectors": [
+    "googledrive"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "research"
+  ],
+  "example_prompts": [
+    "Summarize this report in 5 bullets: the company opened 3 new stores in the spring quarter, hired 45 staff and spent 2.1 million on fit-out, but online sales fell 8 percent and management expects a recovery next year.",
+    "Summarize this PDF and give me the key figures and deadlines",
+    "TL;DR this in two sentences: The library will close its main hall for repairs from the first Monday of next month and reopen it after eight weeks. During the closure, loans and returns move to the side entrance, and the reading room stays open on weekdays.",
+    "Give me a one-paragraph summary of this contract and what I need to do"
+  ]
+}

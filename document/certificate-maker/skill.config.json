@@ -1,0 +1,12 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Make certificates of completion for Ana Lima, Bruno Costa and Chen Wei for the Spring Pottery Workshop, 8 hours",
+    "Create a certificate of participation for one person in our hackathon, I will fill in the date by hand",
+    "Make award certificates for the top three students in a spelling contest: first, second and third place",
+    "Attendance certificates for everyone on this class list, A4 landscape"
+  ]
+}

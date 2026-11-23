@@ -1,0 +1,13 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing",
+    "document"
+  ],
+  "example_prompts": [
+    "Make an A4 flyer for a bake sale on Saturday 10 to 2 at the town hall, cookies $1.50 and cakes $12",
+    "Design a birthday party invitation for Lena turning 30, square size for sharing",
+    "Poster for our school science fair, blue and white, with the date and room left for me to fill in",
+    "Make an Instagram story poster announcing a 20 percent off weekend sale"
+  ]
+}

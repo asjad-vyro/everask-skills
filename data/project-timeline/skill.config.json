@@ -1,0 +1,19 @@
+{
+  "type": "data",
+  "tags": [
+    "data",
+    "document"
+  ],
+  "example_prompts": [
+    "Make a Gantt chart for this project starting 2031-03-03: 1 Design (4 days, Ana), 2 Build (10 days, Ben, after 1), 3 Test (3 days, Ana, after 2), 4 Launch (1 day, Cy, after 3).",
+    "Plan a 6-week school science fair as a project timeline with tasks, owners and a Gantt chart",
+    "Schedule my website relaunch tasks and tell me when it finishes and which tasks can't slip",
+    "Turn this task list into a timeline spreadsheet: Research 5 days, Draft 8 days after Research, Review 3 days after Draft, Publish 1 day after Review"
+  ],
+  "connectors": [
+    "googlesheets",
+    "asana",
+    "trello",
+    "notion"
+  ]
+}

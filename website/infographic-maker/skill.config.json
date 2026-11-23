@@ -1,0 +1,13 @@
+{
+  "type": "website",
+  "tags": [
+    "website",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make an infographic about why sleep matters for students: 5 key facts, simple and colourful",
+    "Turn this into an infographic: our cafe sold 1,200 coffees in May, 1,500 in June and 1,900 in July",
+    "Create a one-page infographic showing the 4 steps of the water cycle for my school project",
+    "Hazme una infografia sobre como reciclar en casa, en 4 pasos"
+  ]
+}

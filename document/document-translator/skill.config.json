@@ -1,0 +1,12 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Translate this paragraph into French and keep the numbers and dates exactly as they are: The meeting moves to 14 May at 3 pm in Room 204. Budget approved: 12,500 euros.",
+    "Translate my Word contract into Spanish and keep the formatting",
+    "Translate this memo into English and show the English above the original text",
+    "Translate this spreadsheet's labels into German without touching the numbers"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "research"
+  ],
+  "example_prompts": [
+    "Write a 600-word argumentative essay: should schools ban smartphones in classrooms?",
+    "Help me plan and draft a compare-and-contrast essay on two ways of learning a language",
+    "Escribe un ensayo de 500 palabras sobre las ventajas y desventajas de las redes sociales",
+    "Draft a 1,000-word expository essay on how the printing press changed society, in APA style"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "notion"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing",
+    "document"
+  ],
+  "example_prompts": [
+    "Make a printable cafe menu: coffee 3.00, latte 3.80, croissant 2.50, cheesecake 5.00, orange juice 3.20",
+    "Turn my restaurant's dishes and prices into a two-column A4 menu with starters, mains and desserts",
+    "Make a bilingual English and French menu: soup of the day 6, roast chicken 18, chocolate cake 7",
+    "Make a drinks menu for my bar, marking the vegan options"
+  ]
+}

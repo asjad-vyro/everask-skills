@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<style>
+  @page { size: {{PAPER}}; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans", "Noto Sans CJK SC", "Noto Naskh Arabic", "Helvetica Neue", Arial, sans-serif;
+    color: #1b1f24; background: #ffffff;
+  }
+  .page { width: 100%; height: {{PAGE_HEIGHT}}; display: flex; flex-direction: column; overflow: hidden; }
+  .head { background: #12355b; color: #ffffff; padding: 12mm 14mm 9mm 14mm; }
+  .head h1 { margin: 0; font-size: 34pt; line-height: 1.12; }
+  .head p { margin: 3mm 0 0 0; font-size: 15pt; color: #cfe0f3; }
+  .points { flex: 1; display: flex; flex-direction: column; padding: 8mm 14mm 4mm 14mm; gap: 3.5mm; }
+  .point { flex: 1; display: flex; align-items: center; gap: 6mm; border: 0.6mm solid #d5dde6; border-radius: 3mm; padding: 2mm 6mm; }
+  .num { flex: none; width: 15mm; height: 15mm; border-radius: 50%; background: #e8a317; color: #12355b;
+         font-size: 22pt; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .txt { font-size: 20pt; line-height: 1.25; font-weight: 600; }
+  .foot { padding: 3mm 14mm 8mm 14mm; font-size: 9.5pt; color: #4a5563; }
+  .foot div + div { margin-top: 1.2mm; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head"><h1>{{TITLE}}</h1><p>{{SUBTITLE}}</p></div>
+  <div class="points">
+{{POINTS}}
+  </div>
+  <div class="foot"><div>{{FOOTER}}</div><div>{{SOURCE_LINE}}</div></div>
+</div>
+</body>
+</html>

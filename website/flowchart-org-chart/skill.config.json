@@ -1,0 +1,13 @@
+{
+  "type": "website",
+  "tags": [
+    "website",
+    "document"
+  ],
+  "example_prompts": [
+    "Draw an org chart: Dana is CEO; Eli (CTO) and Fay (CFO) report to Dana; Gus and Hana report to Eli",
+    "Make a flowchart for handling a customer refund request, with a check on the purchase date",
+    "Timeline of a product launch: research in March, design in May, beta in August, release in October",
+    "Haz un organigrama de mi equipo de ventas: un gerente, dos supervisores y cuatro vendedores"
+  ]
+}

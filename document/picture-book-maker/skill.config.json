@@ -1,0 +1,13 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make a picture book for ages 4 to 6 about a little fox who learns to share her berries",
+    "Illustrated bedtime story about a sleepy dragon who cannot find his pillow, 8 pages",
+    "Turn this story into a picture book with a picture on every page: a girl called Mia builds a rocket from boxes and flies to the moon",
+    "Hazme un cuento ilustrado sobre una nubecita que tiene miedo de los truenos"
+  ]
+}

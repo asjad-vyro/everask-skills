@@ -1,0 +1,17 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "slides"
+  ],
+  "example_prompts": [
+    "Write a script for our group presentation on renewable energy: 4 speakers, 10 minutes",
+    "We are 3 students presenting on recycling at school for 5 minutes. Write what each of us says.",
+    "Split this talk between Maya, Leo and Sam, 8 minutes, and give each a hand-over line",
+    "Make a spoken script from my slide outline and add likely questions with answers"
+  ],
+  "connectors": [
+    "googleslides",
+    "googledocs"
+  ]
+}

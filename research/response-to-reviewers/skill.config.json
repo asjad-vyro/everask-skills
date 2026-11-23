@@ -1,0 +1,17 @@
+{
+  "type": "research",
+  "tags": [
+    "research",
+    "document"
+  ],
+  "example_prompts": [
+    "Write a response letter to these two reviewers. I will paste their comments and tell you what I changed.",
+    "Reviewer 2 says my sample is too small and the discussion overstates the findings. Help me answer politely",
+    "Turn these reviewer comments into a point-by-point rebuttal and a checklist of edits for my revised manuscript",
+    "Revise and resubmit: draft the cover letter to the editor and the reply to each comment"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive"
+  ]
+}

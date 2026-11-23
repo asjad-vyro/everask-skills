@@ -1,0 +1,12 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Make a weekly study timetable: Math 5 h, Physics 4 h, History 3 h, school 8-14 on weekdays, no study after 21:00",
+    "Create a 3-day-a-week beginner workout routine I can do at home, one page to print",
+    "Weekly chore chart for a family of four, printable",
+    "Plan de repas pour une semaine, sans arachides, à imprimer"
+  ]
+}

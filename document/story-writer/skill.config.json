@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Write a short bedtime story for a 6-year-old about a brave turtle",
+    "Continue my novel: chapter 4, Mara finally opens the lighthouse door. Keep her voice dry and never mention dates",
+    "Write a 500-word scene between two sisters arguing over their late grandmother's house",
+    "Rewrite this chapter in first person and keep everything else the same"
+  ],
+  "connectors": [
+    "googledocs",
+    "notion"
+  ]
+}

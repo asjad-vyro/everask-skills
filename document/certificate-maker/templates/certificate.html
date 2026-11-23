@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<title>{{DOC_TITLE}}</title>
+<style>
+@page { size: {{PAGE}} landscape; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --accent: {{ACCENT}}; --paper: #fffdf7; }
+html, body { background: var(--paper); }
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; color: #25221f;
+  font-family: Georgia, "Times New Roman", "Noto Serif", "Noto Sans", "Noto Sans CJK SC", "Noto Naskh Arabic", serif; }
+.cert { width: {{PW}}; height: {{PH}}; padding: 12mm; page-break-after: always; break-after: page; overflow: hidden; background: var(--paper); }
+.cert:last-child { page-break-after: auto; break-after: auto; }
+.outer { height: 100%; border: 2.2mm solid var(--accent); padding: 2mm; }
+.inner { height: 100%; border: .5mm solid var(--accent); padding: 9mm 16mm 9mm; text-align: center;
+  display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+.org { font-size: 14pt; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--accent); min-height: 8mm; }
+h1 { font-size: 34pt; line-height: 1.15; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.intro { font-size: 14pt; font-style: italic; margin-top: 5mm; }
+.name { line-height: 1.15; font-weight: 700; padding: 1mm 12mm 2mm; border-bottom: .4mm solid #8b8378; min-width: 60%;
+  font-family: Georgia, "Times New Roman", "Noto Serif", "Noto Sans CJK SC", "Noto Naskh Arabic", serif; }
+.reason { font-size: 14pt; font-style: italic; margin-top: 3mm; }
+.subject { font-size: 21pt; font-weight: 700; margin-top: 2mm; line-height: 1.25; }
+.extra { font-size: 13pt; margin-top: 3mm; }
+.blank { display: inline-block; min-width: 55mm; border-bottom: .4mm solid #555; height: 7mm; vertical-align: bottom; }
+.sig { display: flex; justify-content: space-around; width: 100%; align-items: flex-start; gap: 12mm; }
+.sigbox { flex: 1; max-width: 80mm; }
+.sigline { border-top: .4mm solid #25221f; padding-top: 1.5mm; font-size: 12pt; min-height: 10mm; }
+.sigline b { display: block; font-size: 13pt; }
+.sigspace { height: 14mm; }
+.datebox .val { height: 14mm; display: flex; align-items: flex-end; justify-content: center; font-size: 13pt; padding-bottom: 1mm; }
+.cap { font-size: 10pt; color: #555; text-transform: uppercase; letter-spacing: .1em; }
+</style>
+</head>
+<body>
+{{PAGES}}
+</body>
+</html>

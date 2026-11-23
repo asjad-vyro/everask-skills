@@ -1,0 +1,12 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Design a logo for my coffee stall called Kopi Pagi, friendly and warm",
+    "I need logo ideas for a modern law firm named Harlow & Finch, navy and grey",
+    "Make three logo concepts for a kids yoga studio called Little Lotus, bright but calm",
+    "Quiero un logo para mi panaderia Pan de Casa, colores marron y crema"
+  ]
+}
