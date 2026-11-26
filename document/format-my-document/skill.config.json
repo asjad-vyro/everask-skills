@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Format my attached report: Times New Roman 12, 1.5 line spacing, 2.5 cm margins, numbered headings, references in alphabetical order",
+    "Add page numbers and a table of contents to my Word thesis and make all headings the same style",
+    "Make my document follow APA 7 as far as you can and tell me which rules you could not apply",
+    "Put this text into a Word file: bold centred title, SimSun 12pt body, first-line indent of 2 characters"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive"
+  ]
+}

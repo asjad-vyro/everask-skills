@@ -1,0 +1,13 @@
+{
+  "type": "data",
+  "tags": [
+    "data",
+    "document"
+  ],
+  "example_prompts": [
+    "Make a weekly rota for 6 cafe staff: two open, two close, max 5 shifts each, nobody closes then opens the next day",
+    "Build an exam invigilation timetable: 5 teachers, 3 sessions a day for 4 days, 2 invigilators per session, nobody on more than 6 sessions in total",
+    "I run a small clinic with 3 nurses and 2 receptionists. Create a Monday to Saturday shift schedule with at most 40 hours each",
+    "Who should work which shift? 4 part-timers, weekend cover needed, each can do at most 3 shifts a week"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "slides",
+  "tags": [
+    "slides",
+    "data"
+  ],
+  "example_prompts": [
+    "Make one slide for my director from this: Region,Q1,Q2 / North,120,132 / South,80,68 / East,50,50 / West,30,45",
+    "Boil this down to two slides: customer churn fell from 6 percent to 4 percent after the onboarding change, but support tickets rose 20 percent",
+    "One takeaway slide for the board: revenue was 2.4M in March and 2.7M in April, costs were flat at 1.9M, and we need approval to hire two engineers",
+    "Turn these survey findings into 3 slides at most, with the decision we need from leadership on the last one"
+  ]
+}

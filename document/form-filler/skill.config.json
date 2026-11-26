@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Fill in my attached application form: I'm Elena Vasquez, born 12 May 1990, email elena@example.org, phone 555 0187. Leave anything you don't have a value for blank.",
+    "Complete this Word template with my details and tell me which fields still need an answer",
+    "Fill the blanks in my attached Excel sheet with these numbers and leave the signature line empty",
+    "Fill this PDF registration form for me and list what is still missing"
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "What sizes and backgrounds can you make from a product photo for an online shop?",
+    "Remove the background from my photo and give me a transparent PNG",
+    "Put my product photo on a pure white 2000x2000 square for a marketplace listing",
+    "Cut out my profile picture and put it on a blue background at 400x400"
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox"
+  ]
+}

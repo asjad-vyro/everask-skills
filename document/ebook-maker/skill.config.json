@@ -1,0 +1,17 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Write and design a 10-page A5 ebook for beginners on starting a vegetable balcony garden",
+    "Turn this outline into a PDF booklet with a cover and contents page: 1 Why sleep matters, 2 Evening routine, 3 Morning light, 4 When to ask for help",
+    "Make a lead-magnet ebook called Five Habits for Calmer Mondays, 6x9, green theme",
+    "Buat ebook singkat tentang cara menghemat uang bulanan untuk mahasiswa"
+  ],
+  "connectors": [
+    "googledrive",
+    "notion"
+  ]
+}

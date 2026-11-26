@@ -1,0 +1,13 @@
+{
+  "type": "website",
+  "tags": [
+    "website",
+    "engineering"
+  ],
+  "example_prompts": [
+    "Make a clickable admin panel demo for a small clinic with Patients, Appointments, Invoices and Staff. Roles: Admin, Doctor, Reception, where Reception cannot see Staff",
+    "I need a demo of an inventory portal for a client: Products, Suppliers, Orders, Stock Counts, with Manager and Clerk roles",
+    "Build a school management portal prototype with Students, Teachers, Classes, Grades and Attendance",
+    "Prototype an HR panel with Employees, Leave Requests and Payroll that I can show my team"
+  ]
+}

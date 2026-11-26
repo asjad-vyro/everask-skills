@@ -1,0 +1,17 @@
+{
+  "type": "document",
+  "tags": [
+    "document"
+  ],
+  "example_prompts": [
+    "Use this as the model: 'Meeting notes - Mon 3 June. Attendees: A, B. Decisions: 1) Budget approved. Actions: A to book room.' Write notes in the same format for our Thursday planning call: we chose the venue and Sam will send invites.",
+    "Use this letter as a model and write another one in the same style for a different customer, with these details",
+    "Here is last year's bake sale announcement: 'Join us Saturday 10-2 at the town hall for cakes, bread and live music. All proceeds go to the library.' Write one in the same format for our school's book fair.",
+    "Make a new copy of my attached spreadsheet with the same layout and formulas, filled with these new rows"
+  ],
+  "connectors": [
+    "googledocs",
+    "googledrive",
+    "notion"
+  ]
+}

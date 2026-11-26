@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Change the date on my event poster to a new one and keep the design the same",
+    "Replace the price on this flyer and tell me what you changed",
+    "Swap the name on this invitation image for a different name",
+    "Edit the wording on my PDF flyer without redoing the layout"
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox"
+  ]
+}

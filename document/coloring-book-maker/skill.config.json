@@ -1,0 +1,16 @@
+{
+  "type": "document",
+  "tags": [
+    "document",
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make a 6-page coloring book of farm animals for ages 4 to 6",
+    "Create a relaxing mandala coloring book for adults with 10 pages",
+    "Make a dinosaur coloring book for my 7 year old, A4, with a page for his name",
+    "Crea un libro para colorear de animales del mar para niños"
+  ],
+  "connectors": [
+    "googledrive"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "Make a reference sheet for a round blue fox barista mascot with a green apron and a yellow scarf",
+    "Create a character sheet for an original elf ranger for my fantasy game",
+    "Design a friendly robot mascot for my kids' app with front, side and back views and expressions",
+    "What do you need from me to make a consistent character sheet for my comic?"
+  ],
+  "connectors": [
+    "figma",
+    "googledrive"
+  ]
+}

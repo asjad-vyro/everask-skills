@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "I have a 2 minute video and want to remove the part from 0:40 to 0:55. What do you need from me?",
+    "How do I make my landscape video work for Reels without stretching or cutting people off?",
+    "Remove 10s to 15s of this video and make it vertical 9:16 for phones.",
+    "Add my logo in the top right corner from 0:05 to 0:20 and mute the sound between 1:00 and 1:10."
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox"
+  ]
+}

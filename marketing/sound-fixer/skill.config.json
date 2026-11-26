@@ -1,0 +1,16 @@
+{
+  "type": "marketing",
+  "tags": [
+    "marketing"
+  ],
+  "example_prompts": [
+    "My podcast episode sounds quiet next to other shows. What loudness should I aim for, and what can you fix once I upload it?",
+    "The music in my video drowns out my voice. How can you fix that, and what do you need from me?",
+    "Make the volume of this recording even, cut it to the first 15 seconds and add a 2 second fade out.",
+    "Cut the section from 1:20 to 1:45 out of this audio file and join it smoothly."
+  ],
+  "connectors": [
+    "googledrive",
+    "dropbox"
+  ]
+}
